@@ -1,11 +1,21 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import Pages from "vite-plugin-pages";
 import path from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      Pages({
+        dirs: "src/pages",
+        extensions: ["tsx", "ts", "jsx", "js"],
+        resolver: "react",
+        exclude: ["**/RootLayout.tsx", "**/components/**"],
+      }),
+    ],
     resolve: {
       alias: {
         "@": path.resolve(import.meta.dirname, "."),
@@ -27,7 +37,8 @@ export default defineConfig(() => {
               id.includes("node_modules/react") ||
               id.includes("node_modules/react-dom") ||
               id.includes("node_modules/motion") ||
-              id.includes("node_modules/lucide-react")
+              id.includes("node_modules/lucide-react") ||
+              id.includes("node_modules/react-router")
             ) {
               return "vendor";
             }
