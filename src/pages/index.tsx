@@ -1,5 +1,5 @@
-import { useOutletContext } from "react-router-dom";
-import { motion } from "motion/react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
 import { ServicesShowcase } from "@/src/components/ServicesShowcase";
@@ -10,38 +10,41 @@ import { TechnologyFlow } from "@/src/components/TechnologyFlow";
 import { AboutSection } from "@/src/components/AboutSection";
 import { ResourcesSection } from "@/src/components/ResourcesSection";
 import { ContactSection } from "@/src/components/ContactSection";
+import { HotspotModal } from "@/src/components/HotspotModal";
 import { PageId, HotspotItem } from "@/src/types";
 
-interface PageContext {
-  onNavigate: (page: PageId) => void;
-  onSelectHotspot: (hotspot: HotspotItem | null) => void;
-  selectedHotspot: HotspotItem | null;
-}
-
 export default function IndexPage() {
-  const { onNavigate, onSelectHotspot, selectedHotspot } =
-    useOutletContext<PageContext>();
+  const navigate = useNavigate();
+  const [selectedHotspot, setSelectedHotspot] = useState<HotspotItem | null>(
+    null,
+  );
+
+  const handleNavigate = (page: PageId) => {
+    navigate(page === "home" ? "/" : `/${page}`);
+  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}>
+    <>
       <HeroSection
-        onSelectHotspot={onSelectHotspot}
+        onSelectHotspot={setSelectedHotspot}
         selectedHotspot={selectedHotspot}
-        onNavigate={onNavigate}
+        onNavigate={handleNavigate}
       />
       <WhyCosmicFire />
-      <ServicesShowcase onNavigate={onNavigate} />
-      <CinematicBanner onNavigate={onNavigate} />
+      <ServicesShowcase onNavigate={handleNavigate} />
+      <CinematicBanner onNavigate={handleNavigate} />
       <InteractiveBlueprint />
-      <IndustriesSection onNavigate={onNavigate} />
+      <IndustriesSection onNavigate={handleNavigate} />
       <TechnologyFlow />
-      <AboutSection onNavigate={onNavigate} />
+      <AboutSection onNavigate={handleNavigate} />
       <ResourcesSection />
-      <ContactSection onNavigate={onNavigate} />
-    </motion.div>
+      <ContactSection onNavigate={handleNavigate} />
+
+      <HotspotModal
+        hotspot={selectedHotspot}
+        onClose={() => setSelectedHotspot(null)}
+        onNavigate={handleNavigate}
+      />
+    </>
   );
 }

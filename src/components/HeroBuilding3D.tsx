@@ -1,24 +1,24 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  ShieldAlert, 
-  Bell, 
-  Droplets, 
-  Cpu, 
-  Flame, 
-  LogOut, 
-  Maximize2, 
-  RotateCw, 
-  Activity, 
-  CheckCircle2, 
+import React, { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  ShieldAlert,
+  Bell,
+  Droplets,
+  Cpu,
+  Flame,
+  LogOut,
+  Maximize2,
+  RotateCw,
+  Activity,
+  CheckCircle2,
   Sparkles,
   Layers,
   ChevronRight,
-  Info
-} from 'lucide-react';
-import * as THREE from 'three';
-import { HERO_HOTSPOTS } from '../data/mockData';
-import { HotspotItem } from '../types';
+  Info,
+} from "lucide-react";
+import * as THREE from "three";
+import { HERO_HOTSPOTS } from "../data/mockData";
+import { HotspotItem } from "../types";
 
 interface HeroBuilding3DProps {
   onSelectHotspot: (hotspot: HotspotItem) => void;
@@ -33,23 +33,25 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
   const [isSimulating, setIsSimulating] = useState(false);
-  const [networkIntensity, setNetworkIntensity] = useState<'normal' | 'boost'>('normal');
+  const [networkIntensity, setNetworkIntensity] = useState<"normal" | "boost">(
+    "normal",
+  );
   const [webglSupported, setWebglSupported] = useState(true);
 
   // Hotspot icon mapping
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldAlert':
+      case "ShieldAlert":
         return <ShieldAlert className="w-4 h-4 text-[#FF4D0A]" />;
-      case 'Bell':
+      case "Bell":
         return <Bell className="w-4 h-4 text-[#FF4D0A]" />;
-      case 'Droplets':
+      case "Droplets":
         return <Droplets className="w-4 h-4 text-[#FF4D0A]" />;
-      case 'Cpu':
+      case "Cpu":
         return <Cpu className="w-4 h-4 text-[#FF4D0A]" />;
-      case 'Flame':
+      case "Flame":
         return <Flame className="w-4 h-4 text-[#FF4D0A]" />;
-      case 'LogOut':
+      case "LogOut":
         return <LogOut className="w-4 h-4 text-[#FF4D0A]" />;
       default:
         return <Sparkles className="w-4 h-4 text-[#FF4D0A]" />;
@@ -65,10 +67,10 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
         canvas: canvasRef.current,
         alpha: true,
         antialias: true,
-        powerPreference: 'high-performance',
+        powerPreference: "high-performance",
       });
     } catch (e) {
-      console.warn('WebGL initialization fallback triggered', e);
+      console.warn("WebGL initialization fallback triggered", e);
       setWebglSupported(false);
       return;
     }
@@ -80,7 +82,7 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
 
     // Camera setup - slightly low angle architectural hero perspective
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
@@ -194,7 +196,11 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
 
       // Floor ceiling slab
       if (f === 3) {
-        const roofGeo = new THREE.BoxGeometry(buildingWidth + 0.4, 0.3, buildingDepth + 0.4);
+        const roofGeo = new THREE.BoxGeometry(
+          buildingWidth + 0.4,
+          0.3,
+          buildingDepth + 0.4,
+        );
         const roof = new THREE.Mesh(roofGeo, concreteMaterial);
         roof.position.set(0, 4 * floorHeight + 0.15, 0);
         roof.castShadow = true;
@@ -227,7 +233,11 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     }
 
     // Glass Facade walls
-    const glassFacadeGeo = new THREE.BoxGeometry(buildingWidth + 0.04, 4 * floorHeight, buildingDepth + 0.04);
+    const glassFacadeGeo = new THREE.BoxGeometry(
+      buildingWidth + 0.04,
+      4 * floorHeight,
+      buildingDepth + 0.04,
+    );
     const glassFacade = new THREE.Mesh(glassFacadeGeo, glassMaterial);
     glassFacade.position.set(0, (4 * floorHeight) / 2 + 0.1, 0);
     buildingGroup.add(glassFacade);
@@ -235,13 +245,20 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     // Mullions & window frames
     const frameLines = new THREE.Group();
     for (let f = 0; f <= 4; f++) {
-      const horizontalMullion = new THREE.BoxGeometry(buildingWidth + 0.1, 0.05, buildingDepth + 0.1);
+      const horizontalMullion = new THREE.BoxGeometry(
+        buildingWidth + 0.1,
+        0.05,
+        buildingDepth + 0.1,
+      );
       const hm = new THREE.Mesh(horizontalMullion, darkFrameMaterial);
       hm.position.set(0, f * floorHeight + 0.1, 0);
       frameLines.add(hm);
     }
     for (let x = -3; x <= 3; x += 1.5) {
-      const vm = new THREE.Mesh(new THREE.BoxGeometry(0.04, 4 * floorHeight, 0.04), darkFrameMaterial);
+      const vm = new THREE.Mesh(
+        new THREE.BoxGeometry(0.04, 4 * floorHeight, 0.04),
+        darkFrameMaterial,
+      );
       vm.position.set(x, (4 * floorHeight) / 2 + 0.1, buildingDepth / 2 + 0.03);
       frameLines.add(vm);
     }
@@ -301,12 +318,12 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     // Add glowing terminal nodes / sensors
     const sensorGeo = new THREE.SphereGeometry(0.12, 16, 16);
     const sensorPositions = [
-      new THREE.Vector3(0.5, 5.4, 1.5),   // Smoke detector floor 4
-      new THREE.Vector3(-0.8, 3.7, 2.3),  // Fire alarm floor 3
-      new THREE.Vector3(3.2, 5.4, 2.2),   // Sprinkler head roof/fl4
-      new THREE.Vector3(2.0, 2.0, 2.9),   // Fire control panel floor 2
-      new THREE.Vector3(-2.2, 0.4, 2.7),  // Extinguisher floor 1
-      new THREE.Vector3(3.8, 0.35, 2.8),  // Emergency exit ground
+      new THREE.Vector3(0.5, 5.4, 1.5), // Smoke detector floor 4
+      new THREE.Vector3(-0.8, 3.7, 2.3), // Fire alarm floor 3
+      new THREE.Vector3(3.2, 5.4, 2.2), // Sprinkler head roof/fl4
+      new THREE.Vector3(2.0, 2.0, 2.9), // Fire control panel floor 2
+      new THREE.Vector3(-2.2, 0.4, 2.7), // Extinguisher floor 1
+      new THREE.Vector3(3.8, 0.35, 2.8), // Emergency exit ground
     ];
 
     const sensorMeshes: THREE.Mesh[] = [];
@@ -338,7 +355,12 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       transparent: true,
       opacity: 0.95,
     });
-    const pulses: { mesh: THREE.Mesh; curveIndex: number; progress: number; speed: number }[] = [];
+    const pulses: {
+      mesh: THREE.Mesh;
+      curveIndex: number;
+      progress: number;
+      speed: number;
+    }[] = [];
 
     for (let i = 0; i < pulseCount; i++) {
       const pMesh = new THREE.Mesh(pulseGeo, pulseMat);
@@ -347,18 +369,17 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       pulses.push({
         mesh: pMesh,
         curveIndex: cIdx,
-        progress: (i / pulseCount),
+        progress: i / pulseCount,
         speed: 0.003 + (i % 3) * 0.0015,
       });
     }
 
-    // Animation Loop with subtle idle rotation & pulse travel
     let animationFrameId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Subtle atmospheric sway
       buildingGroup.rotation.y = -0.32 + Math.sin(elapsedTime * 0.25) * 0.04;
@@ -395,10 +416,10 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       renderer.setSize(nw, nh);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
       renderer.dispose();
     };
@@ -408,8 +429,7 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     <div
       ref={containerRef}
       id="hero-3d-visual-stage"
-      className="relative w-full h-[580px] lg:h-[680px] select-none rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F8F5ED] to-[#F2EBDD] border border-[#E7DED0]/60 shadow-xl shadow-[#171B18]/5"
-    >
+      className="relative w-full h-[580px] lg:h-[680px] select-none rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F8F5ED] to-[#F2EBDD] border border-[#E7DED0]/60 shadow-xl shadow-[#171B18]/5">
       {/* Background architectural grid and ambient halo */}
       <div className="absolute inset-0 bg-tech-grid opacity-60 pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#FF6A00]/15 rounded-full blur-3xl pointer-events-none" />
@@ -432,16 +452,23 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       {/* Mode Controls Bottom-Left */}
       <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2">
         <button
-          onClick={() => setNetworkIntensity(prev => prev === 'normal' ? 'boost' : 'normal')}
+          onClick={() =>
+            setNetworkIntensity((prev) =>
+              prev === "normal" ? "boost" : "normal",
+            )
+          }
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
-            networkIntensity === 'boost'
-              ? 'bg-[#FF4D0A] text-white shadow-md shadow-[#FF4D0A]/40'
-              : 'bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A]'
+            networkIntensity === "boost"
+              ? "bg-[#FF4D0A] text-white shadow-md shadow-[#FF4D0A]/40"
+              : "bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A]"
           }`}
-          title="Toggle conduit luminescence boost"
-        >
+          title="Toggle conduit luminescence boost">
           <Activity className="w-3.5 h-3.5 text-[#FF4D0A] fill-current" />
-          <span>{networkIntensity === 'boost' ? 'CONDUIT BOOST ACTIVE' : 'CONDUIT ENHANCE'}</span>
+          <span>
+            {networkIntensity === "boost"
+              ? "CONDUIT BOOST ACTIVE"
+              : "CONDUIT ENHANCE"}
+          </span>
         </button>
 
         <button
@@ -450,10 +477,11 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
             setTimeout(() => setIsSimulating(false), 2600);
           }}
           disabled={isSimulating}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A] hover:text-[#FF4D0A] transition-all disabled:opacity-50 shadow-sm"
-        >
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A] hover:text-[#FF4D0A] transition-all disabled:opacity-50 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-[#FF6A00]" />
-          <span>{isSimulating ? 'SIMULATING TELEMETRY...' : 'TEST SIGNAL PATH'}</span>
+          <span>
+            {isSimulating ? "SIMULATING TELEMETRY..." : "TEST SIGNAL PATH"}
+          </span>
         </button>
       </div>
 
@@ -463,15 +491,15 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-[#FF4D0A]/10 backdrop-blur-[1px] pointer-events-none flex items-center justify-center z-30"
-        >
+          className="absolute inset-0 bg-[#FF4D0A]/10 backdrop-blur-[1px] pointer-events-none flex items-center justify-center z-30">
           <div className="bg-[#FFFDF8] px-5 py-3 rounded-xl border border-[#FF4D0A] shadow-xl text-center">
             <div className="flex items-center justify-center gap-2 text-sm font-bold text-[#FF4D0A] font-mono-tech mb-1">
               <CheckCircle2 className="w-4 h-4" />
               SYSTEM DIAGNOSTIC: OPTIMAL
             </div>
             <p className="text-xs text-[#52514B]">
-              Addressable loop continuous ping latency: 0.4ms. Zero faults detected.
+              Addressable loop continuous ping latency: 0.4ms. Zero faults
+              detected.
             </p>
           </div>
         </motion.div>
@@ -489,10 +517,9 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
               style={{
                 left: `${hotspot.x}%`,
                 top: `${hotspot.y}%`,
-                transform: 'translate(-50%, -50%)',
+                transform: "translate(-50%, -50%)",
               }}
-              className="absolute pointer-events-auto"
-            >
+              className="absolute pointer-events-auto">
               {/* Leader Line / Anchor Pin */}
               <div className="relative group">
                 {/* Glowing target beacon */}
@@ -502,13 +529,12 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
                   onMouseLeave={() => setActiveHoverId(null)}
                   className={`relative flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all duration-300 shadow-md ${
                     isSelected
-                      ? 'bg-[#171B18] text-[#FFFDF8] border-[#FF4D0A] ring-2 ring-[#FF4D0A]/40 scale-105'
+                      ? "bg-[#171B18] text-[#FFFDF8] border-[#FF4D0A] ring-2 ring-[#FF4D0A]/40 scale-105"
                       : isHovered
-                      ? 'bg-[#FFFDF8] text-[#171B18] border-[#FF4D0A] scale-105 shadow-lg shadow-[#FF4D0A]/20'
-                      : 'bg-[#FFFDF8]/95 text-[#171B18] border-[#E7DED0] hover:border-[#FF4D0A]'
+                        ? "bg-[#FFFDF8] text-[#171B18] border-[#FF4D0A] scale-105 shadow-lg shadow-[#FF4D0A]/20"
+                        : "bg-[#FFFDF8]/95 text-[#171B18] border-[#E7DED0] hover:border-[#FF4D0A]"
                   }`}
-                  aria-label={`Inspect ${hotspot.name}`}
-                >
+                  aria-label={`Inspect ${hotspot.name}`}>
                   <span className="flex items-center justify-center w-5 h-5 rounded-md bg-[#F2EBDD]">
                     {getIcon(hotspot.iconName)}
                   </span>
@@ -526,8 +552,7 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.96 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 p-3 bg-[#FFFDF8] rounded-xl border border-[#FF4D0A]/40 shadow-xl shadow-[#171B18]/10 text-left z-40 pointer-events-none"
-                    >
+                      className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 p-3 bg-[#FFFDF8] rounded-xl border border-[#FF4D0A]/40 shadow-xl shadow-[#171B18]/10 text-left z-40 pointer-events-none">
                       <div className="flex items-center justify-between text-[11px] font-mono-tech text-[#FF4D0A] uppercase tracking-wider mb-1">
                         <span>{hotspot.category}</span>
                         <span className="text-[#52514B]">{hotspot.floor}</span>
