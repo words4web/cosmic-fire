@@ -38,25 +38,25 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           isScrolled
-            ? "bg-surface-card/90 backdrop-blur-md border-surface-border/80 py-0.5 sm:py-1 shadow-sm shadow-text-primary/5"
-            : "bg-transparent border-transparent py-1 sm:py-1.5"
+            ? "bg-surface-card/90 backdrop-blur-md border-surface-border/80 shadow-sm shadow-text-primary/5"
+            : "bg-transparent border-transparent"
         }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full h-16 sm:h-20 md:h-22 px-3 sm:px-4 md:px-6 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("home")}
-            className="flex items-center gap-3 sm:gap-4 group text-left cursor-pointer"
+            className="flex items-center gap-2.5 sm:gap-3.5 group text-left cursor-pointer h-full py-1"
             aria-label="Cosmic Fire Homepage">
             <img
               src="/logo.png"
               alt="Cosmic Fire Logo"
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain transition-transform group-hover:scale-105"
+              className="h-full w-auto max-h-14 sm:max-h-16 md:max-h-18 object-contain transition-transform group-hover:scale-105"
             />
-            <span className="font-display font-black text-2xl sm:text-3xl md:text-4xl tracking-tight text-text-primary flex items-center gap-1.5">
+            <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-text-primary flex items-center gap-1.5">
               COSMIC <span className="text-brand-primary">FIRE</span>
             </span>
           </button>
 
-          <nav className="hidden lg:flex items-center gap-1 bg-[#F2EBDD]/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-surface-border/70">
+          <nav className="hidden min-[1137px]:flex items-center gap-1 bg-[#F2EBDD]/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-surface-border/70">
             {NAV_ITEMS.map((item) => {
               const isActive = currentPage === item.id;
               return (
@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden min-[1137px]:flex items-center gap-3">
             <button
               onClick={() => handleNavClick("contact")}
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-surface-card text-xs font-bold tracking-wide uppercase shadow-md shadow-brand-primary/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-text-primary hover:bg-[#F2EBDD] active:bg-surface-border transition-colors cursor-pointer border border-surface-border"
+            className="min-[1137px]:hidden p-2 rounded-xl text-text-primary hover:bg-[#F2EBDD] active:bg-surface-border transition-colors cursor-pointer border border-surface-border"
             aria-label="Toggle navigation menu">
             {mobileMenuOpen ? (
               <X className="w-5 h-5 text-brand-primary" />
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-text-primary/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-text-primary/40 backdrop-blur-sm min-[1137px]:hidden"
             onClick={() => setMobileMenuOpen(false)}>
             <motion.div
               initial={{ y: -30, opacity: 0 }}

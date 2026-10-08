@@ -24,12 +24,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigate,
 }) => {
   return (
-    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-surface-card via-surface-bg to-surface-card">
+    <section className="relative w-full pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-surface-card via-surface-bg to-surface-card">
       <div className="absolute top-10 left-1/3 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
