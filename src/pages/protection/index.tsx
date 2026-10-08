@@ -1,13 +1,13 @@
 import { usePageNavigation } from "@/src/hooks/usePageNavigation";
-import { ResourcesSection } from "@/src/components/ResourcesSection";
+import { ProtectionLayers } from "@/src/components/ProtectionLayers";
 import { ContactSection } from "@/src/components/ContactSection";
 
-export default function ResourcesPage() {
+export default function ProtectionPage() {
   const { handleNavigate } = usePageNavigation();
 
   return (
     <>
-      <ResourcesSection standalone={true} />
+      <ProtectionLayers />
       <ContactSection onNavigate={handleNavigate} />
     </>
   );

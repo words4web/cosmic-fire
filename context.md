@@ -71,10 +71,13 @@ cosmic-fire/
     │   ├── constants.ts         # Global fallback constants & legacy mappings
     │   ├── faq.ts               # Frequently asked questions list
     │   ├── footer.ts            # Site links, legal notices, and compliance credentials
+    │   ├── hero.ts              # Hero banner copy, highlights, and solution ticker
     │   ├── industries.ts        # Multi-site coverage copy and 6 sector cards
+    │   ├── layers.ts            # One System. Multiple Layers (Active & Passive protection items)
     │   ├── services.ts          # 14 core fire protection services with detailed specs
     │   ├── technology.ts        # Detect. Alert. Respond. 4-stage engineering lifecycle data
-    │   └── testimonials.ts      # Verbatim client reviews and ratings
+    │   ├── testimonials.ts      # Verbatim client reviews and ratings
+    │   └── whyUs.ts             # Why Choose Cosmic Fire & 6 premises protection pillars
     │
     ├── hooks/
     │   └── usePageNavigation.ts # Centralized page navigation, URL updates, and window scrolling
@@ -84,7 +87,7 @@ cosmic-fire/
     │   ├── about/               # About page
     │   ├── faq/                 # FAQ page
     │   ├── industries/          # Industries page
-    │   ├── resources/           # Resources & whitepapers page
+    │   ├── protection/          # Multi-Layer Protection (Active & Passive) page
     │   ├── solutions/           # Solutions & services page
     │   ├── technology/          # Technology & lifecycle pipeline page
     │   └── [...all].tsx         # 404 / Catch-all fallback route
@@ -105,7 +108,7 @@ cosmic-fire/
         ├── IndustriesSection.tsx# Multi-site coverage & 6 sector cards with rotating borders
         ├── InteractiveBlueprint.tsx # Interactive 2D schematic floorplan with alarm simulator
         ├── Navbar.tsx           # Sticky top navigation with brand logo, links, and booking CTA
-        ├── ResourcesSection.tsx # Technical knowledge base, compliance whitepapers, and guides
+        ├── ProtectionLayers.tsx # Multi-tier active & passive protection layers component
         ├── ServicesShowcase.tsx # Horizontal category pills & 14 fire protection service cards
         ├── TechnologyFlow.tsx   # 3-Stage pipeline: DETECT → ALERT → RESPOND
         ├── TestimonialsSection.tsx # Rotating shiny border testimonial cards with client quotes
@@ -124,6 +127,7 @@ cosmic-fire/
 | `HeroBuilding3D`       | [src/components/HeroBuilding3D.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroBuilding3D.tsx)                           | Three.js multi-level isometric structure with animated particle grids, floor planes, and clickable sensor hotspots.        |
 | `InteractiveBlueprint` | [src/components/InteractiveBlueprint.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/InteractiveBlueprint.tsx)               | Mobile-responsive interactive blueprint with zone selection, gas/water activation simulations, and modular SVG canvas.     |
 | `BlueprintSvgCanvas`   | [src/components/graphics/BlueprintSvgCanvas.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/graphics/BlueprintSvgCanvas.tsx) | Dedicated, clean SVG canvas rendering architectural room layout, sensors, sprinkler heads, and active fire alarms.         |
+| `ProtectionLayers`     | [src/components/ProtectionLayers.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ProtectionLayers.tsx)                       | One System. Multiple Layers of Protection with Active (5 items) and Passive (9 items) fire engineering tabs.               |
 | `ServicesShowcase`     | [src/components/ServicesShowcase.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)                       | 14 fire protection service cards filterable via horizontal top pills, with "Get Protected" CTAs and feature bullet points. |
 | `IndustriesSection`    | [src/components/IndustriesSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/IndustriesSection.tsx)                     | Multi-site network coverage overview and 6 sector cards rendered directly in a responsive grid with rotating neon borders. |
 | `TestimonialsSection`  | [src/components/TestimonialsSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/TestimonialsSection.tsx)                 | Verbatim client feedback in high-tech cards featuring rotating conic border animations.                                    |

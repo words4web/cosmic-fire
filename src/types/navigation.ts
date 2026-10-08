@@ -1,9 +1,9 @@
 export type PageId =
   | "home"
   | "solutions"
+  | "protection"
   | "industries"
   | "technology"
   | "about"
-  | "resources"
   | "faq"
   | "contact";

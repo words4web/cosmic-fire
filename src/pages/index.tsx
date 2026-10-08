@@ -2,13 +2,13 @@ import { useState } from "react";
 import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
+import { ProtectionLayers } from "@/src/components/ProtectionLayers";
 import { ServicesShowcase } from "@/src/components/ServicesShowcase";
 import { CinematicBanner } from "@/src/components/CinematicBanner";
 import { InteractiveBlueprint } from "@/src/components/InteractiveBlueprint";
 import { IndustriesSection } from "@/src/components/IndustriesSection";
 import { TechnologyFlow } from "@/src/components/TechnologyFlow";
 import { AboutSection } from "@/src/components/AboutSection";
-import { ResourcesSection } from "@/src/components/ResourcesSection";
 import { TestimonialsSection } from "@/src/components/TestimonialsSection";
 import { ContactSection } from "@/src/components/ContactSection";
 import { HotspotModal } from "@/src/components/HotspotModal";
@@ -28,13 +28,13 @@ export default function IndexPage() {
         onNavigate={handleNavigate}
       />
       <WhyCosmicFire />
+      <ProtectionLayers />
       <ServicesShowcase onNavigate={handleNavigate} />
       <CinematicBanner onNavigate={handleNavigate} />
       <InteractiveBlueprint />
       <IndustriesSection onNavigate={handleNavigate} />
       <TechnologyFlow />
       <AboutSection onNavigate={handleNavigate} />
-      <ResourcesSection />
       <TestimonialsSection />
       <ContactSection onNavigate={handleNavigate} />
 

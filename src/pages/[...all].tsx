@@ -1,19 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { Flame, ArrowLeft, Home, ShieldAlert, Compass } from "lucide-react";
-
-const quickLinks = [
-  { label: "Solutions", path: "/solutions" },
-  { label: "Industries", path: "/industries" },
-  { label: "Technology", path: "/technology" },
-  { label: "About", path: "/about" },
-  { label: "Resources", path: "/resources" },
-  { label: "FAQ", path: "/faq" },
-  { label: "Contact", path: "/#contact-section" },
-];
+import { usePageNavigation } from "@/src/hooks/usePageNavigation";
+import { NAV_ITEMS } from "@/src/data/constants";
 
 export default function NotFoundPage() {
-  const navigate = useNavigate();
+  const { handleNavigate, navigate } = usePageNavigation();
 
   return (
     <div className="min-h-[calc(100vh-6rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
@@ -80,12 +71,12 @@ export default function NotFoundPage() {
             <span>Quick Navigation</span>
           </div>
 
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-sm sm:max-w-none mx-auto text-xs font-medium text-[#171B18]">
-            {quickLinks.map((link) => (
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-sm sm:max-w-none mx-auto text-xs font-medium text-text-primary">
+            {NAV_ITEMS.map((link) => (
               <button
-                key={link.path}
-                onClick={() => navigate(link.path)}
-                className="px-3 py-2 sm:py-1.5 rounded-lg bg-[#EAE4D5]/70 hover:bg-[#EAE4D5] active:bg-[#D9D3C7] transition-colors text-center cursor-pointer">
+                key={link.id}
+                onClick={() => handleNavigate(link.id)}
+                className="px-3.5 py-2 sm:py-1.5 rounded-lg bg-surface-card hover:bg-surface-muted border border-surface-border transition-colors text-center cursor-pointer">
                 {link.label}
               </button>
             ))}
