@@ -1,15 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { ServicesShowcase } from "@/src/components/ServicesShowcase";
 import { InteractiveBlueprint } from "@/src/components/InteractiveBlueprint";
 import { ContactSection } from "@/src/components/ContactSection";
-import { PageId } from "@/src/types";
 
 export default function SolutionsPage() {
-  const navigate = useNavigate();
-
-  const handleNavigate = (page: PageId) => {
-    navigate(page === "home" ? "/" : `/${page}`);
-  };
+  const { handleNavigate } = usePageNavigation();
 
   return (
     <>

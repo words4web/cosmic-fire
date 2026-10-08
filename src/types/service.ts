@@ -1,12 +1,8 @@
-export interface ServiceItem {
+export interface ServicePanelItem {
   id: string;
-  number: string;
   title: string;
-  tagline: string;
-  category: string;
   description: string;
-  detailedSpecs: string[];
-  keyBenefits: string[];
-  image: string;
-  schematicType: string;
+  benefitsHeader?: string;
+  benefits: string[];
+  ctaText: string;
 }

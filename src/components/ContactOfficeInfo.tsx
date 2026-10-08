@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
 import { InfoItem } from "./common/InfoItem";
+import { COMPANY_CONTACT } from "../data/company";
 
 export function ContactOfficeInfo() {
   return (
@@ -17,35 +18,37 @@ export function ContactOfficeInfo() {
         <div className="space-y-4 sm:space-y-5 text-xs sm:text-sm">
           <InfoItem icon={Phone} label="Direct Inquiries & Dispatch">
             <a
-              href="tel:+442079460991"
+              href={`tel:${COMPANY_CONTACT.phoneRaw}`}
               className="font-bold text-[#171B18] hover:text-[#FF4D0A] transition-colors break-words">
-              +44 (0) 20 7946 0991 / 0800 555 2676
+              {COMPANY_CONTACT.phone}
             </a>
           </InfoItem>
 
           <InfoItem icon={Mail} label="Engineering & Plans Submission">
             <a
-              href="mailto:engineering@cosmicfire.co.uk"
+              href={`mailto:${COMPANY_CONTACT.email}`}
               className="font-bold text-[#171B18] hover:text-[#FF4D0A] transition-colors break-all">
-              engineering@cosmicfire.co.uk
+              {COMPANY_CONTACT.email}
             </a>
           </InfoItem>
 
           <InfoItem icon={MapPin} label="Headquarters & Technology Lab">
             <span className="font-bold text-[#171B18] block leading-snug">
-              100 Fire Safety Way, London, EC2A 4NE
+              {COMPANY_CONTACT.address}
             </span>
-            <span className="text-[11px] text-[#52514B] block mt-0.5">
-              (Deployments nationwide across the UK)
-            </span>
+            {COMPANY_CONTACT.addressNote && (
+              <span className="text-[11px] text-[#52514B] block mt-0.5">
+                {COMPANY_CONTACT.addressNote}
+              </span>
+            )}
           </InfoItem>
 
           <InfoItem icon={Clock} label="Operating Hours">
             <span className="font-bold text-[#171B18] block leading-snug">
-              Monday – Friday: 08:30 – 17:30 GMT
+              {COMPANY_CONTACT.operatingHours}
             </span>
             <span className="text-[11px] text-[#FF4D0A] font-semibold block mt-0.5">
-              24/7/365 Emergency Monitoring & Corrective Response
+              {COMPANY_CONTACT.operatingHoursEmergency}
             </span>
           </InfoItem>
         </div>

@@ -1,14 +1,14 @@
-import { Suspense, useState, useEffect } from "react";
-import { useRoutes, useLocation, useNavigate } from "react-router-dom";
+import { Suspense, useEffect } from "react";
+import { useRoutes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import routes from "~react-pages";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { usePageNavigation } from "./hooks/usePageNavigation";
 import { PageId } from "./types";
 
 export default function App() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash) {
@@ -23,37 +23,12 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname, location.hash]);
 
+  const { handleNavigate } = usePageNavigation();
+
   const currentPage: PageId =
     location.pathname === "/"
       ? "home"
       : (location.pathname.replace("/", "") as PageId);
-
-  const handleNavigate = (page: PageId) => {
-    if (page === "home") {
-      if (location.pathname === "/" && !location.hash) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        navigate("/");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      return;
-    }
-
-    if (page === "contact") {
-      if (location.pathname === "/") {
-        const el = document.getElementById("contact-section");
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.location.hash = "#contact-section";
-        }
-      } else {
-        navigate("/#contact-section");
-      }
-      return;
-    }
-    navigate(`/${page}`);
-  };
 
   const pageElement = useRoutes(routes);
 

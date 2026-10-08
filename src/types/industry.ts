@@ -1,10 +1,27 @@
-export interface IndustryItem {
+export interface IndustrySectorItem {
   id: string;
-  name: string;
-  category: string;
+  category:
+    | "office"
+    | "retail"
+    | "hospitality"
+    | "industrial"
+    | "education"
+    | "healthcare";
+  title: string;
   description: string;
-  image: string;
-  riskProfile: string;
-  primarySystems: string[];
-  standardsRef: string;
+  keyAreas: string[];
+  ctaText: string;
+}
+
+export interface IndustriesContent {
+  networkHeadline: string;
+  networkDescription: string;
+  networkCtas: {
+    planCta: string;
+    speakCta: string;
+  };
+  networkPoints: string[];
+  premisesHeadline: string;
+  premisesDescription: string;
+  sectors: IndustrySectorItem[];
 }

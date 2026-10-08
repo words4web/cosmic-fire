@@ -1,14 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { ResourcesSection } from "@/src/components/ResourcesSection";
 import { ContactSection } from "@/src/components/ContactSection";
-import { PageId } from "@/src/types";
 
 export default function ResourcesPage() {
-  const navigate = useNavigate();
-
-  const handleNavigate = (page: PageId) => {
-    navigate(page === "home" ? "/" : `/${page}`);
-  };
+  const { handleNavigate } = usePageNavigation();
 
   return (
     <>

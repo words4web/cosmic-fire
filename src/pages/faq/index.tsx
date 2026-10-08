@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   HelpCircle,
@@ -8,25 +7,13 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { FAQ_DATA } from "@/src/data/faq";
+import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { ContactSection } from "@/src/components/ContactSection";
-import { PageId, FaqItem } from "@/src/types";
+import { FaqItem } from "@/src/types";
 
 export default function FaqPage() {
-  const navigate = useNavigate();
+  const { handleNavigate } = usePageNavigation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const handleNavigate = (page: PageId) => {
-    if (page === "contact") {
-      const el = document.getElementById("contact-section");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
-      navigate("/#contact-section");
-      return;
-    }
-    navigate(page === "home" ? "/" : `/${page}`);
-  };
 
   const toggleItem = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);
@@ -74,11 +61,6 @@ export default function FaqPage() {
                     className="w-full text-left p-3.5 sm:p-5 md:p-6 flex items-start justify-between gap-3 sm:gap-4 cursor-pointer"
                     aria-expanded={isOpen}>
                     <div className="space-y-1 sm:space-y-1.5 pr-1">
-                      {item.category && (
-                        <span className="text-[9px] sm:text-[10px] font-mono-tech uppercase tracking-wider text-brand-primary font-bold px-2 py-0.5 rounded bg-brand-primary/10 inline-block">
-                          {item.category}
-                        </span>
-                      )}
                       <h3 className="font-display font-bold text-sm sm:text-base md:text-lg text-text-primary leading-snug">
                         {item.question}
                       </h3>

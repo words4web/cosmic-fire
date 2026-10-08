@@ -6,3 +6,8 @@ export * from "./technology";
 export * from "./article";
 export * from "./contact";
 export * from "./faq";
+export * from "./testimonial";
+export * from "./about";
+export * from "./footer";
+export * from "./company";
+export * from "./blueprint";

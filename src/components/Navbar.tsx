@@ -38,28 +38,22 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           isScrolled
-            ? "bg-surface-card/90 backdrop-blur-md border-surface-border/80 py-3 shadow-sm shadow-text-primary/5"
-            : "bg-transparent border-transparent py-4 sm:py-5"
+            ? "bg-surface-card/90 backdrop-blur-md border-surface-border/80 py-0.5 sm:py-1 shadow-sm shadow-text-primary/5"
+            : "bg-transparent border-transparent py-1 sm:py-1.5"
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("home")}
-            className="flex items-center gap-2.5 sm:gap-3 group text-left cursor-pointer"
+            className="flex items-center gap-3 sm:gap-4 group text-left cursor-pointer"
             aria-label="Cosmic Fire Homepage">
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-text-primary flex items-center justify-center overflow-hidden border border-surface-border group-hover:border-brand-primary transition-all shadow-sm">
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary to-[#FF6A00] opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="relative w-4 h-4 rounded-full border-2 border-surface-card flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-surface-card" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-black text-lg sm:text-xl tracking-tight text-text-primary flex items-center gap-1">
-                COSMIC <span className="text-brand-primary">FIRE</span>
-              </span>
-              <span className="text-[9px] font-mono-tech uppercase tracking-widest text-text-secondary -mt-1">
-                Safety Engineering
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Cosmic Fire Logo"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain transition-transform group-hover:scale-105"
+            />
+            <span className="font-display font-black text-2xl sm:text-3xl md:text-4xl tracking-tight text-text-primary flex items-center gap-1.5">
+              COSMIC <span className="text-brand-primary">FIRE</span>
+            </span>
           </button>
 
           <nav className="hidden lg:flex items-center gap-1 bg-[#F2EBDD]/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-surface-border/70">
