@@ -2,17 +2,18 @@
 
 ## 1. Project Overview
 
-**Cosmic Fire** is an interactive, high-performance web platform showcasing industrial-grade fire protection, suppression, detection, and lifecycle safety engineering services.
+**Cosmic Fire** is an interactive, high-performance web platform showcasing industrial-grade fire protection, suppression, detection, and lifecycle safety engineering services across London and Kent.
 
-The application combines architectural engineering aesthetics with interactive 3D simulations (Three.js), real-time fire safety blueprint simulators, technical telemetry hotspot inspection, and lead capture for commercial, industrial, and high-risk facilities.
+The application combines architectural engineering aesthetics with interactive 3D simulations (Three.js), a modular SVG schematic blueprint simulator, technical telemetry hotspot inspection, and multi-channel client inquiries for commercial, residential, education, healthcare, industrial, and retail premises.
 
 ### Key Highlights:
 
-- **Interactive 3D Visualization**: Real-time Three.js isometric building simulation featuring active safety sensor nodes, alarm states, and floor isolation mechanics.
-- **Interactive Blueprint Simulator**: Schematic canvas with live simulated alarm scenarios across multiple facility zones (Server Room, Logistics Warehouse, Atrium).
-- **Comprehensive Solution Directory**: 8 specialized fire engineering disciplines (Suppression, Sprinklers, Detection, Smoke Control, Hydrants, Foam, Kitchen Hoods, Inspections).
-- **Responsive Single-Page & Deep-Link Hash Navigation**: Smooth client-side routing synchronized with the browser history and address bar hash.
-- **Premium Design System**: Industrial bone/ivory surfaces (`#F8F5ED`), deep charcoal typography (`#171B18`), and high-visibility safety orange accents (`#FF4D0A`).
+- **Interactive 3D Building Simulation**: Real-time Three.js isometric building model with interactive sensor nodes, alarm states, and floor isolation mechanics.
+- **Interactive Blueprint Simulator**: Schematic canvas with live simulated alarm scenarios across multiple facility zones (Server Room, Logistics Warehouse, Atrium), separated cleanly into dedicated SVG graphics and typed data models.
+- **Dedicated Solution & Sector Directories**: 14 specialized fire safety services (Suppression, Alarms, Fire Doors, Fire Risk Assessments, Extinguishers, Hydrants, etc.) and 6 industry sectors.
+- **Modular Data & Type Architecture**: Zero hardcoded strings across components; structured data models organized by domain (`about`, `services`, `industries`, `testimonials`, `blueprint`, `company`, `footer`, `faq`).
+- **Shared Navigation Hook**: Unified `usePageNavigation` hook handling URL routing, scroll restoration, and hash synchronizations without duplicated logic across pages.
+- **Premium Design System**: Bone/ivory surfaces (`#F8F5ED`), deep charcoal typography (`#171B18`), high-visibility safety orange accents (`#FF4D0A`), rotating 3px shiny borders on cards, and responsive layouts across all device form factors.
 
 ---
 
@@ -20,7 +21,7 @@ The application combines architectural engineering aesthetics with interactive 3
 
 - **Framework**: React 19 (`react`, `react-dom`)
 - **Language**: TypeScript 5+ (`tsc`)
-- **Bundler & Build Tool**: Vite 8 with `@vitejs/plugin-react`
+- **Bundler & Build Tool**: Vite 8 with `@vitejs/plugin-react` and `@generouted/react-router`
 - **Styling**: Tailwind CSS v4 (`tailwindcss`, `@tailwindcss/vite`) with custom CSS animations
 - **3D Graphics**: Three.js (`three`, `@types/three`)
 - **Animation & Motion**: Motion / Framer Motion (`motion`)
@@ -33,74 +34,121 @@ The application combines architectural engineering aesthetics with interactive 3
 
 ```text
 cosmic-fire/
-├── .gitignore                   # Git ignore specifications (dependencies, builds, env, caches)
+├── .gitignore                   # Git ignore specifications
 ├── context.md                   # Complete architectural and project documentation
 ├── index.html                   # HTML entry point (loads Sora, Manrope, JetBrains Mono fonts)
 ├── package.json                 # Scripts and dependency declarations
 ├── pnpm-lock.yaml               # Deterministic dependency lockfile
-├── pnpm-workspace.yaml          # PNPM configuration & build script permissions
+├── pnpm-workspace.yaml          # PNPM workspace configuration
 ├── tsconfig.json                # Strict TypeScript configuration
 ├── vite.config.ts               # Vite configuration (plugins, aliases, bundle code-splitting)
+├── public/                      # Static assets (logo.png, favicons)
 └── src/
     ├── main.tsx                 # Application entry point & React DOM root mount
-    ├── App.tsx                  # Master layout controller, hash router, and modal manager
+    ├── App.tsx                  # Master layout controller & global overlay provider
     ├── index.css                # Global CSS rules, custom keyframes, technical background grids
-    ├── types.ts                 # TypeScript data types (Hotspots, Services, TechSteps, Form data)
     │
-    ├── data/
-    │   └── mockData.ts          # Central data repository for services, hotspots, specs, and articles
+    ├── types/                   # Domain-driven TypeScript type definitions
+    │   ├── index.ts             # Central type export hub
+    │   ├── about.ts             # Pillars, credentials, statistics types
+    │   ├── article.ts           # Technical whitepaper & resource types
+    │   ├── blueprint.ts         # Zone & blueprint simulation types
+    │   ├── company.ts           # Company contact & office info types
+    │   ├── contact.ts           # Consultation form and quote types
+    │   ├── faq.ts               # FAQ items and category types
+    │   ├── footer.ts            # Footer links, compliance badges, columns
+    │   ├── hotspot.ts           # 3D sensor hotspot & telemetry types
+    │   ├── industry.ts          # Sector profiles & network coverage types
+    │   ├── navigation.ts        # Page IDs and route types
+    │   ├── service.ts           # Service items, disciplines, and feature types
+    │   ├── technology.ts        # Lifecycle steps and pipeline types
+    │   └── testimonial.ts       # Client review and testimonial types
     │
-    └── components/              # Modular UI and Interactive feature components
-        ├── Navbar.tsx           # Sticky top navigation with page links and quick-booking CTA
-        ├── HeroSection.tsx      # Main landing banner hosting the 3D building visualizer
-        ├── HeroBuilding3D.tsx   # Three.js interactive 3D tower with live sensor hotspot nodes
+    ├── data/                    # Domain-driven central data repositories
+    │   ├── about.ts             # About section pillars, milestones, and credentials
+    │   ├── blueprint.ts         # Schematic zones, sensors, and telemetry scenarios
+    │   ├── company.ts           # Shared office addresses, phone numbers, and emails
+    │   ├── constants.ts         # Global fallback constants & legacy mappings
+    │   ├── faq.ts               # Frequently asked questions list
+    │   ├── footer.ts            # Site links, legal notices, and compliance credentials
+    │   ├── industries.ts        # Multi-site coverage copy and 6 sector cards
+    │   ├── services.ts          # 14 core fire protection services with detailed specs
+    │   ├── technology.ts        # Detect. Alert. Respond. 4-stage engineering lifecycle data
+    │   └── testimonials.ts      # Verbatim client reviews and ratings
+    │
+    ├── hooks/
+    │   └── usePageNavigation.ts # Centralized page navigation, URL updates, and window scrolling
+    │
+    ├── pages/                   # File-based route views (generouted)
+    │   ├── index.tsx            # Home landing page
+    │   ├── about/               # About page
+    │   ├── faq/                 # FAQ page
+    │   ├── industries/          # Industries page
+    │   ├── resources/           # Resources & whitepapers page
+    │   ├── solutions/           # Solutions & services page
+    │   ├── technology/          # Technology & lifecycle pipeline page
+    │   └── [...all].tsx         # 404 / Catch-all fallback route
+    │
+    ├── validations/
+    │   └── contact.ts           # Contact form schema and validation rules
+    │
+    └── components/              # Modular UI and interactive components
+        ├── AboutSection.tsx     # 4 Core pillars, credentials, and company story
+        ├── CinematicBanner.tsx  # Mission statement & emergency readiness CTA
+        ├── ConsultationForm.tsx # Interactive lead capture and consultation booking form
+        ├── ContactOfficeInfo.tsx# Reusable office locations, phone, and email info cards
+        ├── ContactSection.tsx   # Combined consultation form and office details section
+        ├── Footer.tsx           # Multi-column footer with brand logo and compliance badges
+        ├── HeroBuilding3D.tsx   # Three.js 3D isometric tower with interactive sensor nodes
+        ├── HeroSection.tsx      # Main landing banner hosting the 3D visualizer
+        ├── HotspotModal.tsx     # Sensor inspection modal with real-time specs & NFPA telemetry
+        ├── IndustriesSection.tsx# Multi-site coverage & 6 sector cards with rotating borders
         ├── InteractiveBlueprint.tsx # Interactive 2D schematic floorplan with alarm simulator
-        ├── HotspotModal.tsx     # Technical inspection modal (telemetry, specs, NFPA compliance)
-        ├── ServicesShowcase.tsx # Filterable 8-discipline engineering solutions showcase
-        ├── TechnologyFlow.tsx   # Step-by-step pipeline: DETECT → ALERT → RESPOND
-        ├── WhyCosmicFire.tsx    # Value metrics & sprinkler engineering breakdown
-        ├── IndustriesSection.tsx# Sector-specific safety profiles (Commercial, Logistics, Healthcare, Data Centers)
-        ├── CinematicBanner.tsx  # Full-bleed mission statement & emergency readiness CTA
+        ├── Navbar.tsx           # Sticky top navigation with brand logo, links, and booking CTA
         ├── ResourcesSection.tsx # Technical knowledge base, compliance whitepapers, and guides
-        ├── AboutSection.tsx     # Company story, credentials, standards adherence, team
-        ├── ContactSection.tsx   # Multi-field engineering consultation booking form
-        └── Footer.tsx           # Site map, compliance badges, contact info, legal
+        ├── ServicesShowcase.tsx # Horizontal category pills & 14 fire protection service cards
+        ├── TechnologyFlow.tsx   # 3-Stage pipeline: DETECT → ALERT → RESPOND
+        ├── TestimonialsSection.tsx # Rotating shiny border testimonial cards with client quotes
+        ├── WhyCosmicFire.tsx    # Safety metrics & engineering breakdown
+        ├── common/              # Reusable atoms and small layout wrappers
+        └── graphics/            # SVG graphic canvases (e.g. BlueprintSvgCanvas)
 ```
 
 ---
 
 ## 4. Key Components & Features
 
-| Component              | Path                                                                                                                              | Description                                                                                                                                            |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `App`                  | [src/App.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/App.tsx)                                                         | Manages client hash-based page transitions (`#home`, `#solutions`, `#industries`, `#technology`, `#about`, `#resources`, `#contact`) and modal states. |
-| `HeroBuilding3D`       | [src/components/HeroBuilding3D.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroBuilding3D.tsx)             | Canvas-rendered 3D multi-level isometric structure with animated particle grids, floor planes, and clickable sensor hotspots.                          |
-| `InteractiveBlueprint` | [src/components/InteractiveBlueprint.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/InteractiveBlueprint.tsx) | Interactive SVG/canvas floorplan demonstrating water flow, gas discharge, and sensor telemetry across active zones.                                    |
-| `HotspotModal`         | [src/components/HotspotModal.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/HotspotModal.tsx)                 | Telemetry inspection modal detailing hardware specifications, NFPA/EN standards, and inquiry redirection.                                              |
-| `ServicesShowcase`     | [src/components/ServicesShowcase.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)         | Detailed breakdown of fire suppression systems, alarms, sprinklers, and compliance maintenance services.                                               |
-| `TechnologyFlow`       | [src/components/TechnologyFlow.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/TechnologyFlow.tsx)             | Explains the 3-stage lifecycle safety loop: Detection, Alerting, and Suppression Response.                                                             |
-| `ContactSection`       | [src/components/ContactSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ContactSection.tsx)             | Interactive consultation booking form capturing facility requirements, safety standards, and project scope.                                            |
+| Component              | Path                                                                                                                                            | Description                                                                                                                |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `Navbar`               | [src/components/Navbar.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx)                                           | Clean header navigation with enlarged brand logo (`/logo.png`), responsive mobile menu, and quick CTA.                     |
+| `HeroBuilding3D`       | [src/components/HeroBuilding3D.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroBuilding3D.tsx)                           | Three.js multi-level isometric structure with animated particle grids, floor planes, and clickable sensor hotspots.        |
+| `InteractiveBlueprint` | [src/components/InteractiveBlueprint.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/InteractiveBlueprint.tsx)               | Mobile-responsive interactive blueprint with zone selection, gas/water activation simulations, and modular SVG canvas.     |
+| `BlueprintSvgCanvas`   | [src/components/graphics/BlueprintSvgCanvas.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/graphics/BlueprintSvgCanvas.tsx) | Dedicated, clean SVG canvas rendering architectural room layout, sensors, sprinkler heads, and active fire alarms.         |
+| `ServicesShowcase`     | [src/components/ServicesShowcase.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)                       | 14 fire protection service cards filterable via horizontal top pills, with "Get Protected" CTAs and feature bullet points. |
+| `IndustriesSection`    | [src/components/IndustriesSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/IndustriesSection.tsx)                     | Multi-site network coverage overview and 6 sector cards rendered directly in a responsive grid with rotating neon borders. |
+| `TestimonialsSection`  | [src/components/TestimonialsSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/TestimonialsSection.tsx)                 | Verbatim client feedback in high-tech cards featuring rotating conic border animations.                                    |
+| `AboutSection`         | [src/components/AboutSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/AboutSection.tsx)                               | 4 core engineering pillars, company mission, and accreditation highlights.                                                 |
+| `ContactSection`       | [src/components/ContactSection.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/ContactSection.tsx)                           | Consultation booking form integrated with shared office contact information.                                               |
+| `Footer`               | [src/components/Footer.tsx](file:///home/mazahir/projects/work/cosmic-fire/src/components/Footer.tsx)                                           | Site navigation, social links, compliance accreditations, and centralized contact details.                                 |
 
 ---
 
-## 5. Data Flow & Routing Architecture
+## 5. Navigation & State Architecture
 
 ```mermaid
 flowchart TD
-    A[Browser Hash / User Click] --> B[App.tsx State: currentPage]
+    A[User Action / URL Path] --> B[usePageNavigation Hook]
+    B --> C[Browser History & Window Scroll to Top]
+    C --> D[Active Route View in src/pages/]
 
-    B -->|'home'| C[Full Landing Page with all 10 Modules]
-    B -->|'solutions'| D[Services Showcase + Blueprint + Consultation]
-    B -->|'industries'| E[Industries Section + Cinematic Banner + Consultation]
-    B -->|'technology'| F[Detect-Alert-Respond Flow + Blueprint + Consultation]
-    B -->|'about'| G[Company Story + Standards + Consultation]
-    B -->|'resources'| H[Knowledge Base & Technical Guides]
-    B -->|'contact'| I[Consultation Form & Office Locations]
+    D --> E[Navbar & Global Layout]
+    D --> F[Page Specific Feature Modules]
+    D --> G[Contact / Consultation CTA]
 
-    subgraph 3D & Telemetry State
-        J[HeroBuilding3D Node Click] --> K[App.tsx: setSelectedHotspot]
-        K --> L[HotspotModal Overlay]
-        L -->|Book Inspection CTA| I
+    subgraph Interactive Simulations
+        H[HeroBuilding3D Node Click] --> I[HotspotModal Overlay]
+        I -->|Book Inspection CTA| B
+        J[Blueprint Zone Switch] --> K[BlueprintSvgCanvas State Animation]
     end
 ```
 
@@ -108,11 +156,10 @@ flowchart TD
 
 ## 6. Development & Build Commands
 
-| Command        | Description                                                         |
-| -------------- | ------------------------------------------------------------------- |
-| `pnpm install` | Installs all required project dependencies                          |
-| `pnpm dev`     | Starts the local Vite development server on `http://localhost:3000` |
-| `pnpm build`   | Builds optimized production bundle in `dist/` with chunk splitting  |
-| `pnpm preview` | Serves the production build locally for verification                |
-| `pnpm lint`    | Runs TypeScript compiler type-check (`tsc --noEmit`)                |
-| `pnpm clean`   | Removes build artifacts (`dist/`)                                   |
+| Command        | Description                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `pnpm install` | Installs all project dependencies                                     |
+| `pnpm dev`     | Starts the local Vite development server on `http://localhost:3000`   |
+| `pnpm build`   | Compiles TypeScript and builds optimized production bundle in `dist/` |
+| `pnpm preview` | Previews the production build locally                                 |
+| `pnpm lint`    | Runs TypeScript compiler type checks (`tsc --noEmit`)                 |

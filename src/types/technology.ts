@@ -1,10 +1,16 @@
-export interface TechStep {
-  step: string;
+export interface TechnologyStepItem {
+  id: string;
+  stepNumber: string;
   title: string;
   shortDesc: string;
-  fullDesc: string;
-  responseTime: string;
-  hardware: string;
-  protocol: string;
-  icon: string;
+  detailTitle: string;
+  detailDescription: string;
+  listTitle: string;
+  listItems: string[];
+}
+
+export interface TechnologyFlowData {
+  headline: string;
+  description: string;
+  steps: TechnologyStepItem[];
 }
