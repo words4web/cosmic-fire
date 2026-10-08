@@ -1,51 +1,59 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { 
-  ShieldCheck, 
-  Target, 
-  Cpu, 
-  Wrench, 
-  CheckCircle2, 
+import React from "react";
+import { motion } from "motion/react";
+import {
+  ShieldCheck,
+  Target,
+  Cpu,
+  Wrench,
+  CheckCircle2,
   ArrowRight,
   Sparkles,
-  Award
-} from 'lucide-react';
-import { TRUST_POINTS } from '../data/mockData';
-import { PageId } from '../types';
+  Award,
+} from "lucide-react";
+import { TRUST_POINTS } from "../data/constants";
+import { PageId } from "../types";
 
 interface AboutSectionProps {
   onNavigate: (page: PageId) => void;
   standalone?: boolean;
 }
 
-export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalone = false }) => {
+export const AboutSection: React.FC<AboutSectionProps> = ({
+  onNavigate,
+  standalone = false,
+}) => {
   const pillars = [
     {
-      title: 'Our Approach',
-      description: 'We believe genuine fire protection is engineered at the intersection of architectural spatial understanding, thermodynamic modeling, and precision hardware integration. We do not apply generic cookie-cutter templates.',
+      title: "Our Approach",
+      description:
+        "We believe genuine fire protection is engineered at the intersection of architectural spatial understanding, thermodynamic modeling, and precision hardware integration. We do not apply generic cookie-cutter templates.",
       icon: Target,
     },
     {
-      title: 'Prevention-First Thinking',
-      description: 'The safest fire is the one that never develops. By identifying electrical overheating, chemical combustion risks, and combustible storage loads early, we mitigate disaster before active flame generation.',
+      title: "Prevention-First Thinking",
+      description:
+        "The safest fire is the one that never develops. By identifying electrical overheating, chemical combustion risks, and combustible storage loads early, we mitigate disaster before active flame generation.",
       icon: ShieldCheck,
     },
     {
-      title: 'Technical Focus',
-      description: 'We adhere rigorously to international and statutory standards (NFPA, EN54, BS 5839). Our engineers utilize computational fluid dynamics (CFD) and hydraulic modeling to substantiate every pipe diameter and sensor placement.',
+      title: "Technical Focus",
+      description:
+        "We adhere rigorously to international and statutory standards (NFPA, EN54, BS 5839). Our engineers utilize computational fluid dynamics (CFD) and hydraulic modeling to substantiate every pipe diameter and sensor placement.",
       icon: Cpu,
     },
     {
-      title: 'Professional Service & Support',
-      description: 'Fire safety infrastructure is an ongoing life-safety covenant. From preliminary blueprint review through AHJ sign-off and continuous preventive maintenance, our certified technicians ensure flawless operational readiness.',
+      title: "Professional Service & Support",
+      description:
+        "Fire safety infrastructure is an ongoing life-safety covenant. From preliminary blueprint review through AHJ sign-off and continuous preventive maintenance, our certified technicians ensure flawless operational readiness.",
       icon: Wrench,
     },
   ];
 
   return (
-    <section id="about-section" className={`py-24 bg-[#FFFDF8] relative overflow-hidden ${standalone ? 'pt-32' : 'border-t border-[#E7DED0]'}`}>
+    <section
+      id="about-section"
+      className={`py-24 bg-[#FFFDF8] relative overflow-hidden ${standalone ? "pt-32" : "border-t border-[#E7DED0]"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Editorial Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-2.5 mb-3">
@@ -61,7 +69,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalo
           </h2>
 
           <p className="text-base sm:text-lg text-[#52514B] mt-4 leading-relaxed max-w-2xl">
-            Cosmic Fire was founded with a unified conviction: that modern built environments require intelligent, integrated, and uncompromising life-safety engineering designed around the people and assets within.
+            Cosmic Fire was founded with a unified conviction: that modern built
+            environments require intelligent, integrated, and uncompromising
+            life-safety engineering designed around the people and assets
+            within.
           </p>
         </div>
 
@@ -76,9 +87,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalo
                 className="w-full aspect-[4/3] object-cover object-center opacity-85"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#171B18] via-transparent to-transparent" />
-              
+
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#FFFDF8]/90 backdrop-blur-md border border-[#E7DED0] text-xs font-mono-tech text-[#171B18]">
-                <span className="text-[#FF4D0A] font-bold">DISCIPLINE</span>: Certified Fire Protection Engineers (FPE) reviewing spatial egress models.
+                <span className="text-[#FF4D0A] font-bold">DISCIPLINE</span>:
+                Certified Fire Protection Engineers (FPE) reviewing spatial
+                egress models.
               </div>
             </div>
           </div>
@@ -88,17 +101,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalo
               Protection Without Compromise
             </h3>
             <p className="text-sm sm:text-base text-[#52514B] leading-relaxed">
-              Modern structures house complex technologies, sensitive data banks, and thousands of occupants. Conventional off-the-shelf fire equipment often fails to address the unique risk profile of contemporary architecture.
+              Modern structures house complex technologies, sensitive data
+              banks, and thousands of occupants. Conventional off-the-shelf fire
+              equipment often fails to address the unique risk profile of
+              contemporary architecture.
             </p>
             <p className="text-sm sm:text-base text-[#52514B] leading-relaxed">
-              At Cosmic Fire, we combine cutting-edge addressable detection networks, clean-agent waterless suppression, and automated evacuation management into a unified protective canopy.
+              At Cosmic Fire, we combine cutting-edge addressable detection
+              networks, clean-agent waterless suppression, and automated
+              evacuation management into a unified protective canopy.
             </p>
 
             <div className="pt-4 flex items-center gap-4">
               <button
-                onClick={() => onNavigate('contact')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FF4D0A] hover:bg-[#FF6A00] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#FF4D0A]/20"
-              >
+                onClick={() => onNavigate("contact")}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FF4D0A] hover:bg-[#FF6A00] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#FF4D0A]/20">
                 <span>Consult With Our Engineering Team</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -113,8 +130,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalo
             return (
               <div
                 key={pillar.title}
-                className="bg-[#F8F5ED] p-7 rounded-2xl border border-[#E7DED0] hover:border-[#FF4D0A] transition-all duration-300 flex flex-col justify-between"
-              >
+                className="bg-[#F8F5ED] p-7 rounded-2xl border border-[#E7DED0] hover:border-[#FF4D0A] transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <div className="w-11 h-11 rounded-xl bg-[#FFFDF8] border border-[#E7DED0] flex items-center justify-center text-[#FF4D0A] mb-5">
                     <Icon className="w-5 h-5" />
@@ -156,7 +172,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, standalo
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

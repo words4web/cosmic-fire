@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Radio, 
-  Megaphone, 
-  Sliders, 
-  ShieldCheck, 
-  ArrowRight, 
-  Activity, 
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Radio,
+  Megaphone,
+  Sliders,
+  ShieldCheck,
+  ArrowRight,
+  Activity,
   CheckCircle2,
   Clock,
-  Cpu
-} from 'lucide-react';
-import { TECH_STEPS } from '../data/mockData';
+  Cpu,
+} from "lucide-react";
+import { TECH_STEPS } from "../data/constants";
 
 export const TechnologyFlow: React.FC = () => {
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
@@ -20,13 +20,13 @@ export const TechnologyFlow: React.FC = () => {
 
   const getStepIcon = (icon: string) => {
     switch (icon) {
-      case 'Radio':
+      case "Radio":
         return <Radio className="w-5 h-5" />;
-      case 'Megaphone':
+      case "Megaphone":
         return <Megaphone className="w-5 h-5" />;
-      case 'Sliders':
+      case "Sliders":
         return <Sliders className="w-5 h-5" />;
-      case 'ShieldCheck':
+      case "ShieldCheck":
         return <ShieldCheck className="w-5 h-5" />;
       default:
         return <Activity className="w-5 h-5" />;
@@ -34,9 +34,10 @@ export const TechnologyFlow: React.FC = () => {
   };
 
   return (
-    <section id="technology-section" className="py-24 bg-[#F8F5ED] relative overflow-hidden">
+    <section
+      id="technology-section"
+      className="py-24 bg-[#F8F5ED] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFDF8] border border-[#E7DED0] text-xs font-mono-tech uppercase tracking-widest text-[#FF4D0A] font-bold mb-3">
@@ -49,7 +50,8 @@ export const TechnologyFlow: React.FC = () => {
           </h2>
 
           <p className="text-base text-[#52514B] mt-4">
-            Sub-second synchronization between continuous thermal sensing, clear directional acoustic guidance, and targeted mechanical containment.
+            Sub-second synchronization between continuous thermal sensing, clear
+            directional acoustic guidance, and targeted mechanical containment.
           </p>
         </div>
 
@@ -57,11 +59,13 @@ export const TechnologyFlow: React.FC = () => {
         <div className="relative mb-16">
           {/* Background Connecting Bar */}
           <div className="hidden md:block absolute top-1/2 left-10 right-10 h-1 bg-[#E7DED0] -translate-y-1/2 z-0" />
-          
+
           {/* Animated Orange Active Flow Highlight */}
           <div
             className="hidden md:block absolute top-1/2 left-10 h-1 bg-gradient-to-r from-[#FF4D0A] to-[#FF6A00] -translate-y-1/2 z-0 transition-all duration-500"
-            style={{ width: `${(activeStepIndex / (TECH_STEPS.length - 1)) * 88}%` }}
+            style={{
+              width: `${(activeStepIndex / (TECH_STEPS.length - 1)) * 88}%`,
+            }}
           />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
@@ -75,27 +79,24 @@ export const TechnologyFlow: React.FC = () => {
                   onClick={() => setActiveStepIndex(idx)}
                   className={`text-left p-5 rounded-2xl transition-all duration-300 border flex flex-col justify-between ${
                     isActive
-                      ? 'bg-[#FFFDF8] border-[#FF4D0A] shadow-xl shadow-[#FF4D0A]/15 scale-105'
-                      : 'bg-[#FFFDF8]/70 hover:bg-[#FFFDF8] border-[#E7DED0]'
-                  }`}
-                >
+                      ? "bg-[#FFFDF8] border-[#FF4D0A] shadow-xl shadow-[#FF4D0A]/15 scale-105"
+                      : "bg-[#FFFDF8]/70 hover:bg-[#FFFDF8] border-[#E7DED0]"
+                  }`}>
                   <div className="flex items-center justify-between mb-4">
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
                         isActive
-                          ? 'bg-[#FF4D0A] text-white'
+                          ? "bg-[#FF4D0A] text-white"
                           : isPassed
-                          ? 'bg-[#171B18] text-white'
-                          : 'bg-[#F2EBDD] text-[#52514B]'
-                      }`}
-                    >
+                            ? "bg-[#171B18] text-white"
+                            : "bg-[#F2EBDD] text-[#52514B]"
+                      }`}>
                       {getStepIcon(step.icon)}
                     </div>
                     <span
                       className={`text-xs font-mono-tech font-bold ${
-                        isActive ? 'text-[#FF4D0A]' : 'text-[#52514B]'
-                      }`}
-                    >
+                        isActive ? "text-[#FF4D0A]" : "text-[#52514B]"
+                      }`}>
                       STEP {step.step}
                     </span>
                   </div>
@@ -122,14 +123,14 @@ export const TechnologyFlow: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
-            className="bg-[#FFFDF8] rounded-3xl border border-[#E7DED0] p-8 sm:p-12 shadow-xl shadow-[#171B18]/5"
-          >
+            className="bg-[#FFFDF8] rounded-3xl border border-[#E7DED0] p-8 sm:p-12 shadow-xl shadow-[#171B18]/5">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
               {/* Left Column: Description and Engineering Proof */}
               <div className="lg:col-span-7">
                 <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#FF4D0A] font-bold mb-2">
-                  <span>STAGE 0{activeStepIndex + 1} OF 04 EXECUTION ARCHITECTURE</span>
+                  <span>
+                    STAGE 0{activeStepIndex + 1} OF 04 EXECUTION ARCHITECTURE
+                  </span>
                 </div>
 
                 <h3 className="font-display font-bold text-3xl sm:text-4xl text-[#171B18] mb-4">
@@ -183,28 +184,34 @@ export const TechnologyFlow: React.FC = () => {
                       {activeStep.responseTime}
                     </div>
                     <p className="text-xs text-[#52514B] mt-2">
-                      Rigorous lab-bench verification under simulated aerosol and thermal ignition vectors.
+                      Rigorous lab-bench verification under simulated aerosol
+                      and thermal ignition vectors.
                     </p>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-[#E7DED0] flex items-center justify-between">
                   <span className="text-xs font-mono-tech text-[#52514B]">
-                    Next cascade: {TECH_STEPS[(activeStepIndex + 1) % TECH_STEPS.length].title}
+                    Next cascade:{" "}
+                    {
+                      TECH_STEPS[(activeStepIndex + 1) % TECH_STEPS.length]
+                        .title
+                    }
                   </span>
                   <button
-                    onClick={() => setActiveStepIndex((activeStepIndex + 1) % TECH_STEPS.length)}
-                    className="p-2 rounded-lg bg-[#FFFDF8] hover:bg-[#FF4D0A] hover:text-white border border-[#E7DED0] transition-colors"
-                  >
+                    onClick={() =>
+                      setActiveStepIndex(
+                        (activeStepIndex + 1) % TECH_STEPS.length,
+                      )
+                    }
+                    className="p-2 rounded-lg bg-[#FFFDF8] hover:bg-[#FF4D0A] hover:text-white border border-[#E7DED0] transition-colors">
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
-
             </div>
           </motion.div>
         </AnimatePresence>
-
       </div>
     </section>
   );

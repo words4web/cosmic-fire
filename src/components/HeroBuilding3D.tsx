@@ -17,7 +17,7 @@ import {
   Info,
 } from "lucide-react";
 import * as THREE from "three";
-import { HERO_HOTSPOTS } from "../data/mockData";
+import { HERO_HOTSPOTS } from "../data/constants";
 import { HotspotItem } from "../types";
 
 interface HeroBuilding3DProps {

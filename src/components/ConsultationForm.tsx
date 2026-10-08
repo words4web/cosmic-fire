@@ -8,7 +8,7 @@ import {
   ConsultationFormInput,
   defaultConsultationValues,
 } from "../validations/consultationSchema";
-import { CONSULTATION_SERVICES } from "../data/mockData";
+import { CONSULTATION_SERVICES } from "../data/constants";
 import { FormInput } from "./common/FormInput";
 
 export const ConsultationForm: React.FC = () => {

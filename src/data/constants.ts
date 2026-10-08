@@ -582,3 +582,12 @@ export const CONSULTATION_SERVICES = [
   "Fire Safety Consultation & CFD",
   "Other / Custom Facility Architecture",
 ];
+
+export const NAV_ITEMS: { id: PageId; label: string }[] = [
+  { id: "solutions", label: "Solutions" },
+  { id: "industries", label: "Industries" },
+  { id: "technology", label: "Technology" },
+  { id: "about", label: "About" },
+  { id: "resources", label: "Resources" },
+  { id: "contact", label: "Contact" },
+];

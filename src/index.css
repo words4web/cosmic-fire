@@ -1,24 +1,76 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #ff4d0a;
+  --color-brand-primary-hover: #e03e00;
+  --color-surface-card: #fffdf8;
+  --color-surface-bg: #f8f5ed;
+  --color-surface-muted: #eae4d5;
+  --color-surface-border: #e7ded0;
+  --color-text-primary: #171b18;
+  --color-text-secondary: #52514b;
+}
+
+:root {
+  --brand-primary: #ff4d0a;
+  --surface-card: #fffdf8;
+  --surface-bg: #f8f5ed;
+}
+
 @layer base {
-  body {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #171B18;
-    background-color: #F8F5ED;
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-primary) var(--surface-bg);
   }
 
-  h1, h2, h3, h4, .font-display {
-    font-family: 'Sora', 'Manrope', sans-serif;
+  ::-webkit-scrollbar {
+    width: 3.5px;
+    height: 3.5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff4d0a;
+    border-radius: 9999px;
+    min-height: 120px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e03e00;
+  }
+
+  body {
+    font-family:
+      "Manrope",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    color: #171b18;
+    background-color: #f8f5ed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Sora", "Manrope", sans-serif;
     letter-spacing: -0.02em;
   }
 
   .font-mono-tech {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
     filter: drop-shadow(0 0 8px rgba(255, 77, 10, 0.5));
   }
@@ -79,14 +131,14 @@
 /* Technical grid background */
 .bg-tech-grid {
   background-size: 32px 32px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(231, 222, 208, 0.4) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(231, 222, 208, 0.4) 1px, transparent 1px);
 }
 
 .bg-blueprint-grid {
   background-size: 24px 24px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(23, 27, 24, 0.07) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(23, 27, 24, 0.07) 1px, transparent 1px);
 }

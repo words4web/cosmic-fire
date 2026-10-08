@@ -1,20 +1,20 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  X, 
-  ShieldAlert, 
-  Bell, 
-  Droplets, 
-  Cpu, 
-  Flame, 
-  LogOut, 
-  CheckCircle2, 
+import React from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  X,
+  ShieldAlert,
+  Bell,
+  Droplets,
+  Cpu,
+  Flame,
+  LogOut,
+  CheckCircle2,
   ArrowRight,
   Activity,
   Layers,
-  Sparkles
-} from 'lucide-react';
-import { HotspotItem, PageId } from '../types';
+  Sparkles,
+} from "lucide-react";
+import { HotspotItem, PageId } from "../types";
 
 interface HotspotModalProps {
   hotspot: HotspotItem | null;
@@ -25,23 +25,23 @@ interface HotspotModalProps {
 export const HotspotModal: React.FC<HotspotModalProps> = ({
   hotspot,
   onClose,
-  onNavigate
+  onNavigate,
 }) => {
   if (!hotspot) return null;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldAlert':
+      case "ShieldAlert":
         return <ShieldAlert className="w-6 h-6 text-[#FF4D0A]" />;
-      case 'Bell':
+      case "Bell":
         return <Bell className="w-6 h-6 text-[#FF4D0A]" />;
-      case 'Droplets':
+      case "Droplets":
         return <Droplets className="w-6 h-6 text-[#FF4D0A]" />;
-      case 'Cpu':
+      case "Cpu":
         return <Cpu className="w-6 h-6 text-[#FF4D0A]" />;
-      case 'Flame':
+      case "Flame":
         return <Flame className="w-6 h-6 text-[#FF4D0A]" />;
-      case 'LogOut':
+      case "LogOut":
         return <LogOut className="w-6 h-6 text-[#FF4D0A]" />;
       default:
         return <Sparkles className="w-6 h-6 text-[#FF4D0A]" />;
@@ -65,8 +65,7 @@ export const HotspotModal: React.FC<HotspotModalProps> = ({
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl bg-[#FFFDF8] rounded-2xl border border-[#E7DED0] shadow-2xl overflow-hidden z-10"
-        >
+          className="relative w-full max-w-2xl bg-[#FFFDF8] rounded-2xl border border-[#E7DED0] shadow-2xl overflow-hidden z-10">
           {/* Top orange status bar */}
           <div className="h-1.5 w-full bg-gradient-to-r from-[#FF4D0A] via-[#FF6A00] to-[#FFB347]" />
 
@@ -96,8 +95,7 @@ export const HotspotModal: React.FC<HotspotModalProps> = ({
               <button
                 onClick={onClose}
                 className="w-9 h-9 rounded-full bg-[#F2EBDD] hover:bg-[#E7DED0] text-[#171B18] flex items-center justify-center transition-colors"
-                aria-label="Close dialog"
-              >
+                aria-label="Close dialog">
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -128,8 +126,7 @@ export const HotspotModal: React.FC<HotspotModalProps> = ({
                 {hotspot.specs.map((spec, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-2.5 text-xs text-[#171B18] p-2.5 rounded-lg bg-[#F8F5ED] border border-[#E7DED0]/70"
-                  >
+                    className="flex items-start gap-2.5 text-xs text-[#171B18] p-2.5 rounded-lg bg-[#F8F5ED] border border-[#E7DED0]/70">
                     <CheckCircle2 className="w-4 h-4 text-[#FF4D0A] shrink-0 mt-0.5" />
                     <span className="font-medium">{spec}</span>
                   </div>
@@ -148,19 +145,17 @@ export const HotspotModal: React.FC<HotspotModalProps> = ({
                 <button
                   onClick={() => {
                     onClose();
-                    onNavigate('solutions');
+                    onNavigate("solutions");
                   }}
-                  className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl border border-[#E7DED0] hover:border-[#FF4D0A] text-xs font-semibold text-[#171B18] transition-colors"
-                >
+                  className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl border border-[#E7DED0] hover:border-[#FF4D0A] text-xs font-semibold text-[#171B18] transition-colors">
                   View Related Solutions
                 </button>
                 <button
                   onClick={() => {
                     onClose();
-                    onNavigate('contact');
+                    onNavigate("contact");
                   }}
-                  className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF4D0A] hover:bg-[#FF6A00] text-white text-xs font-semibold shadow-md shadow-[#FF4D0A]/30 transition-all"
-                >
+                  className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF4D0A] hover:bg-[#FF6A00] text-white text-xs font-semibold shadow-md shadow-[#FF4D0A]/30 transition-all">
                   <span>Request Engineering Review</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>

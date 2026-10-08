@@ -5,4 +5,5 @@ export type PageId =
   | "technology"
   | "about"
   | "resources"
+  | "faq"
   | "contact";

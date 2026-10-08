@@ -5,3 +5,4 @@ export * from "./industry";
 export * from "./technology";
 export * from "./article";
 export * from "./contact";
+export * from "./faq";
