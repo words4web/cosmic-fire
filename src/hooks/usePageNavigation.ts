@@ -32,6 +32,34 @@ export const usePageNavigation = () => {
         return;
       }
 
+      if (page === "protection") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("protection-layers");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#protection-layers";
+          }
+        } else {
+          navigate("/#protection-layers");
+        }
+        return;
+      }
+
+      if (page === "industries") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("industries-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#industries-section";
+          }
+        } else {
+          navigate("/#industries-section");
+        }
+        return;
+      }
+
       if (page === "contact") {
         if (location.pathname === "/") {
           const el = document.getElementById("contact-section");

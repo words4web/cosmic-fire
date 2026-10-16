@@ -75,3 +75,30 @@ export const INDUSTRIES_DATA: IndustriesContent = {
     },
   ],
 };
+
+export const INDUSTRY_IMAGES: Record<string, { url: string; alt: string }> = {
+  "office-buildings": {
+    url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+    alt: "Modern commercial open-plan office facility",
+  },
+  "retail-premises": {
+    url: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80",
+    alt: "Commercial retail premises and storefront",
+  },
+  "hospitality-venues": {
+    url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+    alt: "Hospitality venue dining room and kitchen facilities",
+  },
+  "industrial-premises": {
+    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    alt: "Industrial warehouse and logistics facility",
+  },
+  "educational-establishments": {
+    url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    alt: "Educational campus building and shared corridors",
+  },
+  "healthcare-environments": {
+    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+    alt: "Healthcare clinic and patient care environment",
+  },
+};

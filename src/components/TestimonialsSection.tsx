@@ -1,49 +1,70 @@
-import React from "react";
-import { motion } from "motion/react";
-import { Quote } from "lucide-react";
+import React, { useState } from "react";
+import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { TESTIMONIALS_DATA } from "../data/testimonials";
 import { TestimonialItem } from "../types";
 
 export const TestimonialsSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? TESTIMONIALS_DATA.length - 1 : prev - 1,
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === TESTIMONIALS_DATA.length - 1 ? 0 : prev + 1,
+    );
+  };
+
   return (
-    <section className="py-12 sm:py-20 md:py-24 bg-surface-card relative overflow-hidden border-t border-surface-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-bg border border-surface-border text-[10px] sm:text-xs font-mono-tech uppercase tracking-widest text-brand-primary font-bold mb-3 shadow-xs">
-            <Quote className="w-3.5 h-3.5 text-brand-primary" />
-            <span>Client Feedback</span>
+    <section className="py-14 sm:py-20 md:py-28 bg-surface-card relative border-t border-surface-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14 pb-6 border-b border-surface-border">
+          <div className="max-w-2xl">
+            <h2 className="font-display font-black text-2xl xs:text-3xl sm:text-4xl md:text-5xl tracking-tight text-text-primary leading-[1.12]">
+              TESTIMONIALS
+            </h2>
           </div>
 
-          <h2 className="font-display font-black text-2xl xs:text-3xl sm:text-4xl md:text-5xl tracking-tight text-text-primary leading-[1.15]">
-            TESTIMONIALS
-          </h2>
+          <div className="flex items-center gap-2 self-start md:self-auto">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous testimonial"
+              className="p-3 rounded-full bg-surface-bg hover:bg-surface-muted text-text-primary border border-surface-border transition-colors cursor-pointer shadow-xs">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={nextSlide}
+              aria-label="Next testimonial"
+              className="p-3 rounded-full bg-surface-bg hover:bg-surface-muted text-text-primary border border-surface-border transition-colors cursor-pointer shadow-xs">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TESTIMONIALS_DATA.map((item: TestimonialItem, idx: number) => {
-            const isFeatured = idx === 0 || idx === 3;
             return (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className={`group relative p-[3px] rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-primary/10 ${
-                  isFeatured ? "md:col-span-2 lg:col-span-1" : ""
-                }`}>
-                <div className="absolute inset-[-100%] animate-border-rotate bg-[conic-gradient(from_0deg,transparent_0_260deg,rgba(255,77,10,0.3)_290deg,rgba(255,77,10,0.9)_330deg,#ffffff_355deg,rgba(255,77,10,1)_360deg)] opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="relative h-full w-full rounded-[calc(1rem-3px)] sm:rounded-[calc(1.5rem-3px)] bg-surface-card p-6 sm:p-8 flex flex-col justify-between z-10 transition-colors">
-                  <div className="mb-4 text-brand-primary opacity-30 group-hover:opacity-70 transition-opacity">
-                    <Quote className="w-8 h-8 sm:w-10 sm:h-10" />
+                className="group flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-surface-bg border border-surface-border hover:border-brand-primary/40 transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-black/5">
+                <div>
+                  <div className="flex items-center justify-between mb-4 pb-3 border-b border-surface-border">
+                    <div className="flex items-center gap-1 text-amber-500">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-500" />
+                      ))}
+                    </div>
+                    <Quote className="w-6 h-6 text-brand-primary/40 group-hover:text-brand-primary transition-colors" />
                   </div>
 
-                  <blockquote className="font-serif text-sm sm:text-base md:text-lg text-text-primary leading-relaxed my-auto">
+                  <blockquote className="text-xs sm:text-sm md:text-base text-text-primary leading-relaxed font-medium">
                     “{item.quote}”
                   </blockquote>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
