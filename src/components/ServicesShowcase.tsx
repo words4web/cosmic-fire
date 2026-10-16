@@ -51,20 +51,10 @@ export const ServicesShowcase = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-surface-border">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-[11px] font-mono-tech uppercase tracking-wider text-brand-primary font-bold mb-3.5">
-              <Flame className="w-3.5 h-3.5 text-brand-primary shrink-0" />
-              <span>Full Scope Commercial Protection</span>
-            </div>
             <h2 className="font-display font-black text-2xl xs:text-3xl sm:text-4xl md:text-5xl tracking-tight text-text-primary leading-[1.12]">
               ENGINEERED FIRE PROTECTION{" "}
               <span className="text-brand-primary">SOLUTIONS</span>
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-text-secondary leading-relaxed">
-              From early warning detection and clean-agent active suppression to
-              complete passive fire compartmentation, every service is delivered
-              in full compliance with current UK Fire Safety Legislation and
-              British Standards.
-            </p>
           </div>
 
           <div className="w-full lg:w-80 relative shrink-0">
@@ -151,16 +141,6 @@ export const ServicesShowcase = ({
                       <span className="text-[10px] font-mono-tech font-bold px-2 py-0.5 rounded-full bg-brand-primary text-white shadow-xs">
                         {paddedIndex}
                       </span>
-                      <span className="text-[10px] font-mono-tech font-semibold px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-xs text-white/90 border border-white/10">
-                        {imageMeta.tag}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white/80 font-mono-tech">
-                      <span className="inline-flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-brand-primary" />
-                        <span>UK Certified Standard</span>
-                      </span>
                     </div>
                   </div>
 
@@ -236,38 +216,6 @@ export const ServicesShowcase = ({
             </button>
           </div>
         )}
-
-        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
-          <div>
-            <span className="text-[10px] sm:text-xs font-mono-tech uppercase tracking-widest text-brand-primary font-bold">
-              Require A Bespoke Survey Or Multi-Service Package?
-            </span>
-            <h3 className="font-display font-bold text-lg sm:text-2xl text-text-primary mt-1">
-              Need assistance determining your exact building safety
-              requirements?
-            </h3>
-            <p className="text-xs sm:text-sm text-text-secondary mt-1 max-w-2xl">
-              Our BAFE and BM TRADA aligned engineers carry out full site
-              assessments across London and Kent, advising on the exact
-              equipment, testing schedules, and compartmentation required for
-              your premises.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              onClick={() => onNavigate("contact")}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-primary/20 cursor-pointer">
-              <span>Book Site Assessment</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <a
-              href="tel:02080500122"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-surface-bg hover:bg-surface-muted text-text-primary border border-surface-border text-xs font-bold transition-colors">
-              <PhoneCall className="w-3.5 h-3.5 text-brand-primary" />
-              <span>020 8050 0122</span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -100,92 +100,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      <div className="w-full bg-[#1F2320] border-y border-white/10 py-6 sm:py-8 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20">
+      <div className="w-full bg-[#1F2320] border-y border-white/10 py-5 sm:py-6 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  London &amp; Kent
-                </span>
-                <span className="text-[10px] text-white/60">
-                  Full Site Coverage
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <FileCheck2 className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  Free Site Surveys
-                </span>
-                <span className="text-[10px] text-white/60">
-                  No-Obligation Quotes
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+            {HERO_DATA.highlights.map((highlight, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-brand-primary" />
+                </div>
+                <span className="text-xs sm:text-sm font-bold text-white leading-tight">
+                  {highlight}
                 </span>
               </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <Clock className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  24/7 Response
-                </span>
-                <span className="text-[10px] text-white/60">
-                  Emergency Call-Out
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <BadgeCheck className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  British Standards
-                </span>
-                <span className="text-[10px] text-white/60">
-                  BS 5839 &amp; BS 5266
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <Users2 className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  DBS-Checked Staff
-                </span>
-                <span className="text-[10px] text-white/60">
-                  Vetted Technicians
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
-                <Building2 className="w-5 h-5 text-brand-primary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xs font-bold text-white leading-tight">
-                  All Premises
-                </span>
-                <span className="text-[10px] text-white/60">
-                  Commercial &amp; HMO
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
