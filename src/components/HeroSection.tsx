@@ -2,105 +2,207 @@ import React from "react";
 import { motion } from "motion/react";
 import {
   ArrowRight,
-  MessageSquare,
-  MapPin,
+  Phone,
+  ShieldCheck,
   CheckCircle2,
-  ChevronDown,
+  FileCheck2,
+  Clock,
+  Building2,
+  Users2,
+  BadgeCheck,
 } from "lucide-react";
-import { HeroBuilding3D } from "./HeroBuilding3D";
 import { HotspotItem, PageId } from "../types";
 import { HERO_DATA } from "../data/hero";
-import { SectionBadge } from "./common";
+import { COMPANY_CONTACT } from "../data/company";
 
 interface HeroSectionProps {
-  onSelectHotspot: (hotspot: HotspotItem) => void;
-  selectedHotspot: HotspotItem | null;
+  onSelectHotspot?: (hotspot: HotspotItem) => void;
+  selectedHotspot?: HotspotItem | null;
   onNavigate: (page: PageId) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
-  onSelectHotspot,
-  selectedHotspot,
-  onNavigate,
-}) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   return (
-    <section className="relative w-full pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-surface-card via-surface-bg to-surface-card">
-      <div className="absolute top-10 left-1/3 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex flex-col justify-center text-left z-10">
-            <SectionBadge pulse className="mb-4 self-start">
-              {HERO_DATA.badge}
-            </SectionBadge>
-
-            <h1 className="font-display font-black text-3xl xs:text-4xl sm:text-5xl lg:text-[54px] leading-[1.05] tracking-tight text-text-primary mb-4 sm:mb-6">
-              {HERO_DATA.headline}
-            </h1>
-
-            <p className="text-xs sm:text-sm md:text-base text-text-secondary font-normal leading-relaxed mb-6 sm:mb-8 max-w-lg">
-              {HERO_DATA.description}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
-              <button
-                onClick={() => onNavigate("solutions")}
-                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/35 transition-all active:scale-[0.98] cursor-pointer">
-                <span>{HERO_DATA.ctas.explore}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-
-              <button
-                onClick={() => onNavigate("contact")}
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-card hover:bg-surface-muted text-text-primary border border-surface-border font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xs active:scale-[0.98] cursor-pointer">
-                <span>{HERO_DATA.ctas.talk}</span>
-                <MessageSquare className="w-4 h-4 text-brand-primary transition-transform group-hover:scale-110" />
-              </button>
-            </div>
-
-            <div className="pt-5 border-t border-surface-border grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-              {HERO_DATA.highlights.map((highlight, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-2 p-2 rounded-lg bg-surface-card border border-surface-border text-[11px] font-semibold text-text-primary">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-primary shrink-0" />
-                  <span className="leading-tight">{highlight}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 relative">
-            <HeroBuilding3D
-              onSelectHotspot={onSelectHotspot}
-              selectedHotspot={selectedHotspot}
-            />
-          </motion.div>
+    <section className="relative w-full overflow-hidden bg-[#171B18]">
+      <div className="relative w-full min-h-[560px] sm:min-h-[620px] md:min-h-[700px] flex items-center justify-center pt-32 sm:pt-36 md:pt-44 pb-16 sm:pb-20 md:pb-24">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop"
+            alt="Modern commercial corporate facility"
+            className="w-full h-full object-cover object-center brightness-[0.38] contrast-[1.08]"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#171B18] via-[#171B18]/60 to-[#171B18]/70" />
+          <div className="absolute inset-0 bg-radial-[at_center_center] from-transparent via-[#171B18]/40 to-[#171B18]" />
         </div>
 
-        <div className="mt-8 sm:mt-12 pt-6 border-t border-surface-border overflow-hidden">
-          <div className="flex items-center gap-4 overflow-x-auto scrollbar-none py-2">
-            <span className="text-[10px] font-mono-tech uppercase tracking-wider text-brand-primary font-bold shrink-0">
-              SOLUTIONS //
-            </span>
-            <div className="flex items-center gap-2 shrink-0">
-              {HERO_DATA.ticker.map((item, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1 rounded-full bg-surface-card border border-surface-border text-[11px] font-mono-tech text-text-secondary shrink-0">
-                  {item}
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 max-w-6xl mx-auto text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-bold tracking-wide uppercase mb-6 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+            <span>{HERO_DATA.badge}</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.08] tracking-tight text-white mb-6 max-w-4xl">
+            {HERO_DATA.headline}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-sm sm:text-base md:text-lg text-white/85 font-normal leading-relaxed mb-8 sm:mb-10 max-w-2xl text-center">
+            {HERO_DATA.description}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto mb-10 sm:mb-12">
+            <button
+              onClick={() => onNavigate("solutions")}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-brand-primary/30 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+              <span>{HERO_DATA.ctas.explore}</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+
+            <a
+              href={`tel:${COMPANY_CONTACT.phoneRaw}`}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+              <Phone className="w-4 h-4 text-brand-primary" />
+              <span>{HERO_DATA.ctas.talk}</span>
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-2xl">
+            {HERO_DATA.highlights.map((highlight, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-semibold text-white/90">
+                <CheckCircle2 className="w-3.5 h-3.5 text-brand-primary shrink-0" />
+                <span>{highlight}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="w-full bg-[#1F2320] border-y border-white/10 py-6 sm:py-8 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  London &amp; Kent
                 </span>
-              ))}
+                <span className="text-[10px] text-white/60">
+                  Full Site Coverage
+                </span>
+              </div>
             </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  Free Site Surveys
+                </span>
+                <span className="text-[10px] text-white/60">
+                  No-Obligation Quotes
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  24/7 Response
+                </span>
+                <span className="text-[10px] text-white/60">
+                  Emergency Call-Out
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <BadgeCheck className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  British Standards
+                </span>
+                <span className="text-[10px] text-white/60">
+                  BS 5839 &amp; BS 5266
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <Users2 className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  DBS-Checked Staff
+                </span>
+                <span className="text-[10px] text-white/60">
+                  Vetted Technicians
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-9 h-9 rounded-lg bg-brand-primary/15 flex items-center justify-center shrink-0">
+                <Building2 className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white leading-tight">
+                  All Premises
+                </span>
+                <span className="text-[10px] text-white/60">
+                  Commercial &amp; HMO
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full bg-[#171B18] py-3.5 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 border-b border-white/10">
+        <div className="flex items-center gap-4 overflow-x-auto scrollbar-none py-1">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-brand-primary uppercase shrink-0">
+            CERTIFIED CAPABILITIES //
+          </span>
+          <div className="flex items-center gap-2 shrink-0">
+            {HERO_DATA.ticker.map((item, idx) => (
+              <span
+                key={idx}
+                className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-medium text-white/80 shrink-0">
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </div>

@@ -18,6 +18,20 @@ export const usePageNavigation = () => {
         return;
       }
 
+      if (page === "solutions") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("services-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#services-section";
+          }
+        } else {
+          navigate("/#services-section");
+        }
+        return;
+      }
+
       if (page === "contact") {
         if (location.pathname === "/") {
           const el = document.getElementById("contact-section");

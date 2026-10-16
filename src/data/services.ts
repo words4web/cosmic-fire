@@ -178,3 +178,93 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     ctaText: "Discuss Class 0 Painting",
   },
 ];
+
+export const SERVICE_IMAGES: Record<
+  string,
+  import("../types").ServiceImageMeta
+> = {
+  "fire-detection-systems": {
+    url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    alt: "Ceiling optical smoke detector and sensor network",
+    category: "detection",
+    tag: "Detection & Sensors",
+  },
+  "fire-alarm-systems": {
+    url: "https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80",
+    alt: "Commercial multi-zone fire alarm control panel",
+    category: "detection",
+    tag: "Alarm Panels & Sounders",
+  },
+  "fire-suppression": {
+    url: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    alt: "Clean agent gas suppression manifold system",
+    category: "suppression",
+    tag: "Clean Agent Suppression",
+  },
+  "fire-extinguisher-solutions": {
+    url: "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=800&q=80",
+    alt: "Wall-mounted commercial fire extinguishers with regulatory signage",
+    category: "suppression",
+    tag: "First Response Equipment",
+  },
+  "fire-extinguisher-servicing": {
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+    alt: "Certified engineer servicing and inspecting fire extinguisher gauge",
+    category: "suppression",
+    tag: "Compliance & Testing",
+  },
+  "fire-curtains": {
+    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+    alt: "Automatic roller fire curtain in modern atrium corridor",
+    category: "passive",
+    tag: "Smoke & Flame Barrier",
+  },
+  "intumescent-coatings": {
+    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    alt: "Structural steel coated with certified intumescent paint",
+    category: "passive",
+    tag: "Structural Steel Protection",
+  },
+  "fire-barriers": {
+    url: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80",
+    alt: "Cavity barrier and fire batt installed inside void compartment",
+    category: "passive",
+    tag: "Cavity Compartmentation",
+  },
+  "fire-doors-screens": {
+    url: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?auto=format&fit=crop&w=800&q=80",
+    alt: "Commercial certified fire exit doors with panic hardware and vision panels",
+    category: "passive",
+    tag: "Doors & Glazed Screens",
+  },
+  "emergency-signage": {
+    url: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80",
+    alt: "Illuminated photoluminescent emergency escape route signage",
+    category: "passive",
+    tag: "BS 5266 Photoluminescent",
+  },
+  "dry-lining": {
+    url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+    alt: "Fire-rated dry lining and plasterboard stud partition installation",
+    category: "passive",
+    tag: "Fire Rated Partitions",
+  },
+  "air-sealing": {
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
+    alt: "Air tightness sealing around commercial building service junctions",
+    category: "passive",
+    tag: "Leakage & Air Barrier",
+  },
+  "penetration-sealing": {
+    url: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    alt: "Intumescent pipe collar and firestop mastic penetration seal",
+    category: "passive",
+    tag: "Cable & Pipe Penetrations",
+  },
+  "class-0-fire-rated-painting": {
+    url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+    alt: "Flame retardant Class 0 architectural paint finish on commercial wall",
+    category: "passive",
+    tag: "Surface Flame Spread",
+  },
+};
