@@ -60,6 +60,34 @@ export const usePageNavigation = () => {
         return;
       }
 
+      if (page === "technology") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("technology-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#technology-section";
+          }
+        } else {
+          navigate("/#technology-section");
+        }
+        return;
+      }
+
+      if (page === "about") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("about-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#about-section";
+          }
+        } else {
+          navigate("/#about-section");
+        }
+        return;
+      }
+
       if (page === "contact") {
         if (location.pathname === "/") {
           const el = document.getElementById("contact-section");
@@ -70,6 +98,20 @@ export const usePageNavigation = () => {
           }
         } else {
           navigate("/#contact-section");
+        }
+        return;
+      }
+
+      if (page === "faq") {
+        if (location.pathname === "/") {
+          const el = document.getElementById("faq-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.hash = "#faq-section";
+          }
+        } else {
+          navigate("/#faq-section");
         }
         return;
       }
