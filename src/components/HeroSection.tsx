@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigate,
 }) => {
   return (
-    <section className="relative w-full pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-surface-card via-surface-bg to-surface-card">
+    <section className="relative w-full pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-surface-card via-surface-bg to-surface-card">
       <div className="absolute top-10 left-1/3 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
 

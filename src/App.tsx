@@ -45,7 +45,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: location.pathname === "/" ? 0 : -15 }}
               transition={{ duration: 0.25 }}
-              className={location.pathname === "/" ? "" : "pt-24"}>
+              className={location.pathname === "/" ? "" : "pt-28 md:pt-32"}>
               {pageElement}
             </motion.div>
           </AnimatePresence>
