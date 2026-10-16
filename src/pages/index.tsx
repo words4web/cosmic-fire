@@ -5,7 +5,6 @@ import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
 import { ProtectionLayers } from "@/src/components/ProtectionLayers";
 import { ServicesShowcase } from "@/src/components/ServicesShowcase";
 import { CinematicBanner } from "@/src/components/CinematicBanner";
-import { InteractiveBlueprint } from "@/src/components/InteractiveBlueprint";
 import { IndustriesSection } from "@/src/components/IndustriesSection";
 import { TechnologyFlow } from "@/src/components/TechnologyFlow";
 import { AboutSection } from "@/src/components/AboutSection";
@@ -32,7 +31,6 @@ export default function IndexPage() {
       <ProtectionLayers />
       <ServicesShowcase onNavigate={handleNavigate} />
       <CinematicBanner onNavigate={handleNavigate} />
-      <InteractiveBlueprint />
       <IndustriesSection onNavigate={handleNavigate} />
       <TechnologyFlow />
       <AboutSection onNavigate={handleNavigate} />
