@@ -1,9 +1,9 @@
+import { PageId } from "./navigation";
+
 export interface ServicePanelItem {
   id: string;
   title: string;
   description: string;
-  benefitsHeader?: string;
-  benefits: string[];
   ctaText: string;
 }
 
@@ -18,4 +18,12 @@ export interface ServiceImageMeta {
   alt: string;
   category: ServiceCategoryFilter;
   tag: string;
+}
+
+export interface ServiceCardProps {
+  service: ServicePanelItem;
+  imageMeta: ServiceImageMeta;
+  isFlipped: boolean;
+  onCardClick: (serviceId: string) => void;
+  onNavigate: (page: PageId) => void;
 }
