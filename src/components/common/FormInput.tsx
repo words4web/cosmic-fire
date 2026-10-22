@@ -26,7 +26,7 @@ export function FormInput({
         className={`w-full px-4 py-2.5 rounded-xl bg-[#F8F5ED] border text-sm text-[#171B18] outline-none transition-colors ${
           error
             ? "border-rose-500 bg-rose-50/30"
-            : "border-[#E7DED0] focus:border-[#FF4D0A]"
+            : "border-[#E7DED0] focus:border-[#FC7A21]"
         } ${className}`}
       />
       {error && (

@@ -41,7 +41,7 @@ export const ConsultationForm: React.FC = () => {
   return (
     <div className="bg-[#FFFDF8] rounded-2xl sm:rounded-3xl border border-[#E7DED0] p-5 sm:p-8 md:p-10 shadow-xl shadow-[#171B18]/5">
       <div className="mb-6 sm:mb-8">
-        <span className="text-[11px] sm:text-xs font-mono-tech uppercase tracking-wider text-[#FF4D0A] font-bold">
+        <span className="text-[11px] sm:text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold">
           PROJECT INQUIRY FORM
         </span>
         <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171B18] mt-1">
@@ -57,8 +57,8 @@ export const ConsultationForm: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="p-6 sm:p-8 rounded-2xl bg-[#F8F5ED] border border-[#FF4D0A]/30 text-center">
-          <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#FF4D0A]/10 text-[#FF4D0A] flex items-center justify-center mx-auto mb-4">
+          className="p-6 sm:p-8 rounded-2xl bg-[#F8F5ED] border border-[#0489F8]/30 text-center">
+          <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#044FB7]/10 text-[#044FB7] flex items-center justify-center mx-auto mb-4">
             <CheckCircle2 className="w-7 sm:w-8 h-7 sm:h-8" />
           </div>
           <h4 className="font-display font-bold text-xl sm:text-2xl text-[#171B18] mb-2">
@@ -78,7 +78,7 @@ export const ConsultationForm: React.FC = () => {
             <button
               type="button"
               onClick={handleReset}
-              className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#171B18] text-white text-xs font-bold font-mono-tech uppercase tracking-wider hover:bg-[#2A302B] transition-colors">
+              className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#044FB7] text-white text-xs font-bold font-mono-tech uppercase tracking-wider hover:bg-[#0489F8] transition-colors cursor-pointer">
               Submit Another Project Inquiry
             </button>
           </div>
@@ -136,7 +136,7 @@ export const ConsultationForm: React.FC = () => {
               </label>
               <select
                 {...register("serviceRequired")}
-                className="w-full px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-sm text-[#171B18] outline-none focus:border-[#FF4D0A] transition-colors">
+                className="w-full px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-sm text-[#171B18] outline-none focus:border-[#FC7A21] transition-colors">
                 {CONSULTATION_SERVICES.map((svc) => (
                   <option key={svc} value={svc}>
                     {svc}
@@ -162,7 +162,7 @@ export const ConsultationForm: React.FC = () => {
               className={`w-full px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#F8F5ED] border text-sm text-[#171B18] outline-none transition-colors ${
                 errors?.message
                   ? "border-rose-500 bg-rose-50/30"
-                  : "border-[#E7DED0] focus:border-[#FF4D0A]"
+                  : "border-[#E7DED0] focus:border-[#FC7A21]"
               }`}
             />
             {errors?.message && (
@@ -176,7 +176,7 @@ export const ConsultationForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 rounded-xl bg-[#FF4D0A] hover:bg-[#FF6A00] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-[#FF4D0A]/30 transition-all active:scale-[0.99] disabled:opacity-50">
+              className="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 rounded-xl bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-[#FC7A21]/30 transition-all active:scale-[0.99] disabled:opacity-50 cursor-pointer">
               {isSubmitting ? (
                 <span>Transmitting Inquiry...</span>
               ) : (

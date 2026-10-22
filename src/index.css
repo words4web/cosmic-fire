@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #ff4d0a;
-  --color-brand-primary-hover: #e03e00;
+  --color-brand-blue-deep: #044fb7;
+  --color-brand-blue-light: #0489f8;
+  --color-brand-orange-rich: #fc7a21;
+  --color-brand-orange-light: #fe8a2a;
+
+  --color-brand-primary: #fc7a21;
+  --color-brand-primary-hover: #e66812;
+  --color-brand-accent: #044fb7;
+  --color-brand-accent-light: #0489f8;
+  --color-brand-secondary: #fe8a2a;
+
   --color-surface-card: #fffdf8;
   --color-surface-bg: #f8f5ed;
   --color-surface-muted: #eae4d5;
@@ -12,7 +21,14 @@
 }
 
 :root {
-  --brand-primary: #ff4d0a;
+  --brand-blue-deep: #044fb7;
+  --brand-blue-light: #0489f8;
+  --brand-orange-rich: #fc7a21;
+  --brand-orange-light: #fe8a2a;
+
+  --brand-primary: #fc7a21;
+  --brand-primary-hover: #e66812;
+  --brand-accent: #044fb7;
   --surface-card: #fffdf8;
   --surface-bg: #f8f5ed;
 }
@@ -33,13 +49,13 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #ff4d0a;
+    background: #fc7a21;
     border-radius: 9999px;
     min-height: 120px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #e03e00;
+    background: #e66812;
   }
 
   body {
@@ -72,11 +88,11 @@
   0%,
   100% {
     opacity: 0.6;
-    filter: drop-shadow(0 0 8px rgba(255, 77, 10, 0.5));
+    filter: drop-shadow(0 0 8px rgba(252, 122, 33, 0.5));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 18px rgba(255, 106, 0, 0.9));
+    filter: drop-shadow(0 0 18px rgba(254, 138, 42, 0.9));
   }
 }
 
@@ -113,22 +129,29 @@
 }
 
 .glow-orange-sm {
-  box-shadow: 0 0 15px rgba(255, 77, 10, 0.25);
+  box-shadow: 0 0 15px rgba(252, 122, 33, 0.25);
 }
 
 .glow-orange-md {
-  box-shadow: 0 0 25px rgba(255, 77, 10, 0.35);
+  box-shadow: 0 0 25px rgba(252, 122, 33, 0.35);
 }
 
 .glow-orange-lg {
-  box-shadow: 0 0 40px rgba(255, 77, 10, 0.5);
+  box-shadow: 0 0 40px rgba(252, 122, 33, 0.5);
 }
 
 .text-glow-orange {
-  text-shadow: 0 0 20px rgba(255, 77, 10, 0.4);
+  text-shadow: 0 0 20px rgba(252, 122, 33, 0.4);
 }
 
-/* Technical grid background */
+.glow-blue-sm {
+  box-shadow: 0 0 15px rgba(4, 137, 248, 0.25);
+}
+
+.glow-blue-md {
+  box-shadow: 0 0 25px rgba(4, 79, 183, 0.35);
+}
+
 .bg-tech-grid {
   background-size: 32px 32px;
   background-image:

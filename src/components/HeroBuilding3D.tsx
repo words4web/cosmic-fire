@@ -42,19 +42,19 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "ShieldAlert":
-        return <ShieldAlert className="w-4 h-4 text-[#FF4D0A]" />;
+        return <ShieldAlert className="w-4 h-4 text-[#FC7A21]" />;
       case "Bell":
-        return <Bell className="w-4 h-4 text-[#FF4D0A]" />;
+        return <Bell className="w-4 h-4 text-[#0489F8]" />;
       case "Droplets":
-        return <Droplets className="w-4 h-4 text-[#FF4D0A]" />;
+        return <Droplets className="w-4 h-4 text-[#0489F8]" />;
       case "Cpu":
-        return <Cpu className="w-4 h-4 text-[#FF4D0A]" />;
+        return <Cpu className="w-4 h-4 text-[#044FB7]" />;
       case "Flame":
-        return <Flame className="w-4 h-4 text-[#FF4D0A]" />;
+        return <Flame className="w-4 h-4 text-[#FC7A21]" />;
       case "LogOut":
-        return <LogOut className="w-4 h-4 text-[#FF4D0A]" />;
+        return <LogOut className="w-4 h-4 text-[#FE8A2A]" />;
       default:
-        return <Sparkles className="w-4 h-4 text-[#FF4D0A]" />;
+        return <Sparkles className="w-4 h-4 text-[#FC7A21]" />;
     }
   };
 
@@ -102,11 +102,11 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     scene.add(sunLight);
 
     // Warm orange bounce light from ground & interior conduits
-    const orangeBounce = new THREE.PointLight(0xff6a00, 3.5, 25);
+    const orangeBounce = new THREE.PointLight(0xfc7a21, 3.5, 25);
     orangeBounce.position.set(0, 3, 2);
     scene.add(orangeBounce);
 
-    const softFill = new THREE.DirectionalLight(0xffce9a, 0.9);
+    const softFill = new THREE.DirectionalLight(0x0489f8, 0.7);
     softFill.position.set(-12, 10, -8);
     scene.add(softFill);
 
@@ -122,7 +122,7 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     });
 
     const darkFrameMaterial = new THREE.MeshStandardMaterial({
-      color: 0x242825,
+      color: 0x044fb7,
       roughness: 0.4,
       metalness: 0.6,
     });
@@ -144,16 +144,16 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
     });
 
     const orangeConduitMaterial = new THREE.MeshStandardMaterial({
-      color: 0xff4d0a,
-      emissive: 0xff4d0a,
+      color: 0xfc7a21,
+      emissive: 0xfc7a21,
       emissiveIntensity: 1.8,
       roughness: 0.2,
       metalness: 0.1,
     });
 
     const orangeSensorGlowMaterial = new THREE.MeshStandardMaterial({
-      color: 0xff6a00,
-      emissive: 0xff6a00,
+      color: 0xfe8a2a,
+      emissive: 0xfe8a2a,
       emissiveIntensity: 2.6,
       roughness: 0.1,
     });
@@ -336,10 +336,10 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       // Beacon halo
       const haloGeo = new THREE.RingGeometry(0.16, 0.28, 24);
       const haloMat = new THREE.MeshBasicMaterial({
-        color: 0xff6a00,
+        color: 0x0489f8,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.7,
       });
       const halo = new THREE.Mesh(haloGeo, haloMat);
       halo.position.copy(pos);
@@ -430,26 +430,22 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
       ref={containerRef}
       id="hero-3d-visual-stage"
       className="relative w-full h-[580px] lg:h-[680px] select-none rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F8F5ED] to-[#F2EBDD] border border-[#E7DED0]/60 shadow-xl shadow-[#171B18]/5">
-      {/* Background architectural grid and ambient halo */}
       <div className="absolute inset-0 bg-tech-grid opacity-60 pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#FF6A00]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#FF4D0A]/10 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#0489F8]/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#FC7A21]/15 rounded-full blur-2xl pointer-events-none" />
 
-      {/* 3D WebGL Canvas */}
       <canvas
         ref={canvasRef}
         className="w-full h-full cursor-grab active:cursor-grabbing block"
       />
 
-      {/* Telemetry HUD Top-Right Header */}
       <div className="absolute top-4 right-4 z-20 flex items-center gap-2 bg-[#FFFDF8]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#E7DED0] shadow-sm text-xs font-mono-tech text-[#52514B]">
-        <span className="w-2 h-2 rounded-full bg-[#FF4D0A] animate-ping" />
-        <span className="font-semibold text-[#171B18]">NETWORK ACTIVE</span>
+        <span className="w-2 h-2 rounded-full bg-[#0489F8] animate-ping" />
+        <span className="font-semibold text-[#044FB7]">NETWORK ACTIVE</span>
         <span className="text-[#E7DED0]">|</span>
         <span>6 NODES MONITORED</span>
       </div>
 
-      {/* Mode Controls Bottom-Left */}
       <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2">
         <button
           onClick={() =>
@@ -459,11 +455,11 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
           }
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
             networkIntensity === "boost"
-              ? "bg-[#FF4D0A] text-white shadow-md shadow-[#FF4D0A]/40"
-              : "bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A]"
+              ? "bg-[#FC7A21] text-white shadow-md shadow-[#FC7A21]/40"
+              : "bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FC7A21]"
           }`}
           title="Toggle conduit luminescence boost">
-          <Activity className="w-3.5 h-3.5 text-[#FF4D0A] fill-current" />
+          <Activity className="w-3.5 h-3.5 text-[#FC7A21] fill-current" />
           <span>
             {networkIntensity === "boost"
               ? "CONDUIT BOOST ACTIVE"
@@ -477,24 +473,23 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
             setTimeout(() => setIsSimulating(false), 2600);
           }}
           disabled={isSimulating}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#FF4D0A] hover:text-[#FF4D0A] transition-all disabled:opacity-50 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-[#FF6A00]" />
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-[#FFFDF8]/90 text-[#171B18] border border-[#E7DED0] hover:border-[#0489F8] hover:text-[#044FB7] transition-all disabled:opacity-50 shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-[#0489F8]" />
           <span>
             {isSimulating ? "SIMULATING TELEMETRY..." : "TEST SIGNAL PATH"}
           </span>
         </button>
       </div>
 
-      {/* Simulation Signal Pulse Overlay */}
       {isSimulating && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-[#FF4D0A]/10 backdrop-blur-[1px] pointer-events-none flex items-center justify-center z-30">
-          <div className="bg-[#FFFDF8] px-5 py-3 rounded-xl border border-[#FF4D0A] shadow-xl text-center">
-            <div className="flex items-center justify-center gap-2 text-sm font-bold text-[#FF4D0A] font-mono-tech mb-1">
-              <CheckCircle2 className="w-4 h-4" />
+          className="absolute inset-0 bg-[#0489F8]/10 backdrop-blur-[1px] pointer-events-none flex items-center justify-center z-30">
+          <div className="bg-[#FFFDF8] px-5 py-3 rounded-xl border border-[#044FB7] shadow-xl text-center">
+            <div className="flex items-center justify-center gap-2 text-sm font-bold text-[#044FB7] font-mono-tech mb-1">
+              <CheckCircle2 className="w-4 h-4 text-[#0489F8]" />
               SYSTEM DIAGNOSTIC: OPTIMAL
             </div>
             <p className="text-xs text-[#52514B]">
@@ -505,7 +500,6 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
         </motion.div>
       )}
 
-      {/* Interactive Floating Technical Callouts */}
       <div className="absolute inset-0 pointer-events-none z-20">
         {HERO_HOTSPOTS.map((hotspot) => {
           const isSelected = selectedHotspot?.id === hotspot.id;
@@ -520,19 +514,17 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
                 transform: "translate(-50%, -50%)",
               }}
               className="absolute pointer-events-auto">
-              {/* Leader Line / Anchor Pin */}
               <div className="relative group">
-                {/* Glowing target beacon */}
                 <button
                   onClick={() => onSelectHotspot(hotspot)}
                   onMouseEnter={() => setActiveHoverId(hotspot.id)}
                   onMouseLeave={() => setActiveHoverId(null)}
                   className={`relative flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all duration-300 shadow-md ${
                     isSelected
-                      ? "bg-[#171B18] text-[#FFFDF8] border-[#FF4D0A] ring-2 ring-[#FF4D0A]/40 scale-105"
+                      ? "bg-[#044FB7] text-white border-[#0489F8] ring-2 ring-[#0489F8]/40 scale-105"
                       : isHovered
-                        ? "bg-[#FFFDF8] text-[#171B18] border-[#FF4D0A] scale-105 shadow-lg shadow-[#FF4D0A]/20"
-                        : "bg-[#FFFDF8]/95 text-[#171B18] border-[#E7DED0] hover:border-[#FF4D0A]"
+                        ? "bg-[#FFFDF8] text-[#171B18] border-[#FC7A21] scale-105 shadow-lg shadow-[#FC7A21]/20"
+                        : "bg-[#FFFDF8]/95 text-[#171B18] border-[#E7DED0] hover:border-[#FC7A21]"
                   }`}
                   aria-label={`Inspect ${hotspot.name}`}>
                   <span className="flex items-center justify-center w-5 h-5 rounded-md bg-[#F2EBDD]">
@@ -541,10 +533,9 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
                   <span className="text-xs font-semibold whitespace-nowrap tracking-tight">
                     {hotspot.name}
                   </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D0A] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FC7A21] animate-pulse" />
                 </button>
 
-                {/* Extended Details Tooltip on Hover */}
                 <AnimatePresence>
                   {isHovered && !isSelected && (
                     <motion.div
@@ -552,17 +543,17 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.96 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 p-3 bg-[#FFFDF8] rounded-xl border border-[#FF4D0A]/40 shadow-xl shadow-[#171B18]/10 text-left z-40 pointer-events-none">
-                      <div className="flex items-center justify-between text-[11px] font-mono-tech text-[#FF4D0A] uppercase tracking-wider mb-1">
+                      className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64 p-3 bg-[#FFFDF8] rounded-xl border border-[#FC7A21]/40 shadow-xl shadow-[#171B18]/10 text-left z-40 pointer-events-none">
+                      <div className="flex items-center justify-between text-[11px] font-mono-tech text-[#FC7A21] uppercase tracking-wider mb-1">
                         <span>{hotspot.category}</span>
                         <span className="text-[#52514B]">{hotspot.floor}</span>
                       </div>
                       <p className="text-xs text-[#52514B] line-clamp-2 leading-relaxed mb-2">
                         {hotspot.description}
                       </p>
-                      <div className="flex items-center justify-between pt-1.5 border-t border-[#E7DED0] text-[10px] text-[#171B18] font-semibold">
+                      <div className="flex items-center justify-between pt-1.5 border-t border-[#E7DED0] text-[10px] text-[#044FB7] font-semibold">
                         <span>Click to view technical specs</span>
-                        <ChevronRight className="w-3 h-3 text-[#FF4D0A]" />
+                        <ChevronRight className="w-3 h-3 text-[#FC7A21]" />
                       </div>
                     </motion.div>
                   )}
@@ -573,9 +564,8 @@ export const HeroBuilding3D: React.FC<HeroBuilding3DProps> = ({
         })}
       </div>
 
-      {/* Interactive Helper Banner */}
       <div className="absolute bottom-4 right-4 z-20 hidden sm:flex items-center gap-2 bg-[#FFFDF8]/90 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#E7DED0] text-[11px] text-[#52514B]">
-        <Info className="w-3.5 h-3.5 text-[#FF4D0A]" />
+        <Info className="w-3.5 h-3.5 text-[#0489F8]" />
         <span>Click callouts to inspect engineering specs & telemetry</span>
       </div>
     </div>

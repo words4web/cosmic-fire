@@ -10,7 +10,7 @@ interface InfoItemProps {
 export function InfoItem({ icon: Icon, label, children }: InfoItemProps) {
   return (
     <div className="flex items-start gap-3.5">
-      <div className="w-9 h-9 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] flex items-center justify-center text-[#FF4D0A] shrink-0">
+      <div className="w-9 h-9 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] flex items-center justify-center text-[#FC7A21] shrink-0">
         <Icon className="w-4 h-4" />
       </div>
       <div>

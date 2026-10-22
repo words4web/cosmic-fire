@@ -50,13 +50,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             ? "bg-surface-card/95 backdrop-blur-md shadow-md border-b border-surface-border/80"
             : "bg-surface-card border-b border-surface-border/60"
         }`}>
-        <div className="w-full bg-[#171B18] text-white/90 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-6 md:px-10 lg:px-14 xl:px-20 border-b border-white/10">
+        <div className="w-full bg-[#044FB7] text-white/95 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-6 md:px-10 lg:px-14 xl:px-20 border-b border-white/10">
           <div className="w-full flex items-center justify-between gap-2">
             <div className="flex items-center gap-3 sm:gap-6 min-w-0">
               <a
                 href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-                className="flex items-center gap-1.5 sm:gap-2 hover:text-brand-primary transition-colors font-medium truncate">
-                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand-primary shrink-0" />
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-[#FE8A2A] transition-colors font-medium truncate">
+                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0489F8] shrink-0" />
                 <span className="truncate">
                   <span className="hidden sm:inline">Call Us: </span>
                   <strong className="font-bold text-white text-[11px] sm:text-xs">
@@ -69,20 +69,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
               <a
                 href={`mailto:${COMPANY_CONTACT.email}`}
-                className="hidden lg:flex items-center gap-1.5 sm:gap-2 hover:text-brand-primary transition-colors truncate">
-                <Mail className="w-3.5 h-3.5 text-brand-primary shrink-0" />
+                className="hidden lg:flex items-center gap-1.5 sm:gap-2 hover:text-[#FE8A2A] transition-colors truncate">
+                <Mail className="w-3.5 h-3.5 text-[#0489F8] shrink-0" />
                 <span className="truncate">{COMPANY_CONTACT.email}</span>
               </a>
             </div>
 
-            <div className="flex items-center gap-2.5 sm:gap-5 text-[10px] sm:text-[11px] text-white/80 shrink-0">
+            <div className="flex items-center gap-2.5 sm:gap-5 text-[10px] sm:text-[11px] text-white/90 shrink-0">
               <span className="flex items-center gap-1 sm:gap-1.5">
-                <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand-primary shrink-0" />
+                <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0489F8] shrink-0" />
                 <span>London &amp; Kent</span>
               </span>
               <span className="h-3 w-px bg-white/20" />
               <span className="flex items-center gap-1 sm:gap-1.5">
-                <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand-primary shrink-0" />
+                <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FE8A2A] shrink-0" />
                 <span>24/7 Support</span>
               </span>
             </div>
@@ -100,8 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               className="h-full w-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-text-primary leading-none flex items-center gap-1.5">
-                COSMIC <span className="text-brand-primary">FIRE</span>
+              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-[#044FB7] leading-none flex items-center gap-1.5">
+                COSMIC <span className="text-[#FC7A21]">FIRE</span>
               </span>
               <span className="text-[10px] sm:text-[11px] font-semibold text-text-secondary tracking-wider uppercase mt-1">
                 Solution • London &amp; Kent

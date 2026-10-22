@@ -14,10 +14,10 @@ export default function NotFoundPage() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.4 }}
           className="relative inline-flex items-center justify-center mb-6 sm:mb-8">
-          <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl sm:rounded-3xl bg-[#FF4D0A]/10 border border-[#FF4D0A]/20 flex items-center justify-center text-[#FF4D0A] shadow-xl shadow-[#FF4D0A]/5">
-            <Flame className="w-10 h-10 sm:w-14 sm:h-14 animate-pulse" />
+          <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl sm:rounded-3xl bg-[#044FB7]/10 border border-[#044FB7]/20 flex items-center justify-center text-[#044FB7] shadow-xl shadow-[#044FB7]/5">
+            <Flame className="w-10 h-10 sm:w-14 sm:h-14 animate-pulse text-[#FC7A21]" />
           </div>
-          <span className="absolute -bottom-2 -right-2 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-mono font-bold bg-[#171B18] text-[#F8F5ED] rounded-full border border-[#D9D3C7] shadow-sm">
+          <span className="absolute -bottom-2 -right-2 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-mono font-bold bg-[#044FB7] text-[#FFFDF8] rounded-full border border-[#0489F8]/40 shadow-sm">
             404
           </span>
         </motion.div>
@@ -27,7 +27,7 @@ export default function NotFoundPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}>
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#EAE4D5] border border-[#D9D3C7] text-[10px] sm:text-xs font-mono text-[#5A6258] mb-3 sm:mb-4">
-            <ShieldAlert className="w-3.5 h-3.5 text-[#FF4D0A] shrink-0" />
+            <ShieldAlert className="w-3.5 h-3.5 text-[#FC7A21] shrink-0" />
             <span>SIGNAL LOST / PAGE NOT FOUND</span>
           </div>
 
@@ -48,14 +48,14 @@ export default function NotFoundPage() {
           className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto">
           <button
             onClick={() => navigate("/")}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#FF4D0A] hover:bg-[#E03E00] text-[#FFFDF8] font-medium text-sm sm:text-base shadow-lg shadow-[#FF4D0A]/20 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#FC7A21] hover:bg-[#FE8A2A] text-[#FFFDF8] font-medium text-sm sm:text-base shadow-lg shadow-[#FC7A21]/20 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
             <Home className="w-4 h-4 shrink-0" />
             <span>Return to Homepage</span>
           </button>
 
           <button
             onClick={() => navigate(-1)}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#EAE4D5] hover:bg-[#D9D3C7] text-[#171B18] font-medium text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#044FB7]/10 hover:bg-[#044FB7]/20 text-[#044FB7] font-medium text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
             <ArrowLeft className="w-4 h-4 shrink-0" />
             <span>Go Back</span>
           </button>
@@ -67,7 +67,7 @@ export default function NotFoundPage() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-[#D9D3C7]/60">
           <div className="flex items-center justify-center gap-1.5 text-xs font-mono text-[#5A6258] uppercase tracking-wider mb-3 sm:mb-4">
-            <Compass className="w-3.5 h-3.5 text-[#FF4D0A]" />
+            <Compass className="w-3.5 h-3.5 text-[#0489F8]" />
             <span>Quick Navigation</span>
           </div>
 

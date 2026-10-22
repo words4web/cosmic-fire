@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer className="w-full bg-[#FFFDF8] text-[#171B18] border-t border-[#E7DED0] pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-12 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#FF4D0A_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.03]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#044FB7_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.04]" />
 
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-[#E7DED0]">
@@ -35,10 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105 shrink-0"
               />
               <div className="flex flex-col">
-                <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-[#171B18] leading-none">
-                  COSMIC <span className="text-[#FF4D0A]">FIRE</span>
+                <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-[#044FB7] leading-none">
+                  COSMIC <span className="text-[#FC7A21]">FIRE</span>
                 </span>
-                <span className="text-[10px] sm:text-xs font-mono-tech tracking-widest text-[#FF4D0A] font-bold mt-1.5 uppercase">
+                <span className="text-[10px] sm:text-xs font-mono-tech tracking-widest text-[#0489F8] font-bold mt-1.5 uppercase">
                   {FOOTER_DATA.tagline}
                 </span>
               </div>
@@ -50,8 +50,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="space-y-3 sm:space-y-4 lg:col-span-3">
-            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D0A]" />
+            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0489F8]" />
               Website Index
             </h4>
             <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm font-semibold">
@@ -59,8 +59,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={link.pageId}>
                   <button
                     onClick={() => onNavigate(link.pageId)}
-                    className="text-text-secondary hover:text-brand-primary transition-all duration-200 cursor-pointer text-left flex items-center gap-2 group hover:translate-x-1 py-0.5">
-                    <span className="w-1 h-1 rounded-full bg-surface-border group-hover:bg-[#FF4D0A] transition-colors shrink-0" />
+                    className="text-text-secondary hover:text-[#044FB7] transition-all duration-200 cursor-pointer text-left flex items-center gap-2 group hover:translate-x-1 py-0.5">
+                    <span className="w-1 h-1 rounded-full bg-surface-border group-hover:bg-[#044FB7] transition-colors shrink-0" />
                     {link.label}
                   </button>
                 </li>
@@ -69,14 +69,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="space-y-3 sm:space-y-4 lg:col-span-2">
-            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D0A]" />
+            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FC7A21]" />
               Core Systems
             </h4>
             <ul className="space-y-2 text-xs text-[#52514B]">
               {FOOTER_DATA.coreSystems.map((system) => (
                 <li key={system} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FF4D0A] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FC7A21] shrink-0 mt-0.5" />
                   <span className="leading-snug">{system}</span>
                 </li>
               ))}
@@ -84,41 +84,41 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="sm:col-span-2 lg:col-span-3 space-y-3 sm:space-y-4">
-            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D0A]" />
+            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#044FB7]" />
               Engineering Office
             </h4>
             <div className="space-y-2.5 sm:space-y-3 text-xs text-[#52514B]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#FF4D0A] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#0489F8] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
                   {COMPANY_CONTACT.address}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#FF4D0A] shrink-0" />
+                <Phone className="w-4 h-4 text-[#0489F8] shrink-0" />
                 <a
                   href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-                  className="hover:text-brand-primary transition-colors font-medium">
+                  className="hover:text-[#044FB7] transition-colors font-medium">
                   {COMPANY_CONTACT.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#FF4D0A] shrink-0" />
+                <Mail className="w-4 h-4 text-[#0489F8] shrink-0" />
                 <a
                   href={`mailto:${COMPANY_CONTACT.email}`}
-                  className="hover:text-brand-primary transition-colors font-medium break-all">
+                  className="hover:text-[#044FB7] transition-colors font-medium break-all">
                   {COMPANY_CONTACT.email}
                 </a>
               </div>
             </div>
 
-            <div className="p-3 sm:p-3.5 rounded-xl bg-[#F6EFE2]/70 border border-[#E7DED0] space-y-1 mt-3">
+            <div className="p-3 sm:p-3.5 rounded-xl bg-[#044FB7]/5 border border-[#044FB7]/20 space-y-1 mt-3">
               <div className="flex items-center gap-2 text-[10px] font-mono-tech uppercase text-[#52514B]">
-                <Activity className="w-3.5 h-3.5 text-[#FF4D0A] animate-pulse" />
+                <Activity className="w-3.5 h-3.5 text-[#0489F8] animate-pulse" />
                 <span>24/7 Monitoring Center</span>
               </div>
-              <span className="text-xs font-bold text-[#FF4D0A] font-mono-tech block">
+              <span className="text-xs font-bold text-[#044FB7] font-mono-tech block">
                 {COMPANY_CONTACT.monitoringCenterStatus}
               </span>
             </div>
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href="https://words4web.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-primary hover:text-[#FF4D0A] underline underline-offset-2 transition-colors font-semibold">
+                className="text-text-primary hover:text-[#FC7A21] underline underline-offset-2 transition-colors font-semibold">
                 Words4Web
               </a>
             </span>
@@ -146,10 +146,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F6EFE2] border border-[#E7DED0] text-[#171B18] hover:text-[#FF4D0A] hover:border-[#FF4D0A]/30 transition-all font-bold cursor-pointer shadow-sm touch-manipulation"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F6EFE2] border border-[#E7DED0] text-[#171B18] hover:text-[#044FB7] hover:border-[#044FB7]/30 transition-all font-bold cursor-pointer shadow-sm touch-manipulation"
             aria-label="Scroll back to top">
             <span>TOP</span>
-            <ArrowUp className="w-3.5 h-3.5 text-[#FF4D0A]" />
+            <ArrowUp className="w-3.5 h-3.5 text-[#044FB7]" />
           </button>
         </div>
       </div>
