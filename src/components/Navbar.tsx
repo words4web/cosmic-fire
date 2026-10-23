@@ -111,7 +111,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
           <nav className="hidden min-[1137px]:flex items-center gap-1.5 bg-[#F2EBDD]/70 px-3 py-1.5 rounded-full border border-surface-border/80">
             {NAV_ITEMS.map((item) => {
-              const isActive = currentPage === item.id;
+              const isActive =
+                currentPage === item.id ||
+                (item.id === "solutions" && currentPage === "services");
               return (
                 <button
                   key={item.id}
@@ -207,7 +209,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-3">
                 {NAV_ITEMS.map((item) => {
-                  const isActive = currentPage === item.id;
+                  const isActive =
+                    currentPage === item.id ||
+                    (item.id === "solutions" && currentPage === "services");
                   return (
                     <button
                       key={item.id}

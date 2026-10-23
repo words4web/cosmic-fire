@@ -3,9 +3,7 @@ import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
 import { ProtectionLayers } from "@/src/components/ProtectionLayers";
-import { ServicesShowcase } from "@/src/components/ServicesShowcase";
 import { CinematicBanner } from "@/src/components/CinematicBanner";
-import { IndustriesSection } from "@/src/components/IndustriesSection";
 import { TechnologyFlow } from "@/src/components/TechnologyFlow";
 import { AboutSection } from "@/src/components/AboutSection";
 import { TestimonialsSection } from "@/src/components/TestimonialsSection";
@@ -29,9 +27,7 @@ export default function IndexPage() {
       />
       <WhyCosmicFire />
       <ProtectionLayers />
-      <ServicesShowcase onNavigate={handleNavigate} />
       <CinematicBanner onNavigate={handleNavigate} />
-      <IndustriesSection onNavigate={handleNavigate} />
       <TechnologyFlow />
       <AboutSection onNavigate={handleNavigate} />
       <TestimonialsSection />

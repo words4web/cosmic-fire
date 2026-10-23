@@ -9,7 +9,6 @@ export interface IndustrySectorItem {
     | "healthcare";
   title: string;
   description: string;
-  keyAreas: string[];
   ctaText: string;
 }
 
@@ -24,4 +23,15 @@ export interface IndustriesContent {
   premisesHeadline: string;
   premisesDescription: string;
   sectors: IndustrySectorItem[];
+}
+
+export interface IndustryImageMeta {
+  url: string;
+  alt: string;
+}
+
+export interface SectorCardProps {
+  sector: IndustrySectorItem;
+  image: IndustryImageMeta;
+  onCtaClick: () => void;
 }

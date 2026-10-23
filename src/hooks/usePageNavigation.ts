@@ -18,17 +18,9 @@ export const usePageNavigation = () => {
         return;
       }
 
-      if (page === "solutions") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("services-section");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#services-section";
-          }
-        } else {
-          navigate("/#services-section");
-        }
+      if (page === "solutions" || page === "services") {
+        navigate("/services");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
@@ -47,16 +39,8 @@ export const usePageNavigation = () => {
       }
 
       if (page === "industries") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("industries-section");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#industries-section";
-          }
-        } else {
-          navigate("/#industries-section");
-        }
+        navigate("/industries");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 

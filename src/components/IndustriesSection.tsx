@@ -1,7 +1,8 @@
-import { ArrowRight, ShieldCheck, CheckCircle2, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { INDUSTRIES_DATA, INDUSTRY_IMAGES } from "../data/industries";
 import { COMPANY_CONTACT } from "../data/company";
 import { PageId } from "../types";
+import { SectorCard } from "./SectorCard";
 
 export const IndustriesSection = ({
   onNavigate,
@@ -75,55 +76,12 @@ export const IndustriesSection = ({
             };
 
             return (
-              <div
+              <SectorCard
                 key={sector.id}
-                className="group flex flex-col justify-between bg-surface-bg rounded-2xl border border-surface-border overflow-hidden hover:border-brand-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-black/5">
-                <div>
-                  <div className="relative aspect-[16/10] overflow-hidden bg-surface-muted">
-                    <img
-                      src={image.url}
-                      alt={image.alt}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  </div>
-
-                  <div className="p-6 sm:p-7 text-center">
-                    <h4 className="font-display font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors leading-snug">
-                      {sector.title}
-                    </h4>
-
-                    <div className="w-12 h-0.5 bg-brand-primary mx-auto my-3.5 transition-all duration-300 group-hover:w-20" />
-
-                    <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mb-6">
-                      {sector.description}
-                    </p>
-
-                    <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
-                      {sector.keyAreas.map((area, i) => (
-                        <div
-                          key={i}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs font-semibold text-text-primary">
-                          <ShieldCheck className="w-3.5 h-3.5 text-brand-primary shrink-0" />
-                          <span>{area}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-7 pt-0 mt-auto">
-                  <div className="pt-4 border-t border-surface-border">
-                    <button
-                      onClick={handleCtaClick}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-sm shadow-brand-primary/20 cursor-pointer group/btn">
-                      <span>{sector.ctaText}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                sector={sector}
+                image={image}
+                onCtaClick={handleCtaClick}
+              />
             );
           })}
         </div>
