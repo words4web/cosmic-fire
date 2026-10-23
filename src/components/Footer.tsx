@@ -20,7 +20,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-[#E7DED0]">
           <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5">
-            <div className="flex items-center gap-3 sm:gap-4 group">
+            <button
+              onClick={() => {
+                onNavigate("home");
+                scrollToTop();
+              }}
+              className="flex items-center gap-3 sm:gap-4 group cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#044FB7] rounded-xl p-1 -m-1 transition-transform"
+              aria-label="Cosmic Fire - Back to top">
               <img
                 src="/logo.png"
                 alt="Cosmic Fire Logo"
@@ -34,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   {FOOTER_DATA.tagline}
                 </span>
               </div>
-            </div>
+            </button>
 
             <p className="text-xs sm:text-sm text-[#52514B] leading-relaxed max-w-md">
               {FOOTER_DATA.description}
