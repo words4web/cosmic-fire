@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </div>
         </div>
 
-        <div className="w-full h-18 sm:h-20 md:h-22 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 flex items-center justify-between">
+        <div className="w-full h-18 sm:h-20 md:h-22 px-2 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("home")}
             className="flex items-center gap-3 sm:gap-4 group text-left cursor-pointer h-full py-2"
