@@ -120,23 +120,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           </div>
         </div>
       </div>
-
-      <div className="w-full bg-[#F2EBDD]/60 py-3.5 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 border-b border-[#E7DED0]">
-        <div className="flex items-center gap-4 overflow-x-auto scrollbar-none py-1">
-          <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#044FB7] uppercase shrink-0">
-            CERTIFIED CAPABILITIES //
-          </span>
-          <div className="flex items-center gap-2 shrink-0">
-            {HERO_DATA.ticker.map((item, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1 rounded-full bg-[#FFFDF8] border border-[#E7DED0] text-[11px] font-medium text-[#52514B] shadow-xs shrink-0">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

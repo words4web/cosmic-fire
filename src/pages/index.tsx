@@ -2,7 +2,6 @@ import { useState } from "react";
 import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
-import { ProtectionLayers } from "@/src/components/ProtectionLayers";
 import { CinematicBanner } from "@/src/components/CinematicBanner";
 import { TechnologyFlow } from "@/src/components/TechnologyFlow";
 import { AboutSection } from "@/src/components/AboutSection";
@@ -26,7 +25,6 @@ export default function IndexPage() {
         onNavigate={handleNavigate}
       />
       <WhyCosmicFire />
-      <ProtectionLayers />
       <CinematicBanner onNavigate={handleNavigate} />
       <TechnologyFlow />
       <AboutSection onNavigate={handleNavigate} />

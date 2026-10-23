@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Shield,
-  ArrowUp,
-  Mail,
-  Phone,
-  MapPin,
-  Activity,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin, Activity } from "lucide-react";
 import { PageId } from "../types";
 import { FOOTER_DATA, FOOTER_LINKS } from "../data/footer";
 import { COMPANY_CONTACT } from "../data/company";
@@ -27,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-[#E7DED0]">
-          <div className="sm:col-span-2 lg:col-span-4 space-y-4 sm:space-y-5">
+          <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5">
             <div className="flex items-center gap-3 sm:gap-4 group">
               <img
                 src="/logo.png"
@@ -68,22 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
 
-          <div className="space-y-3 sm:space-y-4 lg:col-span-2">
-            <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FC7A21]" />
-              Core Systems
-            </h4>
-            <ul className="space-y-2 text-xs text-[#52514B]">
-              {FOOTER_DATA.coreSystems.map((system) => (
-                <li key={system} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#FC7A21] shrink-0 mt-0.5" />
-                  <span className="leading-snug">{system}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="sm:col-span-2 lg:col-span-3 space-y-3 sm:space-y-4">
+          <div className="sm:col-span-2 lg:col-span-4 space-y-3 sm:space-y-4">
             <h4 className="text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold pb-1 border-b border-[#E7DED0]/60 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#044FB7]" />
               Engineering Office

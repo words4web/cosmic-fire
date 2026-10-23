@@ -25,16 +25,8 @@ export const usePageNavigation = () => {
       }
 
       if (page === "protection") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("protection-layers");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#protection-layers";
-          }
-        } else {
-          navigate("/#protection-layers");
-        }
+        navigate("/protection");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
