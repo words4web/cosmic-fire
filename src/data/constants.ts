@@ -125,7 +125,6 @@ export const CONSULTATION_SERVICES = [
 
 export const NAV_ITEMS: { id: PageId; label: string }[] = [
   { id: "home", label: "Home" },
-  { id: "protection", label: "Protection" },
   { id: "solutions", label: "Solutions" },
   { id: "industries", label: "Industries" },
   { id: "technology", label: "Technology" },

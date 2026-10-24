@@ -18,10 +18,6 @@ export const FOOTER_LINKS: FooterLink[] = [
     pageId: "about",
   },
   {
-    label: "Protection Layers",
-    pageId: "protection",
-  },
-  {
     label: "Frequently Asked Questions (FAQ)",
     pageId: "faq",
   },

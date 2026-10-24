@@ -89,24 +89,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </div>
         </div>
 
-        <div className="w-full h-18 sm:h-20 md:h-22 px-2 flex items-center justify-between">
+        <div className="w-full h-20 sm:h-24 md:h-26 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("home")}
-            className="flex items-center gap-3 sm:gap-4 group text-left cursor-pointer h-full py-2"
+            className="flex items-center group text-left cursor-pointer h-full py-1.5"
             aria-label="Cosmic Fire Homepage">
             <img
               src="/logo.png"
               alt="Cosmic Fire Logo"
-              className="h-full w-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain transition-transform group-hover:scale-105"
+              className="h-full w-auto max-h-16 sm:max-h-20 md:max-h-22 object-contain transition-transform group-hover:scale-105"
             />
-            <div className="flex flex-col">
-              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-[#044FB7] leading-none flex items-center gap-1.5">
-                COSMIC <span className="text-[#FC7A21]">FIRE</span>
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-text-secondary tracking-wider uppercase mt-1">
-                Solution • London &amp; Kent
-              </span>
-            </div>
           </button>
 
           <nav className="hidden min-[1137px]:flex items-center gap-1.5 bg-[#F2EBDD]/70 px-3 py-1.5 rounded-full border border-surface-border/80">
