@@ -9,9 +9,21 @@ import {
   Layers,
 } from "lucide-react";
 import { TECHNOLOGY_FLOW_DATA } from "../data/technology";
-import { SectionBadge, FeaturePoint, RotatingBorderCard } from "./common";
+import { PageId } from "../types";
+import {
+  SectionBadge,
+  FeaturePoint,
+  RotatingBorderCard,
+  ConsultationCtaBanner,
+} from "./common";
 
-export const TechnologyFlow: React.FC = () => {
+interface TechnologyFlowProps {
+  onNavigate?: (page: PageId) => void;
+}
+
+export const TechnologyFlow: React.FC<TechnologyFlowProps> = ({
+  onNavigate,
+}) => {
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
 
   const activeStep = TECHNOLOGY_FLOW_DATA.steps[activeStepIndex];
@@ -201,6 +213,13 @@ export const TechnologyFlow: React.FC = () => {
             </RotatingBorderCard>
           </motion.div>
         </AnimatePresence>
+
+        {onNavigate && (
+          <ConsultationCtaBanner
+            onNavigate={onNavigate}
+            className="mt-12 sm:mt-16"
+          />
+        )}
       </div>
     </section>
   );

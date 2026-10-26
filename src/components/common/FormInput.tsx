@@ -16,7 +16,7 @@ export function FormInput({
 }: FormInputProps) {
   return (
     <div>
-      <label className="block text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-semibold mb-1.5">
+      <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5">
         {label}
       </label>
       <input

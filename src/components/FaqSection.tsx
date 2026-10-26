@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { FAQ_DATA } from "../data/faq";
-import { FaqItem } from "../types";
+import { FaqItem, PageId } from "../types";
+import { ConsultationCtaBanner } from "./common";
 
-export const FaqSection: React.FC = () => {
+interface FaqSectionProps {
+  onNavigate?: (page: PageId) => void;
+}
+
+export const FaqSection: React.FC<FaqSectionProps> = ({ onNavigate }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleItem = (idx: number) => {
@@ -13,9 +18,9 @@ export const FaqSection: React.FC = () => {
   return (
     <section
       id="faq-section"
-      className="py-14 sm:py-20 md:py-28 bg-surface-bg relative border-t border-surface-border">
+      className="py-10 sm:py-16 md:py-24 bg-surface-bg relative border-t border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-[11px] font-mono-tech uppercase tracking-wider text-brand-primary font-bold mb-3.5">
             <HelpCircle className="w-3.5 h-3.5 text-brand-primary shrink-0" />
             <span>Frequently Asked Questions</span>
@@ -32,16 +37,16 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className={`rounded-2xl border transition-all overflow-hidden ${
+                className={`rounded-xl sm:rounded-2xl border transition-all overflow-hidden ${
                   isOpen
                     ? "bg-surface-card border-brand-primary shadow-sm"
                     : "bg-surface-card/70 hover:bg-surface-card border-surface-border"
                 }`}>
                 <button
                   onClick={() => toggleItem(idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 cursor-pointer"
+                  className="w-full text-left p-4 sm:p-6 flex items-start justify-between gap-3 sm:gap-4 cursor-pointer"
                   aria-expanded={isOpen}>
-                  <h3 className="font-display font-bold text-base sm:text-lg text-text-primary leading-snug">
+                  <h3 className="font-display font-bold text-sm sm:text-base md:text-lg text-text-primary leading-snug">
                     {item.question}
                   </h3>
 
@@ -56,7 +61,7 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-text-secondary leading-relaxed border-t border-surface-border/60">
+                  <div className="px-4 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-text-secondary leading-relaxed border-t border-surface-border/60">
                     <p className="mt-2 leading-relaxed">{item.answer}</p>
                   </div>
                 )}
@@ -64,6 +69,16 @@ export const FaqSection: React.FC = () => {
             );
           })}
         </div>
+
+        {onNavigate && (
+          <ConsultationCtaBanner
+            title="Have a Specific Question About Your Building?"
+            description="Every building's layout, occupancy, and risk level is unique. Our compliance specialists are available to answer your technical questions."
+            primaryButtonText="Ask Our Experts"
+            onNavigate={onNavigate}
+            className="mt-12 sm:mt-16 max-w-4xl mx-auto"
+          />
+        )}
       </div>
     </section>
   );

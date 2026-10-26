@@ -24,13 +24,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 }) => {
   const handleConsultClick = () => {
     if (onNavigate) {
-      onNavigate("home");
-      setTimeout(() => {
-        const contactElem = document.getElementById("contact-section");
-        if (contactElem) {
-          contactElem.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+      onNavigate("contact");
     } else {
       const contactElem = document.getElementById("contact-section");
       if (contactElem) {

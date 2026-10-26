@@ -31,30 +31,14 @@ export const usePageNavigation = () => {
       }
 
       if (page === "technology") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("technology-section");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#technology-section";
-          }
-        } else {
-          navigate("/#technology-section");
-        }
+        navigate("/technology");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
       if (page === "about") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("about-section");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#about-section";
-          }
-        } else {
-          navigate("/#about-section");
-        }
+        navigate("/about");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
@@ -73,16 +57,8 @@ export const usePageNavigation = () => {
       }
 
       if (page === "faq") {
-        if (location.pathname === "/") {
-          const el = document.getElementById("faq-section");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.hash = "#faq-section";
-          }
-        } else {
-          navigate("/#faq-section");
-        }
+        navigate("/faq");
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 

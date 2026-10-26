@@ -41,7 +41,7 @@ export const ConsultationForm: React.FC = () => {
   return (
     <div className="bg-[#FFFDF8] rounded-2xl sm:rounded-3xl border border-[#E7DED0] p-5 sm:p-8 md:p-10 shadow-xl shadow-[#171B18]/5">
       <div className="mb-6 sm:mb-8">
-        <span className="text-[11px] sm:text-xs font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold">
+        <span className="text-[11px] sm:text-xs uppercase tracking-wider text-[#044FB7] font-extrabold">
           PROJECT INQUIRY FORM
         </span>
         <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171B18] mt-1">
@@ -70,7 +70,7 @@ export const ConsultationForm: React.FC = () => {
             <em>{submittedData.serviceRequired}</em> has been securely submitted
             to our engineering review queue.
           </p>
-          <div className="p-3 rounded-lg bg-[#FFFDF8] border border-[#E7DED0] text-xs font-mono-tech text-[#52514B] inline-block mb-6">
+          <div className="p-3 rounded-lg bg-[#FFFDF8] border border-[#E7DED0] text-xs text-[#52514B] inline-block mb-6">
             A designated Senior Fire Protection Engineer will respond within 1
             business day.
           </div>
@@ -78,7 +78,7 @@ export const ConsultationForm: React.FC = () => {
             <button
               type="button"
               onClick={handleReset}
-              className="w-full sm:w-auto px-5 py-3 rounded-full bg-[#044FB7] text-white text-xs font-bold font-mono-tech uppercase tracking-wider hover:bg-[#0489F8] transition-colors cursor-pointer">
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#044FB7] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#0489F8] transition-colors cursor-pointer">
               Submit Another Project Inquiry
             </button>
           </div>
@@ -131,7 +131,7 @@ export const ConsultationForm: React.FC = () => {
             />
 
             <div>
-              <label className="block text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-semibold mb-1">
+              <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5">
                 Service Discipline Required *
               </label>
               <select
@@ -152,7 +152,7 @@ export const ConsultationForm: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-mono-tech uppercase tracking-wider text-[#171B18] font-semibold mb-1">
+            <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5">
               Project Details / Architectural Scope *
             </label>
             <textarea
