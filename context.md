@@ -29,6 +29,7 @@ The platform follows a grounded, high-trust British commercial contractor aesthe
 - **Forms & Validation**: React Hook Form (`react-hook-form`) with Zod v4 resolver (`zod`, `@hookform/resolvers`)
 - **Animation & Motion**: Motion / Framer Motion (`motion`)
 - **3D & Vector Graphics**: Three.js (`three`, `@types/three`) and modular SVG canvases
+- **Media Optimization**: WebP (85% compression quality) and H.264 MP4 with `+faststart` (web streaming without audio overhead)
 - **Icons**: Lucide React (`lucide-react`)
 - **Package Manager**: PNPM
 
@@ -45,7 +46,43 @@ cosmic-fire/
 ├── pnpm-lock.yaml               # Deterministic dependency lockfile
 ├── tsconfig.json                # Strict TypeScript configuration
 ├── vite.config.ts               # Vite configuration (plugins, aliases, bundle code-splitting)
-├── public/                      # Static assets (logo.png, favicons)
+├── public/                      # Static web assets
+│   ├── logo.png                 # Brand logo
+│   ├── videos/                  # Optimized web videos & posters
+│   │   ├── hero-firefighters.mp4         # 5.1MB compressed H.264 hero background loop
+│   │   ├── hero-firefighters-poster.jpg  # Hero video poster fallback frame
+│   │   ├── why-choose-us.mp4             # 3.0MB compressed H.264 engineering inspection loop
+│   │   └── why-choose-us-poster.jpg      # Why Choose Us poster fallback frame
+│   └── images/                  # Converted & optimized WebP assets
+│       ├── why-us/              # 6 WebP images for Why Cosmic Fire pillars (39KB–110KB)
+│       │   ├── 01-fire-safety-legislation.webp
+│       │   ├── 02-fire-protection-equipment.webp
+│       │   ├── 03-fire-hazard-protection.webp
+│       │   ├── 04-fire-protection-system.webp
+│       │   ├── 05-emergency-fire-protection.webp
+│       │   └── 06-fire-protection-maintenance.webp
+│       ├── industries/          # 6 WebP images for Commercial Sectors (27KB–212KB)
+│       │   ├── office-buildings.webp
+│       │   ├── retail-premises.webp
+│       │   ├── hospitality-venues.webp
+│       │   ├── industrial-premises.webp
+│       │   ├── educational-establishments.webp
+│       │   └── healthcare-environments.webp
+│       └── services/            # 14 WebP images for Core Services (32KB–77KB)
+│           ├── fire-detection-systems.webp
+│           ├── fire-alarm-systems.webp
+│           ├── fire-suppression.webp
+│           ├── fire-extinguisher-solutions.webp
+│           ├── fire-extinguisher-servicing.webp
+│           ├── fire-curtains.webp
+│           ├── intumescent-coatings.webp
+│           ├── fire-barriers.webp
+│           ├── fire-doors-screens.webp
+│           ├── emergency-signage.webp
+│           ├── dry-lining.webp
+│           ├── air-sealing.webp
+│           ├── penetration-sealing.webp
+│           └── class-0-fire-rated-painting.webp
 └── src/
     ├── main.tsx                 # Application entry point & React DOM root mount
     ├── App.tsx                  # Master layout controller & global overlay provider
@@ -74,12 +111,12 @@ cosmic-fire/
     │   ├── faq.ts               # Frequently asked questions list
     │   ├── footer.ts            # Site links, legal notices, and compliance credentials
     │   ├── hero.ts              # Hero banner copy, highlights, and solution ticker
-    │   ├── industries.ts        # Multi-site coverage copy, 6 sector cards, and photo assets
+    │   ├── industries.ts        # Multi-site coverage copy, 6 sector cards, and local WebP assets
     │   ├── layers.ts            # Active (5 items) and Passive (9 items) fire engineering systems
-    │   ├── services.ts          # 14 core fire protection services with photographic assets
+    │   ├── services.ts          # 14 core fire protection services with mapped local WebP assets
     │   ├── technology.ts        # Detect. Alert. Respond. 4-stage engineering lifecycle data
     │   ├── testimonials.ts      # Verbatim client reviews and ratings
-    │   └── whyUs.ts             # Why Choose Cosmic Fire & 6 premises protection pillars
+    │   └── whyUs.ts             # Why Choose Cosmic Fire & 6 premises protection pillars with WebP assets
     │
     ├── hooks/
     │   └── usePageNavigation.ts # Centralized page navigation, URL hash sync, and smooth scrolling
@@ -93,13 +130,14 @@ cosmic-fire/
     │
     └── components/              # Modular UI and interactive components
         ├── Navbar.tsx           # Dual-tier commercial navigation with phone callouts and mobile drawer
-        ├── HeroSection.tsx      # Clean architectural hero with verified highlights and action pills
-        ├── WhyCosmicFire.tsx    # Editorial 2-column split with 6 numbered statutory pillars
+        ├── HeroSection.tsx      # Clean architectural hero with optimized video loop & shiny white typography
+        ├── WhyCosmicFire.tsx    # Editorial 2-column split with 6 3D flip cards (WebP) & engineer inspection video
         ├── ProtectionLayers.tsx # Active (5 items) vs Passive (9 items) comparative system cards
-        ├── ServicesShowcase.tsx # 14 scannable service cards with photos, filters, and search
+        ├── ServicesShowcase.tsx # 14 scannable service cards with WebP photos, filters, and search
+        ├── SectorCard.tsx       # Softened dark gradient card with shiny white typography
         ├── CinematicBanner.tsx  # Architectural safety infrastructure banner
         ├── InteractiveBlueprint.tsx # Interactive 2D schematic floorplan with alarm simulator
-        ├── IndustriesSection.tsx# 6 commercial sector photographic cards with risk badges
+        ├── IndustriesSection.tsx# 6 commercial sector photographic cards with local WebP assets & risk badges
         ├── TechnologyFlow.tsx   # 4-Stage engineering pipeline: Understand, Detect, Alert, Respond
         ├── AboutSection.tsx     # 4 Core engineering pillars (Vision, Mission, Approach, Support)
         ├── TestimonialsSection.tsx # Verified commercial client review cards with 5-star ratings
@@ -121,12 +159,12 @@ cosmic-fire/
 | Section / Component      | File Location                                                                                                                     | Key Capabilities & Verbatim Content                                                                                                                                                                                                                                   |
 | :----------------------- | :-------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Dual-Tier Navbar**     | [`src/components/Navbar.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx)                           | Utility micro-bar (`+44 (0) 20 7946 0991`, `engineering@cosmicfire.co.uk`, London & Kent coverage), logo, desktop pill navigation (`Protection`, `Solutions`, `Industries`, `Technology`, `About`, `Contact`), mobile slide-out drawer, and `REQUEST A QUOTE` button. |
-| **Hero Section**         | [`src/components/HeroSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroSection.tsx)                 | Architectural photo backdrop, verified highlights ticker, emergency response badge, dual action pills (`Explore Our Solutions`, `Talk to an Expert`), and 3D simulation toggle.                                                                                       |
-| **Why Cosmic Fire**      | [`src/components/WhyCosmicFire.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/WhyCosmicFire.tsx)             | Editorial split layout: certified installation showcase paired with 6 numbered statutory pillars (`01`–`06`) detailing British Standards compliance.                                                                                                                  |
+| **Hero Section**         | [`src/components/HeroSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroSection.tsx)                 | Optimized streaming video background (`hero-firefighters.mp4`), pure white & shiny typography with ambient glow, badge pill, and dual action CTAs (`Explore Our Solutions`, `Talk to an Expert`).                                                                    |
+| **Why Cosmic Fire**      | [`src/components/WhyCosmicFire.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/WhyCosmicFire.tsx)             | Editorial split layout: certified engineer inspection video (`why-choose-us.mp4`) paired with 6 3D-flipping statutory pillar cards backed by optimized local WebP imagery (`/images/why-us/`).                                                                       |
 | **Protection Layers**    | [`src/components/ProtectionLayers.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ProtectionLayers.tsx)       | Comparative cards distinguishing 5 Active Systems (Sprinklers, Alarms, Extinguishers) from 9 Passive Systems (Fire Doors, Cavity Barriers, Intumescent Coatings).                                                                                                     |
-| **Services Showcase**    | [`src/components/ServicesShowcase.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)       | 14 core fire protection service cards with high-res photography, category filter tabs, keyword search bar, and benefit checkmarks.                                                                                                                                    |
+| **Services Showcase**    | [`src/components/ServicesShowcase.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)       | 14 core fire protection service cards with 14 bespoke local WebP photos (`/images/services/`), category filter tabs, keyword search bar, and benefit checkmarks.                                                                                                     |
 | **Cinematic Banner**     | [`src/components/CinematicBanner.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/CinematicBanner.tsx)         | Architectural cutaway banner highlighting bespoke system design, evacuation matrices, and key technical response metrics.                                                                                                                                             |
-| **Industries Section**   | [`src/components/IndustriesSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/IndustriesSection.tsx)     | 6 photographic commercial sector cards (Offices, Retail, Hospitality, Logistics, Healthcare, Education) with risk tags.                                                                                                                                               |
+| **Industries Section**   | [`src/components/IndustriesSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/IndustriesSection.tsx)     | 6 photographic commercial sector cards with local WebP assets (`/images/industries/`), softened backdrops, and radiant white typography via `SectorCard`.                                                                                                             |
 | **Technology Flow**      | [`src/components/TechnologyFlow.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/TechnologyFlow.tsx)           | 4-Stage engineering pipeline: Understand Risk, Detect Early, Alert Clearly, and Respond Safely with detailed stage checklists.                                                                                                                                        |
 | **About Section**        | [`src/components/AboutSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/AboutSection.tsx)               | 4 Core pillars (Vision, Mission, Approach, Support) and company history overview.                                                                                                                                                                                     |
 | **Testimonials Section** | [`src/components/TestimonialsSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/TestimonialsSection.tsx) | High-trust quote cards with 5-star badges and client sector identifications.                                                                                                                                                                                          |
