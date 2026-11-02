@@ -71,7 +71,7 @@ export const IndustriesSection = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {INDUSTRIES_DATA.sectors.map((sector) => {
             const image = INDUSTRY_IMAGES[sector.id] || {
-              url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+              url: "/images/industries/office-buildings.webp",
               alt: sector.title,
             };
 

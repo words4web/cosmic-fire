@@ -6,6 +6,7 @@ export interface ProtectionPillar {
   title: string;
   description: string;
   icon: LucideIcon;
+  image: string;
 }
 
 export interface WhyChooseUsData {
@@ -27,6 +28,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We can suggest the optimal fire protection while considering the relevant fire safety regulations and premises-specific requirements.",
       icon: Scale,
+      image: "/images/why-us/01-fire-safety-legislation.webp",
     },
     {
       number: "02",
@@ -34,6 +36,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We recommend the proper fire protection equipment that would suit your needs and premises. We will consider all the details and specifics.",
       icon: Flame,
+      image: "/images/why-us/02-fire-protection-equipment.webp",
     },
     {
       number: "03",
@@ -41,6 +44,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We will point out and eliminate all the fire hazards, thus ensuring that all the needed fire protection equipment will be available in case of an emergency.",
       icon: AlertTriangle,
+      image: "/images/why-us/03-fire-hazard-protection.webp",
     },
     {
       number: "04",
@@ -48,6 +52,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We provide all the fire protection equipment, such as extinguishers, fire alarms, and detectors, and can organize them into an intelligent fire protection system according to your premises’ needs.",
       icon: Cpu,
+      image: "/images/why-us/04-fire-protection-system.webp",
     },
     {
       number: "05",
@@ -55,6 +60,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We assist our clients in organizing and properly equipping their workplace or home with fire emergency response equipment.",
       icon: Siren,
+      image: "/images/why-us/05-emergency-fire-protection.webp",
     },
     {
       number: "06",
@@ -62,6 +68,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "Our company offers professional fire protection equipment maintenance services that help to ensure that your equipment is always in proper working condition.",
       icon: Wrench,
+      image: "/images/why-us/06-fire-protection-maintenance.webp",
     },
   ],
 };
