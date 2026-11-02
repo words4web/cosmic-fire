@@ -1,6 +1,5 @@
 export type PageId =
   | "home"
-  | "services"
   | "solutions"
   | "industries"
   | "technology"
