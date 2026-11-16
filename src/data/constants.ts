@@ -128,5 +128,4 @@ export const NAV_ITEMS: { id: PageId; label: string; hasDropdown?: boolean }[] =
   { id: "home", label: "Home" },
   { id: "services", label: "Services", hasDropdown: true },
   { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
 ];

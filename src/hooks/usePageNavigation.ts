@@ -38,14 +38,14 @@ export const usePageNavigation = () => {
 
       if (page === "contact") {
         if (location.pathname === "/") {
-          const el = document.getElementById("contact-section");
+          const el = document.getElementById("hero-query-form");
           if (el) {
             el.scrollIntoView({ behavior: "smooth" });
           } else {
-            window.location.hash = "#contact-section";
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }
         } else {
-          navigate("/#contact-section");
+          navigate("/#hero-query-form");
         }
         return;
       }

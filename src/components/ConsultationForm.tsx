@@ -39,18 +39,11 @@ export const ConsultationForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FFFDF8] rounded-2xl sm:rounded-3xl border border-[#E7DED0] p-5 sm:p-8 md:p-10 shadow-xl shadow-[#171B18]/5">
-      <div className="mb-6 sm:mb-8">
-        <span className="text-[11px] sm:text-xs uppercase tracking-wider text-[#044FB7] font-extrabold">
-          PROJECT INQUIRY FORM
-        </span>
-        <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171B18] mt-1">
-          Request a Fire Protection Consultation
+    <div className="w-full bg-[#FFFDF8] rounded-2xl sm:rounded-3xl border border-[#E7DED0] p-4 xs:p-5 sm:p-7 md:p-8 shadow-2xl font-sans">
+      <div className="mb-4 sm:mb-5">
+        <h3 className="font-display font-black text-xl sm:text-2xl text-[#171B18] tracking-tight leading-tight">
+          Request a Free Quote
         </h3>
-        <p className="text-xs sm:text-sm text-[#52514B] mt-1 leading-relaxed">
-          Please submit your facility specifications below for a formal
-          engineering response.
-        </p>
       </div>
 
       {submitSuccess && submittedData ? (
@@ -86,27 +79,29 @@ export const ConsultationForm: React.FC = () => {
       ) : (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4"
+          className="space-y-3 sm:space-y-4"
           noValidate>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Row 1: Name and Company */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             <FormInput
-              label="Full Name *"
+              label="Full Name"
               registration={register("fullName")}
               placeholder="e.g. Marcus Thorne"
               error={errors?.fullName}
             />
 
             <FormInput
-              label="Company / Organization *"
+              label="Company / Organization"
               registration={register("company")}
               placeholder="e.g. Apex Holdings Ltd."
               error={errors?.company}
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Row 2: Email and Phone */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             <FormInput
-              label="Business Email *"
+              label="Business Email"
               type="email"
               registration={register("email")}
               placeholder="e.g. m.thorne@apex.com"
@@ -114,7 +109,7 @@ export const ConsultationForm: React.FC = () => {
             />
 
             <FormInput
-              label="UK Phone Number *"
+              label="UK Phone Number"
               type="tel"
               registration={register("phone")}
               placeholder="e.g. 07123 456789 or +44 20 7946 0991"
@@ -122,66 +117,68 @@ export const ConsultationForm: React.FC = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Row 3: Location and Service Discipline */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             <FormInput
-              label="Facility Location / Postcode *"
+              label="Facility Location / Postcode"
               registration={register("location")}
               placeholder="e.g. London, EC2A 4NE"
               error={errors?.location}
             />
 
-            <div>
-              <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5">
-                Service Discipline Required *
+            <div className="flex flex-col">
+              <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5 font-sans">
+                Service Discipline Required
               </label>
               <select
                 {...register("serviceRequired")}
-                className="w-full px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-sm text-[#171B18] outline-none focus:border-[#FC7A21] transition-colors">
+                className="w-full px-3.5 py-2.5 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-xs sm:text-sm text-[#171B18] font-sans outline-none focus:border-[#FC7A21] transition-colors truncate">
                 {CONSULTATION_SERVICES.map((svc) => (
-                  <option key={svc} value={svc}>
+                  <option key={svc} value={svc} className="font-sans">
                     {svc}
                   </option>
                 ))}
               </select>
               {errors?.serviceRequired && (
-                <span className="text-[11px] text-rose-600 mt-1 block">
+                <span className="text-[11px] text-rose-600 mt-1 block font-sans">
                   {errors?.serviceRequired?.message}
                 </span>
               )}
             </div>
           </div>
 
+          {/* Row 4: Message */}
           <div>
-            <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5">
-              Project Details / Architectural Scope *
+            <label className="block text-xs font-semibold text-[#171B18] tracking-tight mb-1.5 font-sans">
+              Project Details / Architectural Scope
             </label>
             <textarea
-              rows={4}
+              rows={2}
               {...register("message")}
-              placeholder="Briefly describe your building footprint, current fire safety requirements, timeline, or UK statutory compliance mandates..."
-              className={`w-full px-3.5 sm:px-4 py-2.5 rounded-xl bg-[#F8F5ED] border text-sm text-[#171B18] outline-none transition-colors ${
+              placeholder="Briefly describe your building footprint, current fire safety requirements, or timeline..."
+              className={`w-full px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-[#F8F5ED] border text-xs sm:text-sm text-[#171B18] font-sans outline-none transition-colors ${
                 errors?.message
                   ? "border-rose-500 bg-rose-50/30"
                   : "border-[#E7DED0] focus:border-[#FC7A21]"
               }`}
             />
             {errors?.message && (
-              <span className="text-[11px] text-rose-600 mt-1 block">
+              <span className="text-[11px] text-rose-600 mt-1 block font-sans">
                 {errors?.message?.message}
               </span>
             )}
           </div>
 
-          <div className="pt-2">
+          <div className="pt-1 sm:pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 py-3.5 sm:py-4 rounded-xl bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-[#FC7A21]/30 transition-all active:scale-[0.99] disabled:opacity-50 cursor-pointer">
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-[#FC7A21]/30 transition-all active:scale-[0.99] disabled:opacity-50 cursor-pointer font-sans">
               {isSubmitting ? (
                 <span>Transmitting Inquiry...</span>
               ) : (
                 <>
-                  <span>Request a Consultation</span>
+                  <span>Request a Free Quote</span>
                   <Send className="w-4 h-4" />
                 </>
               )}
