@@ -112,20 +112,21 @@ export const HERO_HOTSPOTS: HotspotItem[] = [
 ];
 
 export const CONSULTATION_SERVICES = [
-  "Fire Risk Assessment",
-  "Fire Detection Systems",
-  "Fire Alarm & Voice EVAC",
-  "Clean Agent Fire Suppression",
-  "Sprinkler Systems & Water Deluge",
-  "Inspection & Maintenance Program",
-  "Emergency Lighting & Wayfinding",
-  "Fire Safety Consultation & CFD",
-  "Other / Custom Facility Architecture",
+  "Fire Safety Inspection & Audit",
+  "Fire Protection Installation",
+  "Fire Maintenance & Servicing",
+  "Fire Doors & Screens",
+  "Fire & Smoke Curtains",
+  "Cavity Fire Barriers",
+  "Penetration Sealing",
+  "Intumescent Steel Coatings",
+  "Extinguisher Supply & Servicing",
+  "Other Commercial Inquiry",
 ];
 
-export const NAV_ITEMS: { id: PageId; label: string }[] = [
+export const NAV_ITEMS: { id: PageId; label: string; hasDropdown?: boolean }[] = [
   { id: "home", label: "Home" },
-  { id: "services", label: "Services" },
+  { id: "services", label: "Services", hasDropdown: true },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];

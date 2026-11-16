@@ -2,60 +2,121 @@ import { ServicePanelItem } from "../types";
 
 export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   {
-    id: "fire-extinguisher-servicing",
-    title: "Fire Extinguisher Servicing",
+    id: "fire-safety-inspection",
+    title: "Fire Safety Inspection",
+    badge: "Survey & Audit",
     description:
-      "Fire extinguishers offer little reassurance if it later emerges that they were not properly maintained or were not fit for purpose. Our fire extinguisher servicing solutions give our clients added confidence that their fire protection equipment is fully maintained and compliant with current regulations. We offer a range of services from examination and equipment checks to full service and maintenance support, ensuring that firefighting equipment remains in full working order.",
-    ctaText: "Book a Service",
+      "Comprehensive site surveys, fire door inspections, and passive barrier audits delivering clear photographic defect schedules and statutory compliance sign-off.",
+    highlights: [
+      "Full photographic condition reports",
+      "Regulatory Reform (Fire Safety) compliance",
+      "Prioritized remedial action schedules",
+    ],
+    ctaText: "Request an Inspection",
   },
   {
-    id: "fire-curtains",
-    title: "Fire Curtains",
+    id: "fire-protection-installation",
+    title: "Fire Protection Installation",
+    badge: "Certified Fitting",
     description:
-      "Fire curtains can help contain fire and smoke by creating a temporary barrier across an opening. They can form part of a passive fire protection strategy where controlling the spread of fire between areas is required.",
-    ctaText: "Discuss Fire Curtains",
+      "Fully accredited supply and installation of timber & steel fire doors, automated fire curtains, cavity fire barriers, and penetration sealing.",
+    highlights: [
+      "BM TRADA / Q-Mark certified installers",
+      "New build installations & heritage retrofits",
+      "Full compliance certificate on completion",
+    ],
+    ctaText: "Get Installation Quote",
   },
   {
-    id: "intumescent-coatings",
-    title: "Intumescent Coatings",
+    id: "fire-maintenance-remedials",
+    title: "Fire Maintenance & Servicing",
+    badge: "Statutory Testing",
     description:
-      "Intumescent coatings can provide fire-resistant protection to suitable structural steel and other applications. The coating reacts to heat and expands to help protect the underlying material during a fire.",
-    ctaText: "Discuss Intumescent Coatings",
-  },
-  {
-    id: "fire-barriers",
-    title: "Fire Barriers",
-    description:
-      "Fire barriers can help prevent the spread of fire and smoke through concealed spaces and cavities within a building. They can form an important part of passive fire protection where fire spread needs to be restricted.",
-    ctaText: "Discuss Fire Barriers",
+      "Scheduled preventative maintenance contracts and rapid defect repairs ensuring all fire doors, seals, extinguishers, and barriers remain 100% operational.",
+    highlights: [
+      "Routine 6-month & annual service intervals",
+      "Statutory digital logbook maintenance",
+      "Emergency reactive repair dispatch",
+    ],
+    ctaText: "Book Maintenance",
   },
   {
     id: "fire-doors-screens",
     title: "Fire Doors & Screens",
+    badge: "Compartmentation",
     description:
-      "Fire doors and screens can help reduce the spread of fire and smoke between separate rooms, areas and corridors. They form an important part of passive fire protection and protected escape routes.",
+      "Certified FD30 and FD60 internal/external fire doors, acoustic seals, panic exit hardware, and glazed fire-rated protective screens.",
+    highlights: [
+      "FD30, FD60, and FD120 fire door sets",
+      "Drop seals, intumescent strips & closers",
+      "Glazed fire-rated vision panels & screens",
+    ],
     ctaText: "Discuss Fire Doors",
   },
   {
-    id: "dry-lining",
-    title: "Dry Lining",
+    id: "fire-curtains",
+    title: "Fire & Smoke Curtains",
+    badge: "Active Barrier",
     description:
-      "Dry lining provides a practical building solution that can support fire safety and other building requirements. The appropriate materials and systems can be selected according to the requirements of the premises.",
-    ctaText: "Discuss Dry Lining",
+      "Automated drop-down fire and smoke containment curtains designed for open-plan commercial atriums, elevator lobbies, and escape corridors.",
+    highlights: [
+      "BS EN 1634 & BS 8524 compliant curtains",
+      "Gravity fail-safe automatic deployment",
+      "Discreet ceiling recess housing",
+    ],
+    ctaText: "Discuss Fire Curtains",
   },
   {
-    id: "air-sealing",
-    title: "Air Sealing",
+    id: "fire-barriers",
+    title: "Cavity Fire Barriers",
+    badge: "Concealed Spaces",
     description:
-      "Air sealing can help reduce unwanted air leakage within a building. Where appropriate, it can support both building performance and fire protection requirements.",
-    ctaText: "Discuss Air Sealing",
+      "High-performance cavity barrier systems preventing concealed flame and toxic smoke spread through ceiling voids, raised floors, and partition cavities.",
+    highlights: [
+      "Mineral wool & foil-faced barrier batts",
+      "Tested acoustic & thermal insulation",
+      "Rigorously sealed building perimeters",
+    ],
+    ctaText: "Discuss Fire Barriers",
   },
   {
     id: "penetration-sealing",
     title: "Penetration Sealing",
+    badge: "Firestopping",
     description:
-      "Services such as pipes, cables, and other installations can create openings through fire-resistant walls, floors, and other elements. Penetration sealing helps close these openings and maintain the intended fire protection of the building.",
+      "Tested firestop collars, intumescent wraps, and elastomeric sealants closing openings around pipework, ducting, and cable trays in fire compartments.",
+    highlights: [
+      "BS EN 1366 compliant pipe & cable wraps",
+      "Intumescent mastic & ablative coated batts",
+      "Restores original compartment integrity",
+    ],
     ctaText: "Discuss Penetration Sealing",
+  },
+  {
+    id: "intumescent-coatings",
+    title: "Intumescent Steel Coatings",
+    badge: "Structural Protection",
+    description:
+      "Specialist fireproof spray and brush coatings that expand under intense heat to preserve the load-bearing integrity of structural steelwork.",
+    highlights: [
+      "30, 60, 90 & 120-minute structural ratings",
+      "Internal and exposed architectural finishes",
+      "DFT gauge verification & sign-off",
+    ],
+    ctaText: "Discuss Intumescent Coatings",
+  },
+  {
+    id: "fire-extinguisher-servicing",
+    title: "Extinguisher Supply & Servicing",
+    badge: "Compliance & Testing",
+    description:
+      "Annual extinguisher servicing, discharge testing, pressure testing, and certified replacement of water, foam, CO2, powder, and wet chemical units.",
+    highlights: [
+      "BS 5306-3 & BS 5306-8 compliant checks",
+      "Certified weight & pressure testing",
+      "Complete statutory compliance certificate",
+    ],
+    ctaText: "Book Extinguisher Service",
   },
 ];
 
@@ -63,29 +124,23 @@ export const SERVICE_IMAGES: Record<
   string,
   import("../types").ServiceImageMeta
 > = {
-  "fire-extinguisher-servicing": {
-    url: "/images/services/fire-extinguisher-servicing.webp",
-    alt: "Certified technician inspecting and servicing commercial fire extinguisher pressure gauge",
-    category: "suppression",
-    tag: "Compliance & Testing",
+  "fire-safety-inspection": {
+    url: "/images/why-us/01-fire-safety-legislation.webp",
+    alt: "Fire safety engineer conducting comprehensive commercial building compliance inspection",
+    category: "core",
+    tag: "Survey & Inspection",
   },
-  "fire-curtains": {
-    url: "/images/services/fire-curtains.webp",
-    alt: "Automated flame and smoke containment roller fire curtain in building lobby",
-    category: "passive",
-    tag: "Smoke & Flame Barrier",
+  "fire-protection-installation": {
+    url: "/images/why-us/04-fire-protection-system.webp",
+    alt: "Certified technician installing fire protection barriers and door systems",
+    category: "core",
+    tag: "Certified Installation",
   },
-  "intumescent-coatings": {
-    url: "/images/services/intumescent-coatings.webp",
-    alt: "Specialist technician applying intumescent fireproofing spray coating to structural steel columns",
-    category: "passive",
-    tag: "Structural Steel Protection",
-  },
-  "fire-barriers": {
-    url: "/images/services/fire-barriers.webp",
-    alt: "Fire barrier mineral wool insulation and fire batt installation inside wall cavity",
-    category: "passive",
-    tag: "Cavity Compartmentation",
+  "fire-maintenance-remedials": {
+    url: "/images/why-us/06-fire-protection-maintenance.webp",
+    alt: "Fire safety engineer performing routine maintenance and diagnostics on commercial premises",
+    category: "core",
+    tag: "Statutory Maintenance",
   },
   "fire-doors-screens": {
     url: "/images/services/fire-doors-screens.webp",
@@ -93,22 +148,34 @@ export const SERVICE_IMAGES: Record<
     category: "passive",
     tag: "Doors & Glazed Screens",
   },
-  "dry-lining": {
-    url: "/images/services/dry-lining.webp",
-    alt: "Fire-rated dry lining stud partition wall cross-section with fireproof acoustic plasterboard",
+  "fire-curtains": {
+    url: "/images/services/fire-curtains.webp",
+    alt: "Automated flame and smoke containment roller fire curtain in building lobby",
     category: "passive",
-    tag: "Fire Rated Partitions",
+    tag: "Smoke & Flame Barrier",
   },
-  "air-sealing": {
-    url: "/images/services/air-sealing.webp",
-    alt: "Specialist applying fire-rated intumescent mastic air sealant around electrical cable trays",
+  "fire-barriers": {
+    url: "/images/services/fire-barriers.webp",
+    alt: "Fire barrier mineral wool insulation and fire batt installation inside wall cavity",
     category: "passive",
-    tag: "Leakage & Air Barrier",
+    tag: "Cavity Compartmentation",
   },
   "penetration-sealing": {
     url: "/images/services/penetration-sealing.webp",
     alt: "Firestop collars and intumescent penetration seals around pipes and cable runs through compartment walls",
     category: "passive",
     tag: "Cable & Pipe Penetrations",
+  },
+  "intumescent-coatings": {
+    url: "/images/services/intumescent-coatings.webp",
+    alt: "Specialist technician applying intumescent fireproofing spray coating to structural steel columns",
+    category: "passive",
+    tag: "Structural Steel Protection",
+  },
+  "fire-extinguisher-servicing": {
+    url: "/images/services/fire-extinguisher-servicing.webp",
+    alt: "Certified technician inspecting and servicing commercial fire extinguisher pressure gauge",
+    category: "suppression",
+    tag: "Compliance & Testing",
   },
 };

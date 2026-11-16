@@ -19,8 +19,14 @@ export const usePageNavigation = () => {
       }
 
       if (page === "services" || page === "solutions") {
-        navigate("/services");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (location.pathname === "/") {
+          const el = document.getElementById("contact-section");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        } else {
+          navigate("/#contact-section");
+        }
         return;
       }
 

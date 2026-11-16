@@ -3,12 +3,15 @@ import { PageId } from "./navigation";
 export interface ServicePanelItem {
   id: string;
   title: string;
+  badge?: string;
   description: string;
+  highlights?: string[];
   ctaText: string;
 }
 
 export type ServiceCategoryFilter =
   | "all"
+  | "core"
   | "detection"
   | "suppression"
   | "passive";
@@ -23,7 +26,5 @@ export interface ServiceImageMeta {
 export interface ServiceCardProps {
   service: ServicePanelItem;
   imageMeta: ServiceImageMeta;
-  isFlipped: boolean;
-  onCardClick: (serviceId: string) => void;
   onNavigate: (page: PageId) => void;
 }

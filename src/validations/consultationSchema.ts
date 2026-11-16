@@ -47,7 +47,7 @@ export const defaultConsultationValues: ConsultationFormInput = {
   email: "",
   phone: "",
   location: "",
-  serviceRequired: "Fire Risk Assessment",
-  facilityType: "Commercial High-Rise",
+  serviceRequired: "Fire Safety Inspection & Audit",
+  facilityType: "Commercial Premises",
   message: "",
 };
