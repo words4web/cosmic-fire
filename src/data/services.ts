@@ -2,34 +2,6 @@ import { ServicePanelItem } from "../types";
 
 export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   {
-    id: "fire-detection-systems",
-    title: "Fire Detection Systems",
-    description:
-      "The danger of fire lies in its ability to grow quickly and to spread. Our fire detection solutions give our clients the ability to respond to fire conditions at an early stage with a range of systems designed to meet the needs of commercial premises. We provide solutions that suit the premises’ layout and requirements, including: smoke and heat detection, detector positioning, manual call points, and integration with other systems.",
-    ctaText: "Explore Detection",
-  },
-  {
-    id: "fire-alarm-systems",
-    title: "Fire Alarm Systems",
-    description:
-      "Early detection is only valuable if occupants can act. Fire alarm systems ensure that occupants are aware of fire conditions, allowing them to follow an appropriate action plan. Our fire alarm solutions cover a wide range of fire alarm panels, audible warning devices, manual call points, and zone definition.",
-    ctaText: "Explore Fire Alarms",
-  },
-  {
-    id: "fire-suppression",
-    title: "Fire Suppression",
-    description:
-      "In some circumstances alarms and extinguishers are simply not enough. Our fire suppression systems offer added protection for premises where fire risk is heightened due to layout or due to the nature of the goods or services provided.",
-    ctaText: "Discuss Suppression",
-  },
-  {
-    id: "fire-extinguisher-solutions",
-    title: "Fire Extinguisher Solutions",
-    description:
-      "In appropriate circumstances, a fire extinguisher can offer a vital first response to a developing fire. Our fire extinguisher solutions give our clients the reassurance that they have the correct equipment in place to deal with any fire incident that may arise. We help our clients define their needs based on fire risks, premises layout, and working practices, as well as offering positioning advice and required signage.",
-    ctaText: "Find Your Extinguisher",
-  },
-  {
     id: "fire-extinguisher-servicing",
     title: "Fire Extinguisher Servicing",
     description:
@@ -65,13 +37,6 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     ctaText: "Discuss Fire Doors",
   },
   {
-    id: "emergency-signage",
-    title: "Emergency Signage",
-    description:
-      "Clear emergency and fire safety signage helps people understand where to go and what to do during an emergency. We can assist with suitable signage according to the requirements of the premises.",
-    ctaText: "Discuss Emergency Signage",
-  },
-  {
     id: "dry-lining",
     title: "Dry Lining",
     description:
@@ -92,43 +57,12 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
       "Services such as pipes, cables, and other installations can create openings through fire-resistant walls, floors, and other elements. Penetration sealing helps close these openings and maintain the intended fire protection of the building.",
     ctaText: "Discuss Penetration Sealing",
   },
-  {
-    id: "class-0-fire-rated-painting",
-    title: "Class 0 Fire Rated Painting",
-    description:
-      "Class 0 fire-rated painting can provide additional surface protection for suitable walls and ceilings where required. The appropriate coating system can be considered according to the building and project requirements.",
-    ctaText: "Discuss Class 0 Painting",
-  },
 ];
 
 export const SERVICE_IMAGES: Record<
   string,
   import("../types").ServiceImageMeta
 > = {
-  "fire-detection-systems": {
-    url: "/images/services/fire-detection-systems.webp",
-    alt: "Ceiling optical smoke detector, heat sensor, and manual call point",
-    category: "detection",
-    tag: "Detection & Sensors",
-  },
-  "fire-alarm-systems": {
-    url: "/images/services/fire-alarm-systems.webp",
-    alt: "Commercial multi-zone fire alarm control panel, beacon sounder, and detectors",
-    category: "detection",
-    tag: "Alarm Panels & Sounders",
-  },
-  "fire-suppression": {
-    url: "/images/services/fire-suppression.webp",
-    alt: "Commercial kitchen hood and data center clean agent fire suppression system",
-    category: "suppression",
-    tag: "Clean Agent Suppression",
-  },
-  "fire-extinguisher-solutions": {
-    url: "/images/services/fire-extinguisher-solutions.webp",
-    alt: "Commercial premises fire extinguishers and fire hose reel station",
-    category: "suppression",
-    tag: "First Response Equipment",
-  },
   "fire-extinguisher-servicing": {
     url: "/images/services/fire-extinguisher-servicing.webp",
     alt: "Certified technician inspecting and servicing commercial fire extinguisher pressure gauge",
@@ -159,12 +93,6 @@ export const SERVICE_IMAGES: Record<
     category: "passive",
     tag: "Doors & Glazed Screens",
   },
-  "emergency-signage": {
-    url: "/images/services/emergency-signage.webp",
-    alt: "Illuminated photoluminescent emergency escape route and exit door signage",
-    category: "passive",
-    tag: "BS 5266 Photoluminescent",
-  },
   "dry-lining": {
     url: "/images/services/dry-lining.webp",
     alt: "Fire-rated dry lining stud partition wall cross-section with fireproof acoustic plasterboard",
@@ -182,11 +110,5 @@ export const SERVICE_IMAGES: Record<
     alt: "Firestop collars and intumescent penetration seals around pipes and cable runs through compartment walls",
     category: "passive",
     tag: "Cable & Pipe Penetrations",
-  },
-  "class-0-fire-rated-painting": {
-    url: "/images/services/class-0-fire-rated-painting.webp",
-    alt: "Certified applicator applying Class 0 flame-retardant protective paint to commercial walls and beams",
-    category: "passive",
-    tag: "Surface Flame Spread",
   },
 };
