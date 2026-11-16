@@ -2,9 +2,9 @@ import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
 import { InfoItem } from "./common/InfoItem";
 import { COMPANY_CONTACT } from "../data/company";
 
-export function ContactOfficeInfo() {
+export function ContactOfficeInfo({ className = "" }: { className?: string }) {
   return (
-    <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+    <div className={`space-y-4 sm:space-y-6 ${className}`}>
       <div className="bg-[#FFFDF8] rounded-2xl border border-[#E7DED0] p-5 sm:p-8 shadow-sm">
         <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171B18] mb-2">
           Engineering Consultation Office

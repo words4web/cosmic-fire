@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { ContactSectionProps } from "../types";
 import { ConsultationForm } from "./ConsultationForm";
-import { ContactOfficeInfo } from "./ContactOfficeInfo";
 
 export function ContactSection({
   onNavigate,
@@ -60,12 +59,8 @@ export function ContactSection({
 
         <div
           id="consultation-form"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
-          <ContactOfficeInfo />
-
-          <div className="lg:col-span-7">
-            <ConsultationForm />
-          </div>
+          className="max-w-3xl mx-auto">
+          <ConsultationForm />
         </div>
       </div>
     </section>
