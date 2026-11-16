@@ -10,10 +10,6 @@ export const FOOTER_LINKS: FooterLink[] = [
     pageId: "industries",
   },
   {
-    label: "Technology & Protocols",
-    pageId: "technology",
-  },
-  {
     label: "About Cosmic Fire",
     pageId: "about",
   },

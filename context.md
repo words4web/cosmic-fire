@@ -183,9 +183,8 @@ Because all sections are integrated directly onto the homepage, requests for spe
 
 - `protection` ➔ `#protection-layers`
 - `solutions` ➔ `#services-section`
-- `industries` ➔ `#industries-section`
-- `technology` ➔ `#technology-section`
-- `about` ➔ `#about-section`
+- `industries` ➔ `/industries`
+- `about` ➔ `/about`
 - `faq` ➔ `#faq-section`
 - `contact` ➔ `#contact-section`
 - `home` ➔ window scrolls to top (`0, 0`)

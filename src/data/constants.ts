@@ -127,7 +127,6 @@ export const NAV_ITEMS: { id: PageId; label: string }[] = [
   { id: "home", label: "Home" },
   { id: "solutions", label: "Solutions" },
   { id: "industries", label: "Industries" },
-  { id: "technology", label: "Technology" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];

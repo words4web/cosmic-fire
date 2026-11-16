@@ -30,12 +30,6 @@ export const usePageNavigation = () => {
         return;
       }
 
-      if (page === "technology") {
-        navigate("/technology");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-
       if (page === "about") {
         navigate("/about");
         window.scrollTo({ top: 0, behavior: "smooth" });
