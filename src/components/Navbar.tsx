@@ -136,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         </div>
 
         {/* Main Navbar */}
-        <div className="w-full h-20 sm:h-24 md:h-26 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-between">
+        <div className="w-full h-16 sm:h-20 px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
           <button
             onClick={() => handleNavClick("home")}
             className="flex items-center group text-left cursor-pointer h-full py-1.5"
@@ -144,12 +144,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <img
               src="/logo.png"
               alt="Cosmic Fire Logo"
-              className="h-full w-auto max-h-16 sm:max-h-20 md:max-h-22 object-contain transition-transform group-hover:scale-105"
+              className="h-full w-auto max-h-12 sm:max-h-14 object-contain transition-transform group-hover:scale-105"
             />
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden min-[1137px]:flex items-center gap-1.5 bg-[#F2EBDD]/70 px-3 py-1.5 rounded-full border border-surface-border/80">
+          <nav className="hidden md:flex items-center gap-1 bg-[#F2EBDD]/70 px-3 py-1.5 rounded-full border border-surface-border/80">
             {NAV_ITEMS.map((item) => {
               const isServices = item.id === "services";
               const isActive = currentPage === item.id;
@@ -235,7 +235,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </nav>
 
           {/* Desktop Right Phone & CTA */}
-          <div className="hidden min-[1137px]:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3 lg:gap-4">
             <a
               href={`tel:${COMPANY_CONTACT.phoneRaw}`}
               className="flex flex-col text-right group">
@@ -249,8 +249,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
             <button
               onClick={() => handleNavClick("contact")}
-              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-surface-card text-xs font-extrabold tracking-wider uppercase shadow-md shadow-brand-primary/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
-              <span>ENQUIRE NOW</span>
+              className="group relative inline-flex items-center gap-2 px-5 lg:px-6 py-2.5 lg:py-3 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-surface-card text-xs font-extrabold tracking-wider uppercase shadow-md shadow-brand-primary/25 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+              <span>GET A FREE QUOTE</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
@@ -258,18 +258,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="min-[1137px]:hidden p-2.5 rounded-xl text-text-primary hover:bg-[#F2EBDD] active:bg-surface-border transition-colors cursor-pointer border border-surface-border"
+            className="md:hidden p-2 rounded-xl text-text-primary hover:bg-[#F2EBDD] active:bg-surface-border transition-colors cursor-pointer border border-surface-border"
             aria-label="Toggle navigation menu">
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-brand-primary" />
+              <X className="w-5 h-5 text-brand-primary" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             )}
           </button>
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Clean Fullscreen / Slide Mobile Drawer (Never overlaps header logo or close button) */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -277,111 +277,118 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-text-primary/50 backdrop-blur-sm min-[1137px]:hidden"
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
             onClick={() => setMobileMenuOpen(false)}>
             <motion.div
-              initial={{ y: -30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -30, opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              className="w-full max-h-[90vh] overflow-y-auto bg-surface-card border-b border-surface-border pt-24 sm:pt-28 pb-6 px-4 sm:px-6 shadow-2xl"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-[340px] bg-[#FFFDF8] h-full shadow-2xl flex flex-col justify-between p-6 z-50 overflow-y-auto"
               onClick={(e) => e.stopPropagation()}>
-              <div className="bg-[#171B18] text-white rounded-2xl p-4 mb-4 flex flex-col gap-2">
-                <span className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">
-                  Direct Line • London &amp; Kent
-                </span>
+              
+              {/* Drawer Header */}
+              <div>
+                <div className="flex items-center justify-between pb-5 border-b border-[#E7DED0]">
+                  <img
+                    src="/logo.png"
+                    alt="Cosmic Fire"
+                    className="h-10 w-auto object-contain"
+                  />
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-xl text-[#171B18] hover:bg-[#F2EBDD] active:scale-95 transition-all cursor-pointer border border-[#E7DED0]"
+                    aria-label="Close menu">
+                    <X className="w-5 h-5 text-[#FC7A21]" />
+                  </button>
+                </div>
+
+                {/* Main Navigation Links */}
+                <div className="py-6 space-y-2">
+                  {NAV_ITEMS.map((item) => {
+                    const isServices = item.id === "services";
+                    const isActive = currentPage === item.id;
+
+                    if (isServices) {
+                      return (
+                        <div key={item.id} className="space-y-1">
+                          <button
+                            onClick={() =>
+                              setMobileServicesExpanded(!mobileServicesExpanded)
+                            }
+                            className="w-full text-left px-4 py-3 rounded-xl font-display font-bold text-sm text-[#171B18] hover:bg-[#F8F5ED] flex items-center justify-between transition-colors cursor-pointer">
+                            <span>{item.label}</span>
+                            <ChevronDown
+                              className={`w-4 h-4 text-[#52514B] transition-transform duration-200 ${
+                                mobileServicesExpanded
+                                  ? "rotate-180 text-[#044FB7]"
+                                  : ""
+                              }`}
+                            />
+                          </button>
+
+                          <AnimatePresence>
+                            {mobileServicesExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="pl-4 pr-1 py-1 space-y-1 overflow-hidden">
+                                {DETAILED_SERVICES_DATA.map((service) => (
+                                  <button
+                                    key={service.id}
+                                    onClick={() =>
+                                      handleServiceSelect(
+                                        service.id,
+                                        service.title,
+                                      )
+                                    }
+                                    className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-[#52514B] hover:text-[#044FB7] hover:bg-[#F8F5ED] transition-colors flex items-center justify-between cursor-pointer">
+                                    <span>{service.title}</span>
+                                    <ArrowRight className="w-3.5 h-3.5 text-[#044FB7] opacity-60" />
+                                  </button>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => handleNavClick(item.id)}
+                        className={`w-full text-left px-4 py-3 rounded-xl font-display font-bold text-sm transition-colors flex items-center justify-between cursor-pointer ${
+                          isActive
+                            ? "bg-[#044FB7]/10 text-[#044FB7]"
+                            : "text-[#171B18] hover:bg-[#F8F5ED]"
+                        }`}>
+                        <span>{item.label}</span>
+                        <ArrowRight
+                          className={`w-4 h-4 ${
+                            isActive ? "text-[#044FB7]" : "text-[#52514B]"
+                          }`}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Drawer Footer Actions */}
+              <div className="pt-6 border-t border-[#E7DED0] space-y-3">
                 <a
                   href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-                  className="flex items-center gap-2 text-base font-extrabold text-white">
-                  <Phone className="w-4 h-4 text-brand-primary" />
-                  <span>{COMPANY_CONTACT.phone}</span>
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-xs font-bold text-[#171B18] hover:text-[#044FB7] transition-colors">
+                  <Phone className="w-4 h-4 text-[#044FB7]" />
+                  <span>Call: {COMPANY_CONTACT.phone}</span>
                 </a>
-                <a
-                  href={`mailto:${COMPANY_CONTACT.email}`}
-                  className="flex items-center gap-2 text-xs text-white/80">
-                  <Mail className="w-3.5 h-3.5 text-brand-primary" />
-                  <span>{COMPANY_CONTACT.email}</span>
-                </a>
-              </div>
 
-              <div className="flex flex-col gap-1.5 mb-3">
-                {NAV_ITEMS.map((item) => {
-                  const isServices = item.id === "services";
-                  const isActive = currentPage === item.id;
-
-                  if (isServices) {
-                    return (
-                      <div
-                        key={item.id}
-                        className="rounded-xl border border-surface-border overflow-hidden bg-surface-bg/50">
-                        <button
-                          onClick={() =>
-                            setMobileServicesExpanded(!mobileServicesExpanded)
-                          }
-                          className="w-full text-left px-4 py-3 font-bold transition-all flex items-center justify-between cursor-pointer">
-                          <span className="text-base tracking-tight text-text-primary">
-                            {item.label}
-                          </span>
-                          <ChevronDown
-                            className={`w-4 h-4 text-text-secondary transition-transform duration-200 ${
-                              mobileServicesExpanded ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-
-                        <AnimatePresence>
-                          {mobileServicesExpanded && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              className="px-2 pb-2 space-y-1 overflow-hidden">
-                              {DETAILED_SERVICES_DATA.map((service) => (
-                                <button
-                                  key={service.id}
-                                  onClick={() =>
-                                    handleServiceSelect(service.id, service.title)
-                                  }
-                                  className="w-full text-left px-3 py-2 rounded-lg bg-surface-card hover:bg-surface-muted text-xs font-semibold text-text-primary flex items-center justify-between cursor-pointer">
-                                  <span>{service.title}</span>
-                                </button>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => handleNavClick(item.id)}
-                      className={`text-left px-4 py-3 rounded-xl font-bold transition-all flex items-center justify-between cursor-pointer ${
-                        isActive
-                          ? "bg-brand-primary/10 text-brand-primary border border-brand-primary/20"
-                          : "text-text-primary hover:bg-[#F2EBDD] active:bg-[#EAE4D5]"
-                      }`}>
-                      <span className="text-base tracking-tight">
-                        {item.label}
-                      </span>
-                      <ArrowRight
-                        className={`w-4 h-4 transition-transform ${
-                          isActive
-                            ? "text-brand-primary translate-x-1"
-                            : "text-text-secondary"
-                        }`}
-                      />
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="pt-4 border-t border-surface-border/60">
                 <button
                   onClick={() => handleNavClick("contact")}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary-hover text-surface-card font-extrabold text-sm tracking-wider uppercase shadow-lg shadow-brand-primary/20 transition-all cursor-pointer">
-                  <span>ENQUIRE NOW</span>
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-[#FC7A21]/25 transition-all cursor-pointer">
+                  <span>GET A FREE QUOTE</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
