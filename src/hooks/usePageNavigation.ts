@@ -24,12 +24,6 @@ export const usePageNavigation = () => {
         return;
       }
 
-      if (page === "industries") {
-        navigate("/industries");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-
       if (page === "about") {
         navigate("/about");
         window.scrollTo({ top: 0, behavior: "smooth" });

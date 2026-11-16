@@ -6,10 +6,6 @@ export const FOOTER_LINKS: FooterLink[] = [
     pageId: "solutions",
   },
   {
-    label: "Industries & Facilities",
-    pageId: "industries",
-  },
-  {
     label: "About Cosmic Fire",
     pageId: "about",
   },
