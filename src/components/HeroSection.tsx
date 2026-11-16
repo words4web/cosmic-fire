@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto mb-10 sm:mb-12">
             <button
-              onClick={() => onNavigate("solutions")}
+              onClick={() => onNavigate("services")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-[#FC7A21]/40 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] [text-shadow:_0_0_12px_rgba(255,255,255,0.5)]">
               <span>{HERO_DATA.ctas.explore}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

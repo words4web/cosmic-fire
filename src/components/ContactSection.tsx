@@ -42,7 +42,7 @@ export function ContactSection({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 type="button"
-                onClick={() => onNavigate("solutions")}
+                onClick={() => onNavigate("services")}
                 className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#FC7A21] hover:bg-[#FE8A2A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#FC7A21]/30 transition-all active:scale-95 cursor-pointer">
                 <span>Explore Your Options</span>
                 <ArrowRight className="w-4 h-4" />

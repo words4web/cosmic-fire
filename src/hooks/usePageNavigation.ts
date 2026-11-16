@@ -18,8 +18,8 @@ export const usePageNavigation = () => {
         return;
       }
 
-      if (page === "solutions") {
-        navigate("/solutions");
+      if (page === "services" || page === "solutions") {
+        navigate("/services");
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }

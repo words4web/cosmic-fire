@@ -1,7 +1,7 @@
 import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { ServicesShowcase } from "@/src/components/ServicesShowcase";
 
-export default function SolutionsPage() {
+export default function ServicesPage() {
   const { handleNavigate } = usePageNavigation();
 
   return (

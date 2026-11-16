@@ -2,8 +2,8 @@ import { FooterData, FooterLink } from "../types";
 
 export const FOOTER_LINKS: FooterLink[] = [
   {
-    label: "Fire Protection Solutions",
-    pageId: "solutions",
+    label: "Fire Protection Services",
+    pageId: "services",
   },
   {
     label: "About Cosmic Fire",
