@@ -5,17 +5,20 @@ interface SEOProps {
   description?: string;
   ogTitle?: string;
   ogDescription?: string;
+  image?: string;
 }
 
 const DEFAULT_TITLE = "Fire Prevention & Protection | Cosmic Fire Solutions";
 const DEFAULT_DESCRIPTION =
   "Cosmic Fire designs and installs fire prevention and protection systems for homes, businesses and industrial sites. Get a free site assessment today.";
+const DEFAULT_IMAGE = "https://www.cosmicfiresolutions.co.uk/logo.png";
 
 export function useSEO({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
   ogTitle,
   ogDescription,
+  image = DEFAULT_IMAGE,
 }: SEOProps = {}) {
   useEffect(() => {
     // 1. Set document title
@@ -48,5 +51,22 @@ export function useSEO({
       document.head.appendChild(ogDescTag);
     }
     ogDescTag.setAttribute("content", targetOgDesc);
-  }, [title, description, ogTitle, ogDescription]);
+
+    // 4. Set OpenGraph Image & Twitter Image
+    let ogImageTag = document.querySelector('meta[property="og:image"]');
+    if (!ogImageTag) {
+      ogImageTag = document.createElement("meta");
+      ogImageTag.setAttribute("property", "og:image");
+      document.head.appendChild(ogImageTag);
+    }
+    ogImageTag.setAttribute("content", image);
+
+    let twitterImageTag = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImageTag) {
+      twitterImageTag = document.createElement("meta");
+      twitterImageTag.setAttribute("name", "twitter:image");
+      document.head.appendChild(twitterImageTag);
+    }
+    twitterImageTag.setAttribute("content", image);
+  }, [title, description, ogTitle, ogDescription, image]);
 }
