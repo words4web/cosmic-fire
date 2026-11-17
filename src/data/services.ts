@@ -5,6 +5,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-safety-inspection",
     title: "Fire Safety Inspection",
     badge: "Survey & Audit",
+    metaTitle: "Fire Safety Inspection London & Kent | Cosmic Fire",
+    metaDescription:
+      "Expert fire safety inspections for commercial premises in London & Kent. Identify risks, stay compliant and get a clear action plan. Book today.",
     description:
       "Comprehensive site surveys, fire door inspections, and passive barrier audits delivering clear photographic defect schedules and statutory compliance sign-off.",
     highlights: [
@@ -18,6 +21,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-protection-installation",
     title: "Fire Protection Installation",
     badge: "Certified Fitting",
+    metaTitle: "Fire Protection Installation London & Kent | Cosmic Fire",
+    metaDescription:
+      "Professional fire protection installation for commercial buildings in London & Kent. Systems fitted to UK standards with 24/7 support. Free quote.",
     description:
       "Fully accredited supply and installation of timber & steel fire doors, automated fire curtains, cavity fire barriers, and penetration sealing.",
     highlights: [
@@ -31,6 +37,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-maintenance-remedials",
     title: "Fire Maintenance & Servicing",
     badge: "Statutory Testing",
+    metaTitle: "Fire Maintenance & Servicing London & Kent | Cosmic Fire",
+    metaDescription:
+      "Planned fire protection maintenance and servicing for commercial premises in London & Kent. Keep systems compliant and reliable. Request a quote.",
     description:
       "Scheduled preventative maintenance contracts and rapid defect repairs ensuring all fire doors, seals, extinguishers, and barriers remain 100% operational.",
     highlights: [
@@ -44,6 +53,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-doors-screens",
     title: "Fire Doors & Screens",
     badge: "Compartmentation",
+    metaTitle: "Fire Doors & Screens London & Kent | Cosmic Fire",
+    metaDescription:
+      "Fire doors and screens for commercial buildings in London & Kent. Compartmentation that protects people and property, with expert advice. Get a quote",
     description:
       "Certified FD30 and FD60 internal/external fire doors, acoustic seals, panic exit hardware, and glazed fire-rated protective screens.",
     highlights: [
@@ -57,6 +69,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-curtains",
     title: "Fire & Smoke Curtains",
     badge: "Active Barrier",
+    metaTitle: "Fire & Smoke Curtains London & Kent | Cosmic Fire",
+    metaDescription:
+      "Fire and smoke curtains for commercial premises in London & Kent. Contain fire and smoke while keeping escape routes open. Free quote.",
     description:
       "Automated drop-down fire and smoke containment curtains designed for open-plan commercial atriums, elevator lobbies, and escape corridors.",
     highlights: [
@@ -67,9 +82,12 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     ctaText: "Discuss Fire Curtains",
   },
   {
-    id: "fire-barriers",
+    id: "cavity-fire-barriers",
     title: "Cavity Fire Barriers",
     badge: "Concealed Spaces",
+    metaTitle: "Cavity Fire Barriers London & Kent | Cosmic Fire",
+    metaDescription:
+      "Cavity fire barrier installation for commercial buildings in London & Kent. Stop fire and smoke spreading through hidden voids. Get a free quote.",
     description:
       "High-performance cavity barrier systems preventing concealed flame and toxic smoke spread through ceiling voids, raised floors, and partition cavities.",
     highlights: [
@@ -81,8 +99,11 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   },
   {
     id: "penetration-sealing",
-    title: "Penetration Sealing",
+    title: "Fire Penetration Sealing",
     badge: "Firestopping",
+    metaTitle: "Fire Penetration Sealing London & Kent | Cosmic Fire",
+    metaDescription:
+      "Fire-stopping and penetration sealing for cables, pipes and ducts in commercial buildings in London & Kent. Restore compartmentation. Free quote.",
     description:
       "Tested firestop collars, intumescent wraps, and elastomeric sealants closing openings around pipework, ducting, and cable trays in fire compartments.",
     highlights: [
@@ -96,6 +117,9 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "intumescent-coatings",
     title: "Intumescent Steel Coatings",
     badge: "Structural Protection",
+    metaTitle: "Intumescent Steel Coatings London & Kent | Cosmic Fire",
+    metaDescription:
+      "Intumescent coatings for structural steel in London & Kent. Fire protection that delays steel failure and supports building compliance. Get a quote.",
     description:
       "Specialist fireproof spray and brush coatings that expand under intense heat to preserve the load-bearing integrity of structural steelwork.",
     highlights: [
@@ -107,8 +131,11 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   },
   {
     id: "fire-extinguisher-servicing",
-    title: "Extinguisher Supply & Servicing",
+    title: "Fire Extinguisher Servicing",
     badge: "Compliance & Testing",
+    metaTitle: "Fire Extinguisher Servicing London & Kent | Cosmic Fire",
+    metaDescription:
+      "Fire extinguisher supply and servicing in London & Kent: annual servicing, discharge testing and replacement of water, foam, CO2 and powder units.",
     description:
       "Annual extinguisher servicing, discharge testing, pressure testing, and certified replacement of water, foam, CO2, powder, and wet chemical units.",
     highlights: [
@@ -126,7 +153,7 @@ export const SERVICE_IMAGES: Record<
 > = {
   "fire-safety-inspection": {
     url: "/images/why-us/01-fire-safety-legislation.webp",
-    alt: "Fire safety engineer conducting comprehensive commercial building compliance inspection",
+    alt: "Fire safety engineer conducting comprehensive commercial building compliance inspection in London and Kent",
     category: "core",
     tag: "Survey & Inspection",
   },
@@ -154,6 +181,13 @@ export const SERVICE_IMAGES: Record<
     category: "passive",
     tag: "Smoke & Flame Barrier",
   },
+  "cavity-fire-barriers": {
+    url: "/images/services/fire-barriers.webp",
+    alt: "Fire barrier mineral wool insulation and fire batt installation inside wall cavity",
+    category: "passive",
+    tag: "Cavity Compartmentation",
+  },
+  // Backward compatibility alias
   "fire-barriers": {
     url: "/images/services/fire-barriers.webp",
     alt: "Fire barrier mineral wool insulation and fire batt installation inside wall cavity",

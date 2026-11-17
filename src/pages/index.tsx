@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { usePageNavigation } from "@/src/hooks/usePageNavigation";
+import { useSEO } from "@/src/hooks/useSEO";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
 import { CinematicBanner } from "@/src/components/CinematicBanner";
@@ -12,6 +13,12 @@ export default function IndexPage() {
   const [selectedHotspot, setSelectedHotspot] = useState<HotspotItem | null>(
     null,
   );
+
+  useSEO({
+    title: "Fire Prevention & Protection | Cosmic Fire Solutions",
+    description:
+      "Cosmic Fire designs and installs fire prevention and protection systems for homes, businesses and industrial sites. Get a free site assessment today.",
+  });
 
   return (
     <>

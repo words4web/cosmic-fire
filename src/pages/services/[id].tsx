@@ -3,13 +3,21 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { ShieldCheck, ArrowRight, Phone, ArrowLeft } from "lucide-react";
 import { DETAILED_SERVICES_DATA, SERVICE_IMAGES } from "@/src/data/services";
 import { COMPANY_CONTACT } from "@/src/data/company";
+import { useSEO } from "@/src/hooks/useSEO";
 
 export default function ServiceDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const service = DETAILED_SERVICES_DATA.find((s) => s.id === id);
+  // Support legacy or aliased slug (fire-barriers -> cavity-fire-barriers)
+  const normalizedId = id === "fire-barriers" ? "cavity-fire-barriers" : id;
+  const service = DETAILED_SERVICES_DATA.find((s) => s.id === normalizedId);
   const imageMeta = service ? SERVICE_IMAGES[service.id] : null;
+
+  useSEO({
+    title: service?.metaTitle || (service ? `${service.title} | Cosmic Fire` : "Service Not Found"),
+    description: service?.metaDescription || service?.description,
+  });
 
   if (!service) {
     return (

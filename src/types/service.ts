@@ -7,6 +7,8 @@ export interface ServicePanelItem {
   description: string;
   highlights?: string[];
   ctaText: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export type ServiceCategoryFilter =
