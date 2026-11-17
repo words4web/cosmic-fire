@@ -4,19 +4,22 @@
 
 **Cosmic Fire Solution** is an enterprise-grade commercial fire protection engineering web platform serving London, Kent, and nationwide UK developments.
 
-The platform follows a grounded, high-trust British commercial contractor aesthetic (inspired by leading UK industry benchmarks: Artius Fire, Fire Doors Kent, T7 Fire, London Fire Doors, and Jackson Fire & Security). It provides seamless, unified single-page architectural navigation with scannable photographic service cards, regulatory statutory pillars, active vs. passive protection breakdowns, real commercial sector portfolios, interactive FAQ accordions, and Zod-validated engineering consultation workflows.
+The platform follows a grounded, high-trust British commercial contractor aesthetic (inspired by leading UK industry benchmarks: Artius Fire, Fire Doors Kent, T7 Fire, London Fire Doors, and Jackson Fire & Security). It provides unified architectural navigation with an interactive Hero consultation quote form, dynamic slug-based service showcase pages, regulatory statutory pillars, an interactive FAQ accordion, comprehensive SEO metadata, automated XML sitemaps, and Zod-validated engineering consultation workflows.
 
 ### Key Highlights:
 
-- **Single-Page Commercial Flow**: All core capabilities—Services Showcase, Why Cosmic Fire, Protection Layers, Blueprint Simulation, Industry Sectors, Engineering Technology Lifecycle, About Us, Client Reviews, FAQ, and Consultation Booking—are presented in a cohesive, smooth-scrolling homepage layout.
-- **Strict Content Verbatim Integrity**: 100% of all customer copy, technical descriptions, headlines, addresses, phone numbers, and regulatory bullet points are strictly verified and preserved verbatim from structured data repositories.
-- **Dual-Tier Commercial Navigation**: Top utility micro-strip featuring direct click-to-call phone callouts (`+44 (0) 20 7946 0991`), engineering dispatch emails, London & Kent operational coverage badges, and emergency response status, alongside a sticky primary navigation tier with instant quote trigger.
-- **Core Services Showcase**: Filterable scannable grid with high-resolution equipment photography, category tabs (`All`, `Active Suppression`, `Passive Protection`), live search filtering, and feature checklists.
-- **Why Cosmic Fire & Layered Protection**: Editorial split-column layout with 6 numbered statutory pillars (`01`–`06`) and side-by-side comparison of 5 active systems vs. 9 passive protection systems.
-- **6 Commercial Sectors**: Grounded commercial photography covering Office Buildings, Retail Premises, Hospitality Venues, Industrial Logistics Facilities, Healthcare & Care Homes, and Educational Campuses with key risk badges.
-- **Interactive UK Compliance FAQ Accordion**: Clean expandable questions addressing compliance, survey bookings, maintenance intervals, and British Standards.
-- **Lead Capture & Engineering Dispatch**: Zod-validated consultation form (`fullName`, `company`, `email`, `phone`, `location`, `serviceRequired`, `message`) paired with direct headquarters info, phone, email, and operating hours.
-- **Unified Navigation Hook (`usePageNavigation`)**: Central routing and smooth-scrolling coordinator eliminating 404s and redundant subpage loads.
+- **Hero Quote Form Integration**: The primary engineering consultation form is embedded directly into the Hero section with live ambient lighting animations, clean form fields (no asterisks), and a prominent `"GET A FREE QUOTE"` call-to-action bar with phone contact (`+44 (0) 20 7946 0991`).
+- **London Fire Doors Service Hierarchy**: Adopts a streamlined services hierarchy (Fire Safety Inspection, Fire Protection Installation, Fire Maintenance & Servicing, Fire Doors & Screens, Fire Curtains, Cavity Fire Barriers, Penetration Sealing, Intumescent Coatings, and Extinguisher Servicing).
+- **Dynamic Service Detail Pages (`/services/:id`)**: Dedicated dynamic detail pages featuring photographic headers, statutory checklists, compliance badges, direct consultation dispatch triggers, and full SEO metadata.
+- **Strict Content Verbatim Integrity**: 100% of customer copy, technical descriptions, headlines, addresses, phone numbers, and regulatory bullet points are strictly verified and preserved verbatim from structured data repositories.
+- **Dual-Tier Commercial Navigation**: Top utility micro-strip featuring direct click-to-call phone callouts (`+44 (0) 20 7946 0991`), engineering dispatch emails, London & Kent operational coverage badges, and 24/7 support status, alongside a sticky primary navigation tier with dropdown services menu and mobile slide-out drawer.
+- **Comprehensive SEO Infrastructure**:
+  - Exact meta titles and meta descriptions provided for Home (`/`), About (`/about`), and all individual `/services/:id` routes.
+  - Dynamic `useSEO` React hook updating `document.title`, `<meta name="description">`, and OpenGraph tags per page.
+  - Automated XML sitemap generation (`scripts/generate-sitemap.ts`) targeting `https://www.cosmicfiresolutions.co.uk`.
+  - Crawler configuration via `public/robots.txt`.
+  - Accessible, keyword-rich `alt` attributes on all image elements.
+- **Lead Capture & Engineering Dispatch**: Zod-validated consultation form (`fullName`, `company`, `businessEmail`, `ukPhone`, `facilityLocation`, `serviceRequired`, `projectScope`) with real-time validation and animated submission feedback.
 
 ---
 
@@ -24,14 +27,14 @@ The platform follows a grounded, high-trust British commercial contractor aesthe
 
 - **Framework**: React 19 (`react`, `react-dom`)
 - **Language**: TypeScript 5+ (`tsc`)
-- **Bundler & Build Tool**: Vite 8 with `@vitejs/plugin-react` and `@generouted/react-router`
+- **Bundler & Build Tool**: Vite 8 with `@vitejs/plugin-react` and file-based routing (`@generouted/react-router`)
+- **Routing**: React Router DOM v7 (`react-router-dom`)
 - **Styling**: Tailwind CSS v4 (`tailwindcss`, `@tailwindcss/vite`) with custom design tokens
 - **Forms & Validation**: React Hook Form (`react-hook-form`) with Zod v4 resolver (`zod`, `@hookform/resolvers`)
 - **Animation & Motion**: Motion / Framer Motion (`motion`)
-- **3D & Vector Graphics**: Three.js (`three`, `@types/three`) and modular SVG canvases
-- **Media Optimization**: WebP (85% compression quality) and H.264 MP4 with `+faststart` (web streaming without audio overhead)
 - **Icons**: Lucide React (`lucide-react`)
 - **Package Manager**: PNPM
+- **Automation Scripts**: Node.js automated sitemap generation script (`scripts/generate-sitemap.ts`)
 
 ---
 
@@ -40,162 +43,126 @@ The platform follows a grounded, high-trust British commercial contractor aesthe
 ```text
 cosmic-fire/
 ├── context.md                   # Complete architectural and project documentation
-├── RESTRUCTURING_PLAN.md        # 6-phase UK visual elevation and restructuring roadmap
-├── index.html                   # HTML entry point (loads Sora, Manrope, JetBrains Mono fonts)
-├── package.json                 # Scripts and dependency declarations
+├── index.html                   # HTML entry point (canonical tags, SEO meta, font links)
+├── package.json                 # Scripts (dev, build with sitemap, preview, lint)
 ├── pnpm-lock.yaml               # Deterministic dependency lockfile
 ├── tsconfig.json                # Strict TypeScript configuration
 ├── vite.config.ts               # Vite configuration (plugins, aliases, bundle code-splitting)
+├── scripts/
+│   └── generate-sitemap.ts      # Automated sitemap.xml generator scanning data routes
 ├── public/                      # Static web assets
 │   ├── logo.png                 # Brand logo
+│   ├── robots.txt               # Crawler directives and sitemap URL
+│   ├── sitemap.xml              # Auto-generated XML sitemap
 │   ├── videos/                  # Optimized web videos & posters
-│   │   ├── hero-firefighters.mp4         # 5.1MB compressed H.264 hero background loop
+│   │   ├── hero-firefighters.mp4         # Compressed H.264 hero background loop
 │   │   ├── hero-firefighters-poster.jpg  # Hero video poster fallback frame
-│   │   ├── why-choose-us.mp4             # 3.0MB compressed H.264 engineering inspection loop
+│   │   ├── why-choose-us.mp4             # Compressed H.264 engineering inspection loop
 │   │   └── why-choose-us-poster.jpg      # Why Choose Us poster fallback frame
 │   └── images/                  # Converted & optimized WebP assets
-│       ├── why-us/              # 6 WebP images for Why Cosmic Fire pillars (39KB–110KB)
-│       │   ├── 01-fire-safety-legislation.webp
-│       │   ├── 02-fire-protection-equipment.webp
-│       │   ├── 03-fire-hazard-protection.webp
-│       │   ├── 04-fire-protection-system.webp
-│       │   ├── 05-emergency-fire-protection.webp
-│       │   └── 06-fire-protection-maintenance.webp
-│       ├── industries/          # 6 WebP images for Commercial Sectors (27KB–212KB)
-│       │   ├── office-buildings.webp
-│       │   ├── retail-premises.webp
-│       │   ├── hospitality-venues.webp
-│       │   ├── industrial-premises.webp
-│       │   ├── educational-establishments.webp
-│       │   └── healthcare-environments.webp
-│       └── services/            # 14 WebP images for Core Services (32KB–77KB)
-│           ├── fire-detection-systems.webp
-│           ├── fire-alarm-systems.webp
-│           ├── fire-suppression.webp
-│           ├── fire-extinguisher-solutions.webp
-│           ├── fire-extinguisher-servicing.webp
-│           ├── fire-curtains.webp
-│           ├── intumescent-coatings.webp
-│           ├── fire-barriers.webp
-│           ├── fire-doors-screens.webp
-│           ├── emergency-signage.webp
-│           ├── dry-lining.webp
-│           ├── air-sealing.webp
-│           ├── penetration-sealing.webp
-│           └── class-0-fire-rated-painting.webp
+│       ├── why-us/              # WebP images for Why Cosmic Fire statutory pillars
+│       └── services/            # WebP images for Core Services
 └── src/
     ├── main.tsx                 # Application entry point & React DOM root mount
-    ├── App.tsx                  # Master layout controller & global overlay provider
-    ├── index.css                # Global CSS rules, custom keyframes, technical background grids
+    ├── App.tsx                  # Master layout controller (Navbar, Page router, Footer)
+    ├── index.css                # Global CSS rules, custom keyframes, halo animations
     │
     ├── types/                   # Domain-driven TypeScript type definitions
     │   ├── index.ts             # Central type export hub
     │   ├── about.ts             # Pillars, credentials, statistics types
-    │   ├── blueprint.ts         # Zone & blueprint simulation types
     │   ├── company.ts           # Company contact & office info types
     │   ├── contact.ts           # Consultation form and quote types
     │   ├── faq.ts               # FAQ items and category types
     │   ├── footer.ts            # Footer links, compliance badges, columns
-    │   ├── hotspot.ts           # 3D sensor hotspot & telemetry types
-    │   ├── industry.ts          # Sector profiles & network coverage types
     │   ├── navigation.ts        # Page IDs and route types
-    │   ├── service.ts           # Service items, disciplines, and feature types
-    │   ├── technology.ts        # Lifecycle steps and pipeline types
+    │   ├── service.ts           # Service items, SEO titles/descriptions, and image types
     │   └── testimonial.ts       # Client review and testimonial types
     │
     ├── data/                    # Domain-driven central data repositories
-    │   ├── about.ts             # About section pillars, milestones, and credentials
-    │   ├── blueprint.ts         # Schematic zones, sensors, and telemetry scenarios
+    │   ├── about.ts             # About section pillars and Engineering Consultation Office data
     │   ├── company.ts           # Shared office addresses, phone numbers, and emails
     │   ├── constants.ts         # Global fallback constants & NAV_ITEMS
     │   ├── faq.ts               # Frequently asked questions list
     │   ├── footer.ts            # Site links, legal notices, and compliance credentials
-    │   ├── hero.ts              # Hero banner copy, highlights, and solution ticker
-    │   ├── industries.ts        # Multi-site coverage copy, 6 sector cards, and local WebP assets
-    │   ├── layers.ts            # Active (5 items) and Passive (9 items) fire engineering systems
-    │   ├── services.ts          # 14 core fire protection services with mapped local WebP assets
-    │   ├── technology.ts        # Detect. Alert. Respond. 4-stage engineering lifecycle data
+    │   ├── hero.ts              # Hero banner copy and highlights
+    │   ├── services.ts          # Core fire protection services with SEO metadata & WebP assets
     │   ├── testimonials.ts      # Verbatim client reviews and ratings
-    │   └── whyUs.ts             # Why Choose Cosmic Fire & 6 premises protection pillars with WebP assets
+    │   └── whyUs.ts             # Why Choose Cosmic Fire & 6 premises protection pillars
     │
     ├── hooks/
-    │   └── usePageNavigation.ts # Centralized page navigation, URL hash sync, and smooth scrolling
+    │   ├── usePageNavigation.ts # Centralized page navigation and smooth scrolling
+    │   └── useSEO.ts            # Dynamic document.title and OpenGraph meta updater
     │
-    ├── pages/                   # File-based route views (generouted)
-    │   ├── index.tsx            # Complete Single-Page Commercial Portal
+    ├── pages/                   # File-based route views
+    │   ├── index.tsx            # Homepage with Hero Query Form, Why Us, Testimonials
+    │   ├── about.tsx            # Dedicated About page with Engineering Consultation Office
+    │   ├── faq.tsx              # Interactive FAQ page
+    │   ├── services/
+    │   │   └── [id].tsx         # Dynamic service detail page with SEO and photo header
     │   └── [...all].tsx         # 404 / Catch-all fallback route
     │
     ├── validations/
     │   └── consultationSchema.ts# Zod validation schema for engineering consultations
     │
     └── components/              # Modular UI and interactive components
-        ├── Navbar.tsx           # Dual-tier commercial navigation with phone callouts and mobile drawer
-        ├── HeroSection.tsx      # Clean architectural hero with optimized video loop & shiny white typography
-        ├── WhyCosmicFire.tsx    # Editorial 2-column split with 6 3D flip cards (WebP) & engineer inspection video
-        ├── ProtectionLayers.tsx # Active (5 items) vs Passive (9 items) comparative system cards
-        ├── ServicesShowcase.tsx # 14 scannable service cards with WebP photos, filters, and search
-        ├── SectorCard.tsx       # Softened dark gradient card with shiny white typography
+        ├── Navbar.tsx           # Dual-tier commercial navigation with services dropdown & mobile drawer
+        ├── HeroSection.tsx      # Video hero with integrated ConsultationForm & call CTAs
+        ├── ConsultationForm.tsx # Lead capture form with animated glowing borders & real-time Zod validation
+        ├── WhyCosmicFire.tsx    # Editorial 2-column split with 6 3D flip cards & inspection video
         ├── CinematicBanner.tsx  # Architectural safety infrastructure banner
-        ├── InteractiveBlueprint.tsx # Interactive 2D schematic floorplan with alarm simulator
-        ├── IndustriesSection.tsx# 6 commercial sector photographic cards with local WebP assets & risk badges
-        ├── TechnologyFlow.tsx   # 4-Stage engineering pipeline: Understand, Detect, Alert, Respond
-        ├── AboutSection.tsx     # 4 Core engineering pillars (Vision, Mission, Approach, Support)
-        ├── TestimonialsSection.tsx # Verified commercial client review cards with 5-star ratings
-        ├── FaqSection.tsx       # Interactive 4-question UK compliance accordion
-        ├── ContactSection.tsx   # 2-Column engineering consultation office and quote form
-        ├── ContactOfficeInfo.tsx# Reusable office location, dispatch phone, email, and hours
-        ├── ConsultationForm.tsx # Lead capture form with real-time Zod validation
-        ├── Footer.tsx           # 4-Column commercial footer with monitoring status and credits
-        ├── HeroBuilding3D.tsx   # Three.js 3D isometric tower with interactive sensor nodes
-        ├── HotspotModal.tsx     # Sensor inspection modal with real-time specs & telemetry
-        ├── common/              # Reusable UI atoms (FormInput, InfoItem, SectionBadge, etc.)
-        └── graphics/            # SVG graphic canvases (e.g. BlueprintSvgCanvas)
+        ├── AboutSection.tsx     # Engineering Consultation Office details & core company pillars
+        ├── TestimonialsSection.tsx # Verified commercial client review cards
+        ├── FaqSection.tsx       # Interactive UK compliance accordion
+        ├── ServiceCard.tsx      # Service card component with WebP images and tags
+        ├── Footer.tsx           # 4-Column commercial footer with 24/7 monitoring status
+        └── common/              # Reusable UI atoms (FormInput, SectionBadge, etc.)
 ```
 
 ---
 
 ## 4. Key Page Sections & Component Mapping
 
-| Section / Component      | File Location                                                                                                                     | Key Capabilities & Verbatim Content                                                                                                                                                                                                                                   |
-| :----------------------- | :-------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Dual-Tier Navbar**     | [`src/components/Navbar.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx)                           | Utility micro-bar (`+44 (0) 20 7946 0991`, `engineering@cosmicfire.co.uk`, London & Kent coverage), logo, desktop pill navigation (`Protection`, `Solutions`, `Industries`, `Technology`, `About`, `Contact`), mobile slide-out drawer, and `REQUEST A QUOTE` button. |
-| **Hero Section**         | [`src/components/HeroSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroSection.tsx)                 | Optimized streaming video background (`hero-firefighters.mp4`), pure white & shiny typography with ambient glow, badge pill, and dual action CTAs (`Explore Our Solutions`, `Talk to an Expert`).                                                                    |
-| **Why Cosmic Fire**      | [`src/components/WhyCosmicFire.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/WhyCosmicFire.tsx)             | Editorial split layout: certified engineer inspection video (`why-choose-us.mp4`) paired with 6 3D-flipping statutory pillar cards backed by optimized local WebP imagery (`/images/why-us/`).                                                                       |
-| **Protection Layers**    | [`src/components/ProtectionLayers.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ProtectionLayers.tsx)       | Comparative cards distinguishing 5 Active Systems (Sprinklers, Alarms, Extinguishers) from 9 Passive Systems (Fire Doors, Cavity Barriers, Intumescent Coatings).                                                                                                     |
-| **Services Showcase**    | [`src/components/ServicesShowcase.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ServicesShowcase.tsx)       | 14 core fire protection service cards with 14 bespoke local WebP photos (`/images/services/`), category filter tabs, keyword search bar, and benefit checkmarks.                                                                                                     |
-| **Cinematic Banner**     | [`src/components/CinematicBanner.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/CinematicBanner.tsx)         | Architectural cutaway banner highlighting bespoke system design, evacuation matrices, and key technical response metrics.                                                                                                                                             |
-| **Industries Section**   | [`src/components/IndustriesSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/IndustriesSection.tsx)     | 6 photographic commercial sector cards with local WebP assets (`/images/industries/`), softened backdrops, and radiant white typography via `SectorCard`.                                                                                                             |
-| **Technology Flow**      | [`src/components/TechnologyFlow.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/TechnologyFlow.tsx)           | 4-Stage engineering pipeline: Understand Risk, Detect Early, Alert Clearly, and Respond Safely with detailed stage checklists.                                                                                                                                        |
-| **About Section**        | [`src/components/AboutSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/AboutSection.tsx)               | 4 Core pillars (Vision, Mission, Approach, Support) and company history overview.                                                                                                                                                                                     |
-| **Testimonials Section** | [`src/components/TestimonialsSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/TestimonialsSection.tsx) | High-trust quote cards with 5-star badges and client sector identifications.                                                                                                                                                                                          |
-| **FAQ Section**          | [`src/components/FaqSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/FaqSection.tsx)                   | Expandable 4-question UK compliance accordion with zero layout shift.                                                                                                                                                                                                 |
-| **Contact Section**      | [`src/components/ContactSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ContactSection.tsx)           | 2-Column split: left column houses direct dispatch office details, phone, email, and operating hours; right column hosts the consultation form.                                                                                                                       |
-| **Consultation Form**    | [`src/components/ConsultationForm.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ConsultationForm.tsx)       | Interactive quote request form with real-time Zod validation and immediate feedback states.                                                                                                                                                                           |
-| **Footer**               | [`src/components/Footer.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Footer.tsx)                           | 4-Column commercial footer with index links, core systems list, 24/7 monitoring center status, scroll-to-top button, and Words4Web design credit.                                                                                                                     |
+| Section / Component | File Location | Key Capabilities & Verbatim Content |
+| :--- | :--- | :--- |
+| **Dual-Tier Navbar** | [`src/components/Navbar.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx) | Utility micro-bar (`+44 (0) 20 7946 0991`, `engineering@cosmicfire.co.uk`, London & Kent coverage), logo, desktop pill navigation (`Home`, `Services` dropdown, `About`), mobile slide-out drawer, and `GET A FREE QUOTE` button. |
+| **Hero Section** | [`src/components/HeroSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroSection.tsx) | Streaming video background (`hero-firefighters.mp4`), shiny white typography, dual action CTA pill (`Get a Free Quote` anchor + phone callout), and embedded `ConsultationForm`. |
+| **Consultation Form** | [`src/components/ConsultationForm.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ConsultationForm.tsx) | Interactive quote request form with rotating conic halo animation, breathing glow, clean input styling without asterisks, and real-time Zod validation. |
+| **Why Cosmic Fire** | [`src/components/WhyCosmicFire.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/WhyCosmicFire.tsx) | Certified engineer inspection video (`why-choose-us.mp4`) paired with 6 3D-flipping statutory pillar cards backed by local WebP imagery and keyword-rich alt text. |
+| **Dynamic Service Detail** | [`src/pages/services/[id].tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/pages/services/[id].tsx) | Slug-based service showcase with photographic header, full metadata integration via `useSEO`, highlights, and direct enquiry dispatch. |
+| **About Us Section** | [`src/components/AboutSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/AboutSection.tsx) | Relocated Engineering Consultation Office info (direct phone, address, 24/7 response status) with verbatim copy and core company pillars. |
+| **Cinematic Banner** | [`src/components/CinematicBanner.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/CinematicBanner.tsx) | Architectural safety cutaway banner highlighting bespoke system design and evacuation matrices. |
+| **Testimonials Section** | [`src/components/TestimonialsSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/TestimonialsSection.tsx) | High-trust quote cards with 5-star badges and client sector identifications. |
+| **FAQ Section** | [`src/components/FaqSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/FaqSection.tsx) | Expandable UK compliance accordion with zero layout shift. |
+| **Footer** | [`src/components/Footer.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Footer.tsx) | 4-Column commercial footer with index links, 24/7 monitoring center status, scroll-to-top button, and Words4Web credit. |
 
 ---
 
-## 5. Navigation & Routing Architecture
+## 5. SEO & Metadata Architecture
 
-All navigational items (in the Navbar, sub-hero buttons, hero ticker, and Footer) route through [`usePageNavigation`](file:///home/mazahir/projects/work/cosmic-fire/src/hooks/usePageNavigation.ts).
+1. **Canonical Host**: `https://www.cosmicfiresolutions.co.uk`
+2. **Robots Directives (`public/robots.txt`)**:
+   ```txt
+   User-agent: *
+   Allow: /
+   Disallow: /api/
 
-Because all sections are integrated directly onto the homepage, requests for specific sections smoothly scroll directly to the corresponding DOM element without triggering route reloads or 404s:
-
-- `protection` ➔ `#protection-layers`
-- `solutions` ➔ `#services-section`
-- `industries` ➔ `/industries`
-- `about` ➔ `/about`
-- `faq` ➔ `#faq-section`
-- `contact` ➔ `#contact-section`
-- `home` ➔ window scrolls to top (`0, 0`)
+   Sitemap: https://www.cosmicfiresolutions.co.uk/sitemap.xml
+   ```
+3. **Automated XML Sitemap**: Generated via `scripts/generate-sitemap.ts` as a pre-build step (`pnpm sitemap`), pulling all static and dynamic service routes.
+4. **Per-Route Metadata**: Managed by `useSEO` hook:
+   - **Home (`/`)**: *"Fire Prevention & Protection | Cosmic Fire Solutions"*
+   - **About (`/about`)**: *"About Cosmic Fire | Commercial Fire Protection Engineers UK"*
+   - **Services (`/services/:id`)**: Custom titles and descriptions per service discipline.
+5. **Accessibility**: All `<img>` tags have descriptive, contextual `alt` tags.
 
 ---
 
 ## 6. Build & Quality Verification
 
-| Command        | Action                                                                |
-| :------------- | :-------------------------------------------------------------------- |
-| `pnpm dev`     | Starts the local Vite development server on `http://localhost:3000`   |
-| `pnpm build`   | Compiles TypeScript and builds optimized production bundle in `dist/` |
-| `pnpm preview` | Previews the local production build                                   |
-| `tsc --noEmit` | Validates strict TypeScript compilation with zero type errors         |
+| Command | Action |
+| :--- | :--- |
+| `pnpm dev` | Starts local Vite development server on `http://localhost:3000` |
+| `pnpm sitemap` | Regenerates `public/sitemap.xml` with current routes and dates |
+| `pnpm build` | Executes `pnpm sitemap` followed by `vite build` into `dist/` |
+| `pnpm preview` | Previews the local production build |
+| `pnpm lint` | Validates strict TypeScript compilation (`tsc --noEmit`) |
