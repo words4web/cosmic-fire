@@ -143,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             aria-label="Cosmic Fire Homepage">
             <img
               src="/logo.png"
-              alt="Cosmic Fire Logo"
+              alt="Cosmic Fire Solutions - Commercial Fire Protection Engineers"
               className="h-full w-auto max-h-12 sm:max-h-14 object-contain transition-transform group-hover:scale-105"
             />
           </button>
@@ -292,7 +292,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 <div className="flex items-center justify-between pb-5 border-b border-[#E7DED0]">
                   <img
                     src="/logo.png"
-                    alt="Cosmic Fire"
+                    alt="Cosmic Fire Solutions - Navigation Menu Logo"
                     className="h-10 w-auto object-contain"
                   />
                   <button

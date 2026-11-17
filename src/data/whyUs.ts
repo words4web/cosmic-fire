@@ -7,6 +7,7 @@ export interface ProtectionPillar {
   description: string;
   icon: LucideIcon;
   image: string;
+  imageAlt?: string;
 }
 
 export interface WhyChooseUsData {
@@ -29,6 +30,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "We can suggest the optimal fire protection while considering the relevant fire safety regulations and premises-specific requirements.",
       icon: Scale,
       image: "/images/why-us/01-fire-safety-legislation.webp",
+      imageAlt:
+        "Commercial fire safety compliance audit and regulatory legislation review in London and Kent",
     },
     {
       number: "02",
@@ -37,6 +40,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "We recommend the proper fire protection equipment that would suit your needs and premises. We will consider all the details and specifics.",
       icon: Flame,
       image: "/images/why-us/02-fire-protection-equipment.webp",
+      imageAlt:
+        "Commercial certified fire protection equipment, extinguishers, and suppression systems",
     },
     {
       number: "03",
@@ -45,6 +50,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "We will point out and eliminate all the fire hazards, thus ensuring that all the needed fire protection equipment will be available in case of an emergency.",
       icon: AlertTriangle,
       image: "/images/why-us/03-fire-hazard-protection.webp",
+      imageAlt:
+        "Fire risk assessment engineer identifying and mitigating industrial hazards on site",
     },
     {
       number: "04",
@@ -53,6 +60,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "We provide all the fire protection equipment, such as extinguishers, fire alarms, and detectors, and can organize them into an intelligent fire protection system according to your premises’ needs.",
       icon: Cpu,
       image: "/images/why-us/04-fire-protection-system.webp",
+      imageAlt:
+        "Commercial integrated fire alarm and automatic smoke detection system installation",
     },
     {
       number: "05",
@@ -61,6 +70,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "We assist our clients in organizing and properly equipping their workplace or home with fire emergency response equipment.",
       icon: Siren,
       image: "/images/why-us/05-emergency-fire-protection.webp",
+      imageAlt:
+        "Commercial emergency fire evacuation response protocols and emergency lighting systems",
     },
     {
       number: "06",
@@ -69,6 +80,8 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
         "Our company offers professional fire protection equipment maintenance services that help to ensure that your equipment is always in proper working condition.",
       icon: Wrench,
       image: "/images/why-us/06-fire-protection-maintenance.webp",
+      imageAlt:
+        "Routine fire protection maintenance and annual statutory testing by certified engineers",
     },
   ],
 };

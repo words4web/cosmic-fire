@@ -84,7 +84,7 @@ export const WhyCosmicFire: React.FC = () => {
                         <div className="absolute inset-0 z-0">
                           <img
                             src={pillar.image}
-                            alt={pillar.title}
+                            alt={pillar.imageAlt || pillar.title}
                             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                             loading="lazy"
                           />

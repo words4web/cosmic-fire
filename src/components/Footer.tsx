@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               aria-label="Cosmic Fire - Back to top">
               <img
                 src="/logo.png"
-                alt="Cosmic Fire Logo"
+                alt="Cosmic Fire Solutions - Commercial Fire Safety & Protection UK"
                 className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105 shrink-0"
               />
               <div className="flex flex-col">
