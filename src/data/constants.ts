@@ -112,16 +112,15 @@ export const HERO_HOTSPOTS: HotspotItem[] = [
 ];
 
 export const CONSULTATION_SERVICES = [
-  "Fire Safety Inspection & Audit",
+  "Fire Safety Inspection",
   "Fire Protection Installation",
   "Fire Maintenance & Servicing",
   "Fire Doors & Screens",
   "Fire & Smoke Curtains",
   "Cavity Fire Barriers",
-  "Penetration Sealing",
+  "Fire Penetration Sealing",
   "Intumescent Steel Coatings",
-  "Extinguisher Supply & Servicing",
-  "Other Commercial Inquiry",
+  "Fire Extinguisher Servicing",
 ];
 
 export const NAV_ITEMS: { id: PageId; label: string; hasDropdown?: boolean }[] = [
