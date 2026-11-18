@@ -106,8 +106,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="lg:col-span-5 w-full flex justify-start lg:justify-end mt-2 lg:mt-0">
-            <div className="w-full max-w-[480px] sm:max-w-[540px] relative group">
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-[#0489F8]/30 via-[#FC7A21]/20 to-[#044FB7]/40 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity" />
+            <div className="w-full max-w-[460px] sm:max-w-[480px] lg:max-w-[440px] xl:max-w-[480px] relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#0489F8]/20 via-[#FC7A21]/15 to-[#044FB7]/25 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 backdrop-blur-md p-1.5 sm:p-2">
                 <div className="w-full grid grid-cols-2 gap-1.5 sm:gap-2 aspect-square">
@@ -115,10 +115,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <img
                       src="/images/about/sector-nhs-healthcare.webp"
                       alt="NHS hospital and healthcare building fire safety compliance"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/tile:scale-108"
+                      width={1088}
+                      height={1032}
+                      className="w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] transition-transform duration-500 group-hover/tile:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                     <div className="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2">
                       <span className="inline-block px-1.5 py-0.5 sm:px-2 rounded-md bg-[#044FB7]/90 text-white text-[9px] sm:text-[10px] font-mono-tech font-bold uppercase tracking-wider backdrop-blur-xs border border-white/20">
                         NHS &amp; Healthcare
@@ -130,10 +132,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <img
                       src="/images/about/sector-corporate-office.webp"
                       alt="Modern corporate commercial office building fire protection installation"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/tile:scale-108"
+                      width={1088}
+                      height={1032}
+                      className="w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] transition-transform duration-500 group-hover/tile:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                     <div className="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2">
                       <span className="inline-block px-1.5 py-0.5 sm:px-2 rounded-md bg-[#044FB7]/90 text-white text-[9px] sm:text-[10px] font-mono-tech font-bold uppercase tracking-wider backdrop-blur-xs border border-white/20">
                         Corporate Offices
@@ -145,10 +149,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <img
                       src="/images/about/sector-commercial-towers.webp"
                       alt="Commercial high-rise urban towers fire compartmentation and safety"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/tile:scale-108"
+                      width={1088}
+                      height={1032}
+                      className="w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] transition-transform duration-500 group-hover/tile:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                     <div className="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2">
                       <span className="inline-block px-1.5 py-0.5 sm:px-2 rounded-md bg-[#044FB7]/90 text-white text-[9px] sm:text-[10px] font-mono-tech font-bold uppercase tracking-wider backdrop-blur-xs border border-white/20">
                         Commercial Towers
@@ -160,10 +166,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     <img
                       src="/images/about/sector-education-school.webp"
                       alt="Educational campus and public facility fire risk management"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/tile:scale-108"
+                      width={1088}
+                      height={1032}
+                      className="w-full h-full object-cover [image-rendering:-webkit-optimize-contrast] transition-transform duration-500 group-hover/tile:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                     <div className="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2 sm:left-2 sm:right-2">
                       <span className="inline-block px-1.5 py-0.5 sm:px-2 rounded-md bg-[#044FB7]/90 text-white text-[9px] sm:text-[10px] font-mono-tech font-bold uppercase tracking-wider backdrop-blur-xs border border-white/20">
                         Educational Campuses
