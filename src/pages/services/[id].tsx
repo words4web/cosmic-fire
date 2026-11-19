@@ -95,9 +95,15 @@ export default function ServiceDetailPage() {
                 </div>
               )}
 
-              <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.08] text-white mb-5">
+              <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl tracking-tight leading-[1.08] text-white mb-3">
                 {service.title}
               </h1>
+
+              {service.tagline && (
+                <p className="text-base sm:text-xl font-medium text-[#0489F8] mb-5 font-sans">
+                  {service.tagline}
+                </p>
+              )}
 
               <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mb-8 font-sans">
                 {service.description}
@@ -141,6 +147,59 @@ export default function ServiceDetailPage() {
           </div>
         </div>
       </section>
+
+      {/* Structured Content Sections */}
+      {service.sections && service.sections.length > 0 && (
+        <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {service.sections.map((section, idx) => (
+              <div
+                key={idx}
+                className="p-7 sm:p-9 rounded-3xl bg-surface-card border border-surface-border shadow-xs hover:border-[#044FB7]/30 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#044FB7]/10 border border-[#0489F8]/20 flex items-center justify-center text-[#044FB7] mb-5">
+                    <ShieldCheck className="w-5 h-5 text-[#FC7A21]" />
+                  </div>
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-text-primary mb-2">
+                    {section.heading}
+                  </h3>
+                  {section.subheading && (
+                    <p className="text-xs sm:text-sm font-mono-tech uppercase tracking-wider text-[#044FB7] font-semibold mb-4">
+                      {section.subheading}
+                    </p>
+                  )}
+                  <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+                    {section.content}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Highlights / Key Capabilities */}
+      {service.highlights && service.highlights.length > 0 && (
+        <section className="pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border shadow-xs">
+            <h3 className="font-display font-black text-xl sm:text-2xl text-text-primary mb-6">
+              Key Standards & Compliance
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {service.highlights.map((h, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#044FB7]/10 text-[#0489F8] flex items-center justify-center shrink-0 mt-0.5">
+                    ✓
+                  </div>
+                  <span className="text-sm sm:text-base text-text-primary font-medium">
+                    {h}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
