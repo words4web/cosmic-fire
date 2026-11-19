@@ -1,5 +1,12 @@
 import type { LucideIcon } from "lucide-react";
-import { Scale, Flame, AlertTriangle, Cpu, Siren, Wrench } from "lucide-react";
+import {
+  FileCheck,
+  ShieldCheck,
+  Wrench,
+  Flame,
+  Hammer,
+  Shield,
+} from "lucide-react";
 
 export interface ProtectionPillar {
   number: string;
@@ -19,69 +26,69 @@ export interface WhyChooseUsData {
 
 export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
   tag: "Why Choose Cosmic Fire",
-  headline: "Engineered for What's at Stake",
+  headline: "Built for Purpose by Certified Specialists",
   description:
-    "There are numerous fire hazards that can occur in a business, such as electrical equipment and kitchen appliances, along with machinery, storage spaces, and public areas. Cosmic Fire Solution can assist you with identifying what fire protection needs you have to achieve safer premises, be prepared and to comply.",
+    "We provide certified fire door and passive fire protection services across London and Kent. From full inspections and expert installations to routine maintenance, bespoke manufacturing, and certified steel doors, we ensure your building is safe, fully compliant, and protected.",
   pillars: [
     {
       number: "01",
-      title: "Fire Safety Legislation",
+      title: "Fire Door Inspections",
       description:
-        "We can suggest the optimal fire protection while considering the relevant fire safety regulations and premises-specific requirements.",
-      icon: Scale,
+        "We check and test all components of your fire doors — including leaves, frames, seals, hinges, and closers — and issue full compliance certification.",
+      icon: FileCheck,
       image: "/images/why-us/01-fire-safety-legislation.webp",
       imageAlt:
-        "Commercial fire safety compliance audit and regulatory legislation review in London and Kent",
+        "Certified specialist inspecting commercial fire door leaf and frame condition",
     },
     {
       number: "02",
-      title: "Fire Protection Equipment",
+      title: "Fire Door Installation",
       description:
-        "We recommend the proper fire protection equipment that would suit your needs and premises. We will consider all the details and specifics.",
-      icon: Flame,
+        "Industry standard, certificated installations by fully qualified carpenters ensuring every component performs to its rated fire resistance.",
+      icon: ShieldCheck,
       image: "/images/why-us/02-fire-protection-equipment.webp",
       imageAlt:
-        "Commercial certified fire protection equipment, extinguishers, and suppression systems",
+        "Qualified carpenter fitting a certified fire door assembly on site",
     },
     {
       number: "03",
-      title: "Fire Hazard Protection",
+      title: "Fire Door Maintenance",
       description:
-        "We will point out and eliminate all the fire hazards, thus ensuring that all the needed fire protection equipment will be available in case of an emergency.",
-      icon: AlertTriangle,
-      image: "/images/why-us/03-fire-hazard-protection.webp",
-      imageAlt:
-        "Fire risk assessment engineer identifying and mitigating industrial hazards on site",
-    },
-    {
-      number: "04",
-      title: "Fire Protection System",
-      description:
-        "We provide all the fire protection equipment, such as extinguishers, fire alarms, and detectors, and can organize them into an intelligent fire protection system according to your premises’ needs.",
-      icon: Cpu,
-      image: "/images/why-us/04-fire-protection-system.webp",
-      imageAlt:
-        "Commercial integrated fire alarm and automatic smoke detection system installation",
-    },
-    {
-      number: "05",
-      title: "Emergency Fire Protection",
-      description:
-        "We assist our clients in organizing and properly equipping their workplace or home with fire emergency response equipment.",
-      icon: Siren,
-      image: "/images/why-us/05-emergency-fire-protection.webp",
-      imageAlt:
-        "Commercial emergency fire evacuation response protocols and emergency lighting systems",
-    },
-    {
-      number: "06",
-      title: "Fire Protection Maintenance",
-      description:
-        "Our company offers professional fire protection equipment maintenance services that help to ensure that your equipment is always in proper working condition.",
+        "The resistance capabilities of fire doors can be seriously compromised if not properly maintained. We repair and adjust doors to keep them fully certified.",
       icon: Wrench,
       image: "/images/why-us/06-fire-protection-maintenance.webp",
       imageAlt:
-        "Routine fire protection maintenance and annual statutory testing by certified engineers",
+        "Fire door maintenance specialist adjusting closers and seals",
+    },
+    {
+      number: "04",
+      title: "Fire Stopping",
+      description:
+        "Sealing openings around pipes, cables, and ducting to create fire-resisting compartments that prevent smoke and fire from spreading through buildings.",
+      icon: Flame,
+      image: "/images/why-us/03-fire-hazard-protection.webp",
+      imageAlt:
+        "Certified technician installing fire stopping seals around wall penetrations",
+    },
+    {
+      number: "05",
+      title: "Fire Door Manufacturing",
+      description:
+        "We manufacture bespoke fire doors to match any style of decor whilst adhering to all fire safety regulations and acoustic requirements.",
+      icon: Hammer,
+      image: "/images/why-us/04-fire-protection-system.webp",
+      imageAlt:
+        "Bespoke fire door manufacturing with certified frames and finishes",
+    },
+    {
+      number: "06",
+      title: "Steel Doors",
+      description:
+        "Our high-performance steel fire doors are certified for up to 4 hours, providing a robust, secure, and low-maintenance fire protection solution.",
+      icon: Shield,
+      image: "/images/why-us/05-emergency-fire-protection.webp",
+      imageAlt:
+        "High performance 4-hour rated commercial steel fire door",
     },
   ],
 };

@@ -9,13 +9,22 @@ export default function ServiceDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  // Support legacy or aliased slug (fire-barriers -> cavity-fire-barriers)
-  const normalizedId = id === "fire-barriers" ? "cavity-fire-barriers" : id;
-  const service = DETAILED_SERVICES_DATA.find((s) => s.id === normalizedId);
+  // Support legacy or aliased slugs
+  const slugAliases: Record<string, string> = {
+    "fire-safety-inspection": "fire-door-inspections",
+    "fire-protection-installation": "fire-door-installation",
+    "fire-maintenance-remedials": "fire-door-maintenance",
+    "fire-doors-screens": "fire-door-manufacturing",
+    "penetration-sealing": "fire-stopping",
+  };
+  const targetId = slugAliases[id || ""] || id;
+  const service = DETAILED_SERVICES_DATA.find((s) => s.id === targetId);
   const imageMeta = service ? SERVICE_IMAGES[service.id] : null;
 
   useSEO({
-    title: service?.metaTitle || (service ? `${service.title} | Cosmic Fire` : "Service Not Found"),
+    title:
+      service?.metaTitle ||
+      (service ? `${service.title} | Cosmic Fire` : "Service Not Found"),
     description: service?.metaDescription || service?.description,
   });
 
