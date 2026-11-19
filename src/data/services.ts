@@ -104,37 +104,37 @@ export const SERVICE_IMAGES: Record<
   import("../types").ServiceImageMeta
 > = {
   "fire-door-inspections": {
-    url: "/images/why-us/01-fire-safety-legislation.webp",
+    url: "/images/services/fire-door-inspections.webp",
     alt: "Fire safety engineer conducting comprehensive commercial building fire door inspection in London and Kent",
     category: "core",
     tag: "Inspection & Audit",
   },
   "fire-door-installation": {
-    url: "/images/why-us/02-fire-protection-equipment.webp",
+    url: "/images/services/fire-door-installation.webp",
     alt: "Qualified carpenter installing certified commercial fire door assembly",
     category: "core",
     tag: "Certified Installation",
   },
   "fire-door-maintenance": {
-    url: "/images/why-us/06-fire-protection-maintenance.webp",
+    url: "/images/services/fire-door-maintenance.webp",
     alt: "Technician performing routine fire door servicing, closer adjustments, and seal maintenance",
     category: "core",
     tag: "Regular Maintenance",
   },
   "fire-stopping": {
-    url: "/images/services/penetration-sealing.webp",
+    url: "/images/services/fire-stopping.webp",
     alt: "Fire stopping technician sealing service penetrations around pipes and cables in compartment walls",
     category: "passive",
     tag: "Compartmentation",
   },
   "fire-door-manufacturing": {
-    url: "/images/services/fire-doors-screens.webp",
+    url: "/images/services/fire-door-manufacturing.webp",
     alt: "Bespoke commercial timber and acoustic fire door manufacturing",
     category: "passive",
     tag: "Bespoke Manufacturing",
   },
   "steel-doors": {
-    url: "/images/why-us/05-emergency-fire-protection.webp",
+    url: "/images/services/steel-doors.webp",
     alt: "High performance 4-hour rated commercial steel fire door installation",
     category: "passive",
     tag: "Steel Doors",
@@ -142,31 +142,31 @@ export const SERVICE_IMAGES: Record<
 
   // Aliases for backward compatibility with existing links
   "fire-safety-inspection": {
-    url: "/images/why-us/01-fire-safety-legislation.webp",
+    url: "/images/services/fire-door-inspections.webp",
     alt: "Fire safety engineer conducting comprehensive commercial building fire door inspection",
     category: "core",
     tag: "Inspection & Audit",
   },
   "fire-protection-installation": {
-    url: "/images/why-us/02-fire-protection-equipment.webp",
+    url: "/images/services/fire-door-installation.webp",
     alt: "Qualified carpenter installing certified commercial fire door assembly",
     category: "core",
     tag: "Certified Installation",
   },
   "fire-maintenance-remedials": {
-    url: "/images/why-us/06-fire-protection-maintenance.webp",
+    url: "/images/services/fire-door-maintenance.webp",
     alt: "Technician performing routine fire door servicing and maintenance",
     category: "core",
     tag: "Regular Maintenance",
   },
   "fire-doors-screens": {
-    url: "/images/services/fire-doors-screens.webp",
+    url: "/images/services/fire-door-manufacturing.webp",
     alt: "Certified commercial fire doors and screens",
     category: "passive",
     tag: "Bespoke Doors",
   },
   "penetration-sealing": {
-    url: "/images/services/penetration-sealing.webp",
+    url: "/images/services/fire-stopping.webp",
     alt: "Fire stopping seals around pipes and cables",
     category: "passive",
     tag: "Fire Stopping",

@@ -30,7 +30,7 @@ export const ServicesShowcase = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-10">
           {DETAILED_SERVICES_DATA.map((service) => {
             const imageMeta = SERVICE_IMAGES[service.id] || {
-              url: "/images/why-us/01-fire-safety-legislation.webp",
+              url: "/images/services/fire-door-inspections.webp",
               alt: service.title,
               category: "core",
               tag: "Certified Service",

@@ -36,9 +36,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We check and test all components of your fire doors — including leaves, frames, seals, hinges, and closers — and issue full compliance certification.",
       icon: FileCheck,
-      image: "/images/why-us/01-fire-safety-legislation.webp",
+      image: "/images/services/fire-door-inspections.webp",
       imageAlt:
-        "Certified specialist inspecting commercial fire door leaf and frame condition",
+        "Certified UK fire safety specialist inspecting commercial fire door leaf gap and intumescent seal",
     },
     {
       number: "02",
@@ -46,9 +46,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "Industry standard, certificated installations by fully qualified carpenters ensuring every component performs to its rated fire resistance.",
       icon: ShieldCheck,
-      image: "/images/why-us/02-fire-protection-equipment.webp",
+      image: "/images/services/fire-door-installation.webp",
       imageAlt:
-        "Qualified carpenter fitting a certified fire door assembly on site",
+        "Qualified carpenter fitting a certified solid timber commercial fire door assembly",
     },
     {
       number: "03",
@@ -56,9 +56,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "The resistance capabilities of fire doors can be seriously compromised if not properly maintained. We repair and adjust doors to keep them fully certified.",
       icon: Wrench,
-      image: "/images/why-us/06-fire-protection-maintenance.webp",
+      image: "/images/services/fire-door-maintenance.webp",
       imageAlt:
-        "Fire door maintenance specialist adjusting closers and seals",
+        "Fire door maintenance specialist servicing overhead closer and checking perimeter smoke seals",
     },
     {
       number: "04",
@@ -66,9 +66,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "Sealing openings around pipes, cables, and ducting to create fire-resisting compartments that prevent smoke and fire from spreading through buildings.",
       icon: Flame,
-      image: "/images/why-us/03-fire-hazard-protection.webp",
+      image: "/images/services/fire-stopping.webp",
       imageAlt:
-        "Certified technician installing fire stopping seals around wall penetrations",
+        "Certified technician installing passive fire stopping seals and collars around wall penetrations",
     },
     {
       number: "05",
@@ -76,9 +76,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "We manufacture bespoke fire doors to match any style of decor whilst adhering to all fire safety regulations and acoustic requirements.",
       icon: Hammer,
-      image: "/images/why-us/04-fire-protection-system.webp",
+      image: "/images/services/fire-door-manufacturing.webp",
       imageAlt:
-        "Bespoke fire door manufacturing with certified frames and finishes",
+        "Bespoke commercial fire door manufacturing in timber joinery workshop",
     },
     {
       number: "06",
@@ -86,9 +86,9 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       description:
         "Our high-performance steel fire doors are certified for up to 4 hours, providing a robust, secure, and low-maintenance fire protection solution.",
       icon: Shield,
-      image: "/images/why-us/05-emergency-fire-protection.webp",
+      image: "/images/services/steel-doors.webp",
       imageAlt:
-        "High performance 4-hour rated commercial steel fire door",
+        "High performance 4-hour rated industrial steel fire exit door with panic push bar",
     },
   ],
 };
