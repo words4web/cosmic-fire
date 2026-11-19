@@ -1,7 +1,7 @@
 import { CompanyContact } from "../types";
 
 export const COMPANY_CONTACT: CompanyContact = {
-  address: "100 Fire Safety Way, London, EC2A 4NE",
+  address: "11 Giles Field, Gravesend, DA12 2RB",
   phone: "+44 7432 576606",
   phoneRaw: "+447432576606",
   email: "info@cosmicfire.co.uk",
