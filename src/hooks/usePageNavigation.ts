@@ -7,7 +7,13 @@ export const usePageNavigation = () => {
   const location = useLocation();
 
   const handleNavigate = useCallback(
-    (page: PageId) => {
+    (page: PageId | string) => {
+      if (typeof page === "string" && (page.startsWith("/") || page.startsWith("#"))) {
+        navigate(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       if (page === "home") {
         if (location.pathname === "/" && !location.hash) {
           window.scrollTo({ top: 0, behavior: "smooth" });

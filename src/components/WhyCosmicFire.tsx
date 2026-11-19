@@ -1,6 +1,7 @@
 import React from "react";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { WHY_CHOOSE_US_DATA } from "../data/whyUs";
 
 interface WhyCosmicFireProps {
@@ -102,22 +103,18 @@ export const WhyCosmicFire: React.FC<WhyCosmicFireProps> = ({ onNavigate }) => {
                     </h3>
 
                     <div>
-                      {onNavigate ? (
-                        <button
-                          type="button"
-                          onClick={() => onNavigate(targetUrl)}
-                          className="w-full py-3 px-4 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-[#044FB7] hover:bg-[#033E91] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-lg cursor-pointer">
-                          <span>Explore Service</span>
-                          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                        </button>
-                      ) : (
-                        <a
-                          href={targetUrl}
-                          className="w-full py-3 px-4 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-[#044FB7] hover:bg-[#033E91] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-lg cursor-pointer">
-                          <span>Explore Service</span>
-                          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
-                        </a>
-                      )}
+                      <Link
+                        to={targetUrl}
+                        onClick={(e) => {
+                          if (onNavigate) {
+                            e.preventDefault();
+                            onNavigate(targetUrl);
+                          }
+                        }}
+                        className="w-full py-3 px-4 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-[#044FB7] hover:bg-[#033E91] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-lg cursor-pointer">
+                        <span>Explore Service</span>
+                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
