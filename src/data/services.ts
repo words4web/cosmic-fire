@@ -5,7 +5,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-door-inspections",
     title: "Fire Door Inspections",
     badge: "BM Trada Q-Mark Certified",
-    tagline: "Complete assessment on the function and condition of your fire doors",
+    tagline:
+      "Complete assessment on the function and condition of your fire doors",
     metaTitle: "Fire Door Inspections London & Kent | Cosmic Fire",
     metaDescription:
       "BM Trada Q-Mark certified fire door inspections in London and Kent. Full assessment, photographic compliance report and annual certification.",
@@ -23,7 +24,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-door-installation",
     title: "Fire Door Installation",
     badge: "BM Trada Q-Mark Installation",
-    tagline: "Correct fire door installation you can trust across London & Kent",
+    tagline:
+      "Correct fire door installation you can trust across London & Kent",
     metaTitle: "Fire Door Installation London & Kent | Cosmic Fire",
     metaDescription:
       "BM Trada Q-Mark certified fire door installation in London & Kent. Installed by qualified carpenters with third-party certified hardware.",
@@ -41,7 +43,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-door-maintenance",
     title: "Fire Door Maintenance",
     badge: "BM Trada Q-Mark Maintenance",
-    tagline: "Essential fire door maintenance to protect certification and safety",
+    tagline:
+      "Essential fire door maintenance to protect certification and safety",
     metaTitle: "Fire Door Maintenance London & Kent | Cosmic Fire",
     metaDescription:
       "BM Trada Q-Mark certified fire door maintenance across London & Kent. Cost-effective upgrades, compliant repairs, and statutory compliance.",
@@ -60,7 +63,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     title: "Fire Stopping",
     badge: "Passive Fire Protection",
     tagline: "Sealing openings to prevent smoke, heat and fire from spreading",
-    metaTitle: "Fire Stopping & Penetration Sealing London & Kent | Cosmic Fire",
+    metaTitle:
+      "Fire Stopping & Penetration Sealing London & Kent | Cosmic Fire",
     metaDescription:
       "Certified fire stopping and penetration sealing across London & Kent. Subdividing buildings with fire-resistant compartments to stop fire spread.",
     description:
@@ -77,7 +81,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "fire-door-manufacturing",
     title: "Fire Door Manufacturing",
     badge: "Bespoke Joinery",
-    tagline: "Bespoke fire door manufacturing tailored to your exact decor and specification",
+    tagline:
+      "Bespoke fire door manufacturing tailored to your exact decor and specification",
     metaTitle: "Bespoke Fire Door Manufacturing London & Kent | Cosmic Fire",
     metaDescription:
       "Bespoke commercial fire doors rated from 30 mins to 4 hours in London & Kent. Acoustic ratings up to 54dB, hardwood, softwood, and flush styles.",
@@ -95,7 +100,8 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     id: "steel-doors",
     title: "Steel Doors",
     badge: "Up to 4-Hour Fire Resistance",
-    tagline: "High performance steel fire doors for maximum safety across London & Kent",
+    tagline:
+      "High performance steel fire doors for maximum safety across London & Kent",
     metaTitle: "Commercial Steel Fire Doors London & Kent | Cosmic Fire",
     metaDescription:
       "High performance steel fire doors certified up to 4 hours in London & Kent. Robust, secure, and low maintenance solutions tested to UK fire standards.",
@@ -108,6 +114,83 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
       "Exclusively approved and tested ironmongery fitted with each doorset",
     ],
     ctaText: "Get a Steel Door Estimate",
+  },
+  {
+    id: "fire-curtains",
+    title: "Fire Curtains",
+    badge: "Deployable Barriers",
+    tagline: "Automatic gravity fail-safe curtains containing smoke and fire",
+    metaTitle: "Commercial Fire Curtains London & Kent | Cosmic Fire",
+    metaDescription:
+      "Automatic deployable fire curtains across London & Kent. Creates temporary barriers across open spaces to prevent flame and smoke spread.",
+    description:
+      "In the event of a fire, a fire curtain creates an automatic temporary barrier across an opening to contain smoke and flames. When activated by an alarm, the curtain descends seamlessly under gravity fail-safe operation, preventing fire and toxic smoke from spreading from one room to another across open-plan atriums, corridors, and doorways.",
+    highlights: [
+      "Automatic gravity fail-safe descent upon fire alarm activation",
+      "Maintains open-plan architectural spaces without fixed walls",
+      "Up to 120+ minutes integrity and smoke containment rating",
+      "Side guide channels, bottom bars & emergency retract switches",
+    ],
+    ctaText: "Get a Fire Curtain Estimate",
+  },
+  {
+    id: "intumescent-coatings",
+    title: "Intumescent Coatings",
+    badge: "Structural Fire Protection",
+    tagline:
+      "Fire-retardant paint providing up to 120 minutes structural steel resistance",
+    metaTitle: "Intumescent Coatings & Paint London & Kent | Cosmic Fire",
+    metaDescription:
+      "Specialist intumescent paint applications for structural steel and cast iron in London & Kent. Providing up to 120 minutes fire resistance.",
+    description:
+      "Intumescent fire-retardant paints for structural steel and cast iron are engineered to provide up to 120 minutes of fire resistance. In heat, the coating swells into a thick insulating char that shields load-bearing steelwork from reaching critical failure temperature. Available for interior and exterior environments in a full range of architectural finishes.",
+    highlights: [
+      "Provides up to 120 minutes fire resistance for structural steel",
+      "Interior & exterior formulations with custom architectural topcoats",
+      "Prevents premature building collapse during emergency evacuations",
+      "Full dry film thickness (DFT) compliance verification & certificate",
+    ],
+    ctaText: "Get a Coating Estimate",
+  },
+  {
+    id: "fire-barriers",
+    title: "Cavity Fire Barriers",
+    badge: "Concealed Void Protection",
+    tagline:
+      "Essential fire barriers preventing flame and smoke spread in hidden cavities",
+    metaTitle:
+      "Cavity Fire Barriers & Void Protection London & Kent | Cosmic Fire",
+    metaDescription:
+      "Ventilated and non-ventilated cavity fire barriers across London & Kent. Preventing flame and smoke spread within ceiling voids and cavity walls.",
+    description:
+      "Fire barrier systems are essential to prevent the spread of smoke and fire through obscured spaces within a building, such as suspended ceiling voids, raised floors, and external wall cavities. We supply and install certified ventilated and solid cavity barriers tailored to a wide range of cavity sizes and structural layouts.",
+    highlights: [
+      "Halts hidden fire propagation within ceiling voids and wall cavities",
+      "Ventilated cavity barriers with expanding intumescent strips",
+      "High-density rock mineral wool & certified wire-reinforced systems",
+      "Fully compliant with Building Regulations Approved Document B",
+    ],
+    ctaText: "Get a Barrier Estimate",
+  },
+  {
+    id: "air-sealing",
+    title: "Air Sealing",
+    badge: "Building Regs Part L2",
+    tagline:
+      "Airtightness and acoustic sealing preventing fire spread and energy loss",
+    metaTitle:
+      "Air Sealing & Airtightness Compliance London & Kent | Cosmic Fire",
+    metaDescription:
+      "Air leakage sealing and airtightness compliance in London & Kent. Meeting Building Regulations Part L2 to restrict flame spread and save energy.",
+    description:
+      "Air leakage in buildings not only increases the spread of flames and toxic gases in the event of a fire, but also seriously impacts building energy efficiency. Air leakage is a critical concern for both life safety and environmental performance, requiring buildings to adhere strictly to UK Building Regulations Part L2.",
+    highlights: [
+      "Eliminates uncontrolled air drafts that feed flame spread",
+      "Full compliance with UK Building Regulations Part L2",
+      "Lowers heating and cooling losses across commercial premises",
+      "Air permeability testing, mastic sealing & membrane installation",
+    ],
+    ctaText: "Get an Air Sealing Estimate",
   },
 ];
 
@@ -150,6 +233,30 @@ export const SERVICE_IMAGES: Record<
     alt: "High performance 4-hour rated commercial steel fire door installation",
     category: "passive",
     tag: "Steel Doors",
+  },
+  "fire-curtains": {
+    url: "/images/services/fire-curtains.webp",
+    alt: "Commercial automatic deployable fire curtain in modern atrium opening",
+    category: "passive",
+    tag: "Fire Curtains",
+  },
+  "intumescent-coatings": {
+    url: "/images/services/intumescent-coatings.webp",
+    alt: "Specialist spray application of intumescent fire-retardant paint on structural steelwork",
+    category: "passive",
+    tag: "Intumescent Paint",
+  },
+  "fire-barriers": {
+    url: "/images/services/fire-barriers.webp",
+    alt: "Ventilated cavity fire barrier and void firestop system in suspended ceiling",
+    category: "passive",
+    tag: "Cavity Barriers",
+  },
+  "air-sealing": {
+    url: "/images/services/air-sealing.webp",
+    alt: "Commercial building air leakage sealing and Building Regulations Part L2 compliance",
+    category: "passive",
+    tag: "Air Sealing",
   },
 
   // Aliases for backward compatibility with existing links

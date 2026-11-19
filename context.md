@@ -9,13 +9,17 @@ The platform follows a grounded, high-trust British commercial contractor aesthe
 ### Key Highlights:
 
 - **Hero Quote Form Integration**: The primary engineering consultation form is embedded directly into the Hero section with live ambient lighting animations, clean form fields (no asterisks), and a prominent `"GET A FREE QUOTE"` call-to-action bar with phone contact (`+44 (0) 20 7946 0991`).
-- **London Fire Doors 6-Core Service Hierarchy**:
+- **Services Hierarchy & Navigation**:
   1. **Fire Door Inspections** (`/services/fire-door-inspections`) — BM Trada Q-Mark certified multi-point assessments, surveys, and annual certification.
   2. **Fire Door Installation** (`/services/fire-door-installation`) — BM Trada Q-Mark certified installations by qualified carpenters with tested third-party hardware.
   3. **Fire Door Maintenance** (`/services/fire-door-maintenance`) — Planned statutory servicing under the Regulatory Reform (Fire Safety) Order to preserve certification cost-effectively.
   4. **Fire Stopping** (`/services/fire-stopping`) — Sealing service breaches and penetration openings around pipes, cables, and ducts to maintain compartmentation.
-  5. **Fire Door Manufacturing** (`/services/fire-door-manufacturing`) — Bespoke FD30–FD240 timber and up to 54dB acoustic fire doors crafted for architects, interior designers, and contractors.
+  5. **Fire Door Manufacturing** (`/services/fire-door-manufacturing`) — Bespoke FD30–FD240 timber and up to 54dB acoustic fire doors and glazed screens.
   6. **Steel Doors** (`/services/steel-doors`) — Heavy-duty 4-hour rated industrial and commercial steel fire exit doors with certified ironmongery.
+  7. **Fire Curtains** (`/services/fire-curtains`) — Automatic gravity fail-safe deployable curtains containing fire and smoke across open-plan atriums.
+  8. **Intumescent Coatings** (`/services/intumescent-coatings`) — Fire-retardant structural steel paint systems providing up to 120 minutes fire resistance.
+  9. **Cavity Fire Barriers** (`/services/fire-barriers`) — Ventilated and solid cavity fire barriers preventing hidden fire spread in ceiling and wall voids.
+  10. **Air Sealing** (`/services/air-sealing`) — Airtightness and acoustic sealing preventing draft-driven fire spread while meeting UK Building Regulations Part L2.
 - **Dynamic Service Detail Pages (`/services/:id`)**: Mobile-responsive showcase featuring custom badges, taglines, concise descriptions, direct "Get an Estimate" & "Call Us" CTAs, verified compliance checklists, and an "Other Certified Services" discovery carousel.
 - **Full Social Sharing & SEO Infrastructure**:
   - Dynamically updates `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<meta property="og:image">`, and `<meta name="twitter:image">` per page via the `useSEO` hook.

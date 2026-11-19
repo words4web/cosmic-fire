@@ -118,6 +118,10 @@ export const CONSULTATION_SERVICES = [
   "Fire Stopping",
   "Fire Door Manufacturing",
   "Steel Doors",
+  "Fire Curtains",
+  "Intumescent Coatings",
+  "Cavity Fire Barriers",
+  "Air Sealing",
 ];
 
 export const NAV_ITEMS: { id: PageId; label: string; hasDropdown?: boolean }[] = [
