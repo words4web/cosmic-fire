@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                     href={`tel:${COMPANY_CONTACT.phoneRaw}`}
                     className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 text-white/95 hover:text-[#FC7A21] font-semibold text-xs tracking-wide transition-colors cursor-pointer">
                     <Phone className="w-3.5 h-3.5 text-[#0489F8] shrink-0" />
-                    <span>Call: +44 (0) 20 7946 0991</span>
+                    <span>Call Us</span>
                   </a>
                 </div>
               </motion.div>

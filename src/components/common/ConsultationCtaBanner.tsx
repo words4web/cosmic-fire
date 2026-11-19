@@ -42,7 +42,7 @@ export const ConsultationCtaBanner: React.FC<ConsultationCtaBannerProps> = ({
           href={`tel:${COMPANY_CONTACT.phoneRaw}`}
           className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:px-7 rounded-full bg-surface-bg hover:bg-surface-muted active:scale-[0.98] text-text-primary border border-surface-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer">
           <Phone className="w-3.5 h-3.5 text-brand-primary shrink-0" />
-          <span>{secondaryButtonText || `Call ${COMPANY_CONTACT.phone}`}</span>
+          <span>{secondaryButtonText || "Call Us"}</span>
         </a>
       </div>
     </div>

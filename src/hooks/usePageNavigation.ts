@@ -26,12 +26,12 @@ export const usePageNavigation = () => {
 
       if (page === "services" || page === "solutions") {
         if (location.pathname === "/") {
-          const el = document.getElementById("contact-section");
+          const el = document.getElementById("why-cosmic-fire");
           if (el) {
             el.scrollIntoView({ behavior: "smooth" });
           }
         } else {
-          navigate("/#contact-section");
+          navigate("/#why-cosmic-fire");
         }
         return;
       }

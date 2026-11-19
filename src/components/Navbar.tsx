@@ -238,12 +238,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           <div className="hidden md:flex items-center gap-3 lg:gap-4">
             <a
               href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-              className="flex flex-col text-right group">
-              <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider">
-                Talk to an Expert
-              </span>
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-surface-border bg-surface-bg hover:bg-surface-muted transition-colors group">
+              <Phone className="w-3.5 h-3.5 text-brand-primary" />
               <span className="text-xs font-extrabold text-text-primary group-hover:text-brand-primary transition-colors">
-                +44 (0) 20 7946 0991
+                Call Us
               </span>
             </a>
 
@@ -382,7 +380,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   href={`tel:${COMPANY_CONTACT.phoneRaw}`}
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#F8F5ED] border border-[#E7DED0] text-xs font-bold text-[#171B18] hover:text-[#044FB7] transition-colors">
                   <Phone className="w-4 h-4 text-[#044FB7]" />
-                  <span>Call: {COMPANY_CONTACT.phone}</span>
+                  <span>Call Us</span>
                 </a>
 
                 <button
