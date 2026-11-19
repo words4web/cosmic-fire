@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUp, Mail, Phone, MapPin, Activity } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin } from "lucide-react";
 import { PageId } from "../types";
 import { FOOTER_DATA, FOOTER_LINKS } from "../data/footer";
 import { COMPANY_CONTACT } from "../data/company";
@@ -14,11 +14,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="w-full bg-[#080D1A] text-white border-t border-white/10 pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-12 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#0489F8_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.06]" />
+    <footer className="w-full bg-gradient-to-br from-[#12274A] via-[#1A3660] to-[#16253D] text-white border-t border-[#0489F8]/30 pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-12 relative overflow-hidden">
+      {/* Subtle Dot Grid */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(#0489F8_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.12]" />
+
+      {/* Lighter Blue and Orange Ambient Glows */}
+      <div className="absolute -top-24 -right-24 w-[450px] h-[450px] bg-[#0489F8]/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-[420px] h-[420px] bg-[#FC7A21]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#044FB7]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-white/20">
           <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5">
             <button
               onClick={() => {
@@ -94,16 +100,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   {COMPANY_CONTACT.email}
                 </a>
               </div>
-            </div>
-
-            <div className="p-3 sm:p-3.5 rounded-xl bg-white/[0.04] border border-white/10 space-y-1 mt-3">
-              <div className="flex items-center gap-2 text-[10px] font-mono-tech uppercase text-white/60">
-                <Activity className="w-3.5 h-3.5 text-[#0489F8] animate-pulse" />
-                <span>24/7 Monitoring Center</span>
-              </div>
-              <span className="text-xs font-bold text-[#0489F8] font-mono-tech block">
-                {COMPANY_CONTACT.monitoringCenterStatus}
-              </span>
             </div>
           </div>
         </div>

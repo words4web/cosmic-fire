@@ -47,7 +47,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
   tag: "Why Choose Cosmic Fire",
   headline: "Built for Purpose by Certified Specialists",
   description:
-    "We provide certified fire door and passive fire protection services across London and Kent. From full inspections and expert installations to routine maintenance, bespoke manufacturing, structural coatings, and cavity barriers, we ensure your building is safe, fully compliant, and protected.",
+    "We provide certified fire door and passive fire protection services across London and Kent. From full inspections and expert installations to routine maintenance, bespoke manufacturing, structural coatings, and fire barriers, we ensure your building is safe, fully compliant, and protected.",
   pillars: DETAILED_SERVICES_DATA.map((service, index) => {
     const imageMeta = SERVICE_IMAGES[service.id];
     return {

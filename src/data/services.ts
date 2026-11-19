@@ -4,16 +4,16 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   {
     id: "fire-door-inspections",
     title: "Fire Door Inspections",
-    badge: "BM Trada Q-Mark Certified",
+    badge: "Certified Inspection",
     tagline:
       "Complete assessment on the function and condition of your fire doors",
     metaTitle: "Fire Door Inspections London & Kent | Cosmic Fire",
     metaDescription:
-      "BM Trada Q-Mark certified fire door inspections in London and Kent. Full assessment, photographic compliance report and annual certification.",
+      "Fully certified fire door inspections in London and Kent. Full assessment, photographic compliance report and annual certification.",
     description:
       "Most commercial and rented buildings have many fire doors, all of which can be damaged by everyday wear and tear or vandalism. If these doors are non-compliant, you may be held liable in the event of a fire. We perform a complete check on all fire doors in your building to ensure they comply with current UK regulations and provide full compliance certification on an annual basis.",
     highlights: [
-      "BM Trada Q-Mark scheme fully certified inspectors",
+      "Fully certified and accredited fire door inspectors",
       "Complete check on door leaf, frame, seals, hinges & hardware",
       "Detailed photographic survey & defect report",
       "Annual compliance certificate issued for your legal records",
@@ -23,16 +23,16 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   {
     id: "fire-door-installation",
     title: "Fire Door Installation",
-    badge: "BM Trada Q-Mark Installation",
+    badge: "Certified Installation",
     tagline:
       "Correct fire door installation you can trust across London & Kent",
     metaTitle: "Fire Door Installation London & Kent | Cosmic Fire",
     metaDescription:
-      "BM Trada Q-Mark certified fire door installation in London & Kent. Installed by qualified carpenters with third-party certified hardware.",
+      "Certified commercial fire door installation in London & Kent. Installed by qualified carpenters with third-party certified hardware.",
     description:
-      "A fire door assembly includes the door leaf, frame, doorstops, seals, hinges, and hardware. If just one wrong component is used, it may compromise the door's performance and cost lives. All of our installers are certified under the BM Trada Q-Mark fire door installation scheme, providing reassurance that specified products are fitted correctly and achieve required fire resistance.",
+      "A fire door assembly includes the door leaf, frame, doorstops, seals, hinges, and hardware. If just one wrong component is used, it may compromise the door's performance and cost lives. All of our installers are certified professionals, providing reassurance that specified products are fitted correctly and achieve required fire resistance.",
     highlights: [
-      "BM Trada Q-Mark certified installers & qualified carpenters",
+      "Fully certified installers & qualified commercial carpenters",
       "Third-party certified seals, locks, latches, closers & hinges",
       "Full technical specification on all fixtures and fittings",
       "Official certificate of installation provided on completion",
@@ -42,16 +42,16 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   {
     id: "fire-door-maintenance",
     title: "Fire Door Maintenance",
-    badge: "BM Trada Q-Mark Maintenance",
+    badge: "Certified Maintenance",
     tagline:
       "Essential fire door maintenance to protect certification and safety",
     metaTitle: "Fire Door Maintenance London & Kent | Cosmic Fire",
     metaDescription:
-      "BM Trada Q-Mark certified fire door maintenance across London & Kent. Cost-effective upgrades, compliant repairs, and statutory compliance.",
+      "Certified commercial fire door maintenance across London & Kent. Cost-effective upgrades, compliant repairs, and statutory compliance.",
     description:
-      "Under the Regulatory Reform (Fire Safety) Order, building operators have a legal duty to ensure fire doors retain their resistance throughout their working life. If issues are found, they must be corrected promptly using compliant components. Our BM Trada Q-Mark Maintenance Scheme certification enables us to repair and upgrade existing fire doors as a cost-effective alternative to purchasing new doorsets.",
+      "Under the Regulatory Reform (Fire Safety) Order, building operators have a legal duty to ensure fire doors retain their resistance throughout their working life. If issues are found, they must be corrected promptly using compliant components. Our certified maintenance specialists repair and upgrade existing fire doors as a cost-effective alternative to purchasing new doorsets.",
     highlights: [
-      "BM Trada Q-Mark certified Fire Door Maintainers",
+      "Fully certified and accredited Fire Door Maintainers",
       "Cost-effective alternative to costly new doorset installations",
       "Perimeter intumescent & smoke seal replacements",
       "Closer adjustments, hinge repointing & hardware compliance",
@@ -106,11 +106,11 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
     metaDescription:
       "High performance steel fire doors certified up to 4 hours in London & Kent. Robust, secure, and low maintenance solutions tested to UK fire standards.",
     description:
-      "Our steel fire doors are certified for up to 4 hours, providing a robust and low-maintenance solution designed to stop fire spread long enough for sprinkler systems to work and protect emergency fire crews entering the building. All our inspectors are BM Trada Q-Mark qualified, and only ironmongery tested and approved with its doorset is used.",
+      "Our steel fire doors are certified for up to 4 hours, providing a robust and low-maintenance solution designed to stop fire spread long enough for sprinkler systems to work and protect emergency fire crews entering the building. All our inspectors are fully qualified, and only ironmongery tested and approved with its doorset is used.",
     highlights: [
       "Certified fire resistance ratings for up to 4 hours (FD240)",
       "Robust, low-maintenance, and tamper-resistant steel doorsets",
-      "BM Trada Q-Mark qualified inspectors & comprehensive surveys",
+      "Fully qualified fire safety inspectors & comprehensive surveys",
       "Exclusively approved and tested ironmongery fitted with each doorset",
     ],
     ctaText: "Get a Steel Door Estimate",
@@ -154,19 +154,19 @@ export const DETAILED_SERVICES_DATA: ServicePanelItem[] = [
   },
   {
     id: "fire-barriers",
-    title: "Cavity Fire Barriers",
+    title: "Fire Barriers",
     badge: "Concealed Void Protection",
     tagline:
-      "Essential fire barriers preventing flame and smoke spread in hidden cavities",
+      "Essential fire barriers preventing flame and smoke spread in hidden voids",
     metaTitle:
-      "Cavity Fire Barriers & Void Protection London & Kent | Cosmic Fire",
+      "Fire Barriers & Void Protection London & Kent | Cosmic Fire",
     metaDescription:
-      "Ventilated and non-ventilated cavity fire barriers across London & Kent. Preventing flame and smoke spread within ceiling voids and cavity walls.",
+      "Ventilated and solid fire barriers across London & Kent. Preventing flame and smoke spread within ceiling voids and partition walls.",
     description:
-      "Fire barrier systems are essential to prevent the spread of smoke and fire through obscured spaces within a building, such as suspended ceiling voids, raised floors, and external wall cavities. We supply and install certified ventilated and solid cavity barriers tailored to a wide range of cavity sizes and structural layouts.",
+      "Fire barrier systems are essential to prevent the spread of smoke and fire through obscured spaces within a building, such as suspended ceiling voids, raised floors, and hidden wall voids. We supply and install certified ventilated and solid fire barriers tailored to a wide range of void dimensions and structural layouts.",
     highlights: [
-      "Halts hidden fire propagation within ceiling voids and wall cavities",
-      "Ventilated cavity barriers with expanding intumescent strips",
+      "Halts hidden fire propagation within ceiling voids and wall structures",
+      "Ventilated fire barriers with expanding intumescent strips",
       "High-density rock mineral wool & certified wire-reinforced systems",
       "Fully compliant with Building Regulations Approved Document B",
     ],
@@ -248,9 +248,9 @@ export const SERVICE_IMAGES: Record<
   },
   "fire-barriers": {
     url: "/images/services/fire-barriers.webp",
-    alt: "Ventilated cavity fire barrier and void firestop system in suspended ceiling",
+    alt: "Ventilated fire barrier and void firestop system in suspended ceiling",
     category: "passive",
-    tag: "Cavity Barriers",
+    tag: "Fire Barriers",
   },
   "air-sealing": {
     url: "/images/services/air-sealing.webp",

@@ -120,7 +120,7 @@ export const CONSULTATION_SERVICES = [
   "Steel Doors",
   "Fire Curtains",
   "Intumescent Coatings",
-  "Cavity Fire Barriers",
+  "Fire Barriers",
   "Air Sealing",
 ];
 

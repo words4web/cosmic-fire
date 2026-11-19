@@ -151,22 +151,6 @@ export default function ServiceDetailPage() {
                   <span>Call Us</span>
                 </a>
               </div>
-
-              {/* Quick Trust Badges */}
-              <div className="pt-4 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 text-white/70 text-[11px] sm:text-xs font-mono-tech">
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#FC7A21] shrink-0" />
-                  <span>BM Trada Certified</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#0489F8] shrink-0" />
-                  <span>Fast London Deployment</span>
-                </div>
-                <div className="col-span-2 sm:col-span-1 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#FC7A21] shrink-0" />
-                  <span>Full Compliance Certificate</span>
-                </div>
-              </div>
             </motion.div>
 
             {/* Right Column: Hero Image Card */}
@@ -198,41 +182,8 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Highlights / Key Capabilities */}
-      {service.highlights && service.highlights.length > 0 && (
-        <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-surface-card border border-surface-border shadow-xs">
-            <div className="mb-6 sm:mb-8 pb-4 border-b border-surface-border">
-              <span className="text-[10px] sm:text-[11px] font-mono-tech uppercase tracking-wider font-bold text-[#FC7A21]">
-                Compliance & Quality Assured
-              </span>
-              <h2 className="font-display font-black text-xl sm:text-2xl md:text-3xl text-text-primary tracking-tight mt-1">
-                Key Standards & Compliance Checklist
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-5">
-              {service.highlights.map((h, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl bg-surface-bg/80 border border-surface-border hover:border-[#044FB7]/30 transition-colors">
-                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#FC7A21] to-[#044FB7] flex items-center justify-center shrink-0 text-white shadow-xs">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div className="pt-0.5">
-                    <span className="text-xs sm:text-sm text-text-primary font-medium leading-relaxed block">
-                      {h}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Explore Other Services Section */}
-      <section className="pb-14 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h3 className="font-display font-black text-lg sm:text-2xl text-text-primary tracking-tight">
