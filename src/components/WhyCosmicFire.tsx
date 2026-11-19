@@ -12,16 +12,16 @@ export const WhyCosmicFire: React.FC<WhyCosmicFireProps> = ({ onNavigate }) => {
   return (
     <section
       id="why-cosmic-fire"
-      className="py-14 sm:py-20 md:py-28 bg-surface-bg relative border-t border-surface-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      className="py-10 sm:py-14 md:py-16 bg-surface-bg relative border-t border-surface-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         {/* Top Header & Video Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:col-span-7 space-y-5">
+            className="lg:col-span-7 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#044FB7]/10 border border-[#0489F8]/30 text-[11px] font-mono-tech uppercase tracking-wider text-[#044FB7] font-bold">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0489F8] shrink-0" />
               <span>{WHY_CHOOSE_US_DATA.tag}</span>

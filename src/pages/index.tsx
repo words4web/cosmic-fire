@@ -3,7 +3,6 @@ import { usePageNavigation } from "@/src/hooks/usePageNavigation";
 import { useSEO } from "@/src/hooks/useSEO";
 import { HeroSection } from "@/src/components/HeroSection";
 import { WhyCosmicFire } from "@/src/components/WhyCosmicFire";
-import { CinematicBanner } from "@/src/components/CinematicBanner";
 import { TestimonialsSection } from "@/src/components/TestimonialsSection";
 import { HotspotModal } from "@/src/components/HotspotModal";
 import { HotspotItem } from "@/src/types";
@@ -28,7 +27,6 @@ export default function IndexPage() {
         onNavigate={handleNavigate}
       />
       <WhyCosmicFire onNavigate={handleNavigate} />
-      <CinematicBanner onNavigate={handleNavigate} />
       <TestimonialsSection />
 
       <HotspotModal
