@@ -15,6 +15,7 @@ export interface ProtectionPillar {
   icon: LucideIcon;
   image: string;
   imageAlt?: string;
+  serviceId: string;
 }
 
 export interface WhyChooseUsData {
@@ -39,6 +40,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/fire-door-inspections.webp",
       imageAlt:
         "Certified UK fire safety specialist inspecting commercial fire door leaf gap and intumescent seal",
+      serviceId: "fire-door-inspections",
     },
     {
       number: "02",
@@ -49,6 +51,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/fire-door-installation.webp",
       imageAlt:
         "Qualified carpenter fitting a certified solid timber commercial fire door assembly",
+      serviceId: "fire-door-installation",
     },
     {
       number: "03",
@@ -59,6 +62,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/fire-door-maintenance.webp",
       imageAlt:
         "Fire door maintenance specialist servicing overhead closer and checking perimeter smoke seals",
+      serviceId: "fire-door-maintenance",
     },
     {
       number: "04",
@@ -69,6 +73,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/fire-stopping.webp",
       imageAlt:
         "Certified technician installing passive fire stopping seals and collars around wall penetrations",
+      serviceId: "fire-stopping",
     },
     {
       number: "05",
@@ -79,6 +84,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/fire-door-manufacturing.webp",
       imageAlt:
         "Bespoke commercial fire door manufacturing in timber joinery workshop",
+      serviceId: "fire-door-manufacturing",
     },
     {
       number: "06",
@@ -89,6 +95,7 @@ export const WHY_CHOOSE_US_DATA: WhyChooseUsData = {
       image: "/images/services/steel-doors.webp",
       imageAlt:
         "High performance 4-hour rated industrial steel fire exit door with panic push bar",
+      serviceId: "steel-doors",
     },
   ],
 };

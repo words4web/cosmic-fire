@@ -27,7 +27,7 @@ export default function IndexPage() {
         selectedHotspot={selectedHotspot}
         onNavigate={handleNavigate}
       />
-      <WhyCosmicFire />
+      <WhyCosmicFire onNavigate={handleNavigate} />
       <CinematicBanner onNavigate={handleNavigate} />
       <TestimonialsSection />
 
