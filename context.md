@@ -8,7 +8,7 @@ The platform follows a grounded, high-trust British commercial contractor aesthe
 
 ### Key Highlights:
 
-- **Hero Quote Form Integration**: The primary engineering consultation form is embedded directly into the Hero section with live ambient lighting animations, clean form fields (no asterisks), and a prominent `"GET A FREE QUOTE"` call-to-action bar with phone contact (`+44 (0) 20 7946 0991`).
+- **Hero Quote Form Integration**: The primary engineering consultation form is embedded directly into the Hero section with live ambient lighting animations, clean form fields (no asterisks), and a prominent `"GET A FREE QUOTE"` call-to-action bar with phone contact (`+44 7432 576606`).
 - **Services Hierarchy & Navigation**:
   1. **Fire Door Inspections** (`/services/fire-door-inspections`) — Fully certified multi-point assessments, surveys, and annual compliance certification.
   2. **Fire Door Installation** (`/services/fire-door-installation`) — Certified installations by qualified carpenters with tested third-party hardware.
@@ -140,7 +140,7 @@ cosmic-fire/
 
 | Section / Component | File Location | Key Capabilities & Verbatim Content |
 | :--- | :--- | :--- |
-| **Dual-Tier Navbar** | [`src/components/Navbar.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx) | Top utility bar (`Call Us`, `engineering@cosmicfire.co.uk`, London & Kent coverage), logo, desktop pill navigation (`Home`, `Services` dropdown with all 6 categories, `About`), mobile slide-out drawer, and `GET A FREE QUOTE` button. |
+| **Dual-Tier Navbar** | [`src/components/Navbar.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/Navbar.tsx) | Top utility bar (`Call Us`, `info@cosmicfire.co.uk`, London & Kent coverage), logo, desktop pill navigation (`Home`, `Services` dropdown with all 6 categories, `About`), mobile slide-out drawer, and `GET A FREE QUOTE` button. |
 | **Hero Section** | [`src/components/HeroSection.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/HeroSection.tsx) | Streaming video background (`hero-firefighters.mp4`), dual action CTA pill (`Get a Free Quote` anchor + `Call Us` callout), and embedded `ConsultationForm`. |
 | **Consultation Form** | [`src/components/ConsultationForm.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/ConsultationForm.tsx) | Interactive quote request form with rotating conic halo animation, breathing glow, clean input styling without asterisks, and real-time Zod validation. |
 | **Why Cosmic Fire** | [`src/components/WhyCosmicFire.tsx`](file:///home/mazahir/projects/work/cosmic-fire/src/components/WhyCosmicFire.tsx) | Video preview (`why-choose-us.mp4`) in header paired with 6 full-bleed photographic service cards at the bottom, featuring two-tone logo gradient icons (`#FC7A21` to `#044FB7`) and direct `Explore Service` link buttons. |

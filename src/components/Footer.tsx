@@ -25,30 +25,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-white/20">
-          <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5">
+          <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5 text-left flex flex-col items-start">
             <button
               onClick={() => {
                 onNavigate("home");
                 scrollToTop();
               }}
-              className="flex items-center gap-3 sm:gap-4 group cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0489F8] rounded-xl p-1 -m-1 transition-transform"
+              className="group cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0489F8] rounded-xl p-0 transition-transform block"
               aria-label="Cosmic Fire - Back to top">
               <img
                 src="/logo.png"
                 alt="Cosmic Fire Solutions - Commercial Fire Safety & Protection UK"
-                className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105 shrink-0"
+                className="w-56 sm:w-64 md:w-80 h-auto max-h-36 object-contain object-left transition-transform group-hover:scale-105"
               />
-              <div className="flex flex-col">
-                <span className="font-display font-black text-xl sm:text-2xl md:text-3xl tracking-tight text-white leading-none">
-                  COSMIC <span className="text-[#FC7A21]">FIRE</span>
-                </span>
-                <span className="text-[10px] sm:text-xs font-mono-tech tracking-widest text-[#0489F8] font-bold mt-1.5 uppercase">
-                  {FOOTER_DATA.tagline}
-                </span>
-              </div>
             </button>
 
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-md">
+            <p className="text-[11px] sm:text-xs font-mono-tech tracking-wider text-[#0489F8] font-bold uppercase text-left">
+              {FOOTER_DATA.tagline}
+            </p>
+
+            <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-md text-left">
               {FOOTER_DATA.description}
             </p>
           </div>

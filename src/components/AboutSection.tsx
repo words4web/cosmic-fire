@@ -290,9 +290,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               <div className="font-display font-bold text-xs sm:text-sm text-text-primary mt-1">
                 {COMPANY_CONTACT.address}
               </div>
-              <span className="text-[11px] text-text-secondary block mt-0.5 font-sans">
-                {COMPANY_CONTACT.addressNote}
-              </span>
+              {COMPANY_CONTACT.addressNote && (
+                <span className="text-[11px] text-text-secondary block mt-0.5 font-sans">
+                  {COMPANY_CONTACT.addressNote}
+                </span>
+              )}
             </div>
 
             <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-surface-bg border border-surface-border hover:border-[#044FB7]/40 transition-colors">
