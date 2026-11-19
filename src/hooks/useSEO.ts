@@ -53,13 +53,17 @@ export function useSEO({
     ogDescTag.setAttribute("content", targetOgDesc);
 
     // 4. Set OpenGraph Image & Twitter Image
+    const fullImageUrl = image.startsWith("http")
+      ? image
+      : `https://www.cosmicfiresolutions.co.uk${image.startsWith("/") ? "" : "/"}${image}`;
+
     let ogImageTag = document.querySelector('meta[property="og:image"]');
     if (!ogImageTag) {
       ogImageTag = document.createElement("meta");
       ogImageTag.setAttribute("property", "og:image");
       document.head.appendChild(ogImageTag);
     }
-    ogImageTag.setAttribute("content", image);
+    ogImageTag.setAttribute("content", fullImageUrl);
 
     let twitterImageTag = document.querySelector('meta[name="twitter:image"]');
     if (!twitterImageTag) {
@@ -67,6 +71,6 @@ export function useSEO({
       twitterImageTag.setAttribute("name", "twitter:image");
       document.head.appendChild(twitterImageTag);
     }
-    twitterImageTag.setAttribute("content", image);
+    twitterImageTag.setAttribute("content", fullImageUrl);
   }, [title, description, ogTitle, ogDescription, image]);
 }

@@ -41,6 +41,7 @@ export default function ServiceDetailPage() {
       service?.metaTitle ||
       (service ? `${service.title} | Cosmic Fire` : "Service Not Found"),
     description: service?.metaDescription || service?.description,
+    image: imageMeta?.url || "/logo.png",
   });
 
   if (!service) {
