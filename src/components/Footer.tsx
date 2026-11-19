@@ -25,26 +25,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-16 border-b border-white/20">
-          <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5 text-left flex flex-col items-start">
+          <div className="sm:col-span-2 lg:col-span-5 space-y-4 sm:space-y-5 text-center flex flex-col items-center">
             <button
               onClick={() => {
                 onNavigate("home");
                 scrollToTop();
               }}
-              className="group cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0489F8] rounded-xl p-0 transition-transform block"
+              className="group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0489F8] rounded-xl p-0 transition-transform block"
               aria-label="Cosmic Fire - Back to top">
               <img
                 src="/logo.png"
                 alt="Cosmic Fire Solutions - Commercial Fire Safety & Protection UK"
-                className="w-56 sm:w-64 md:w-80 h-auto max-h-36 object-contain object-left transition-transform group-hover:scale-105"
+                className="w-56 sm:w-64 md:w-80 h-auto max-h-36 object-contain object-center transition-transform group-hover:scale-105"
               />
             </button>
 
-            <p className="text-[11px] sm:text-xs font-mono-tech tracking-wider text-[#0489F8] font-bold uppercase text-left">
+            <p className="text-[11px] sm:text-xs font-mono-tech tracking-wider text-[#0489F8] font-bold uppercase text-center">
               {FOOTER_DATA.tagline}
             </p>
 
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-md text-left">
+            <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-md text-center">
               {FOOTER_DATA.description}
             </p>
           </div>
